@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="libs/MaterialDesign/MaterialDesign-Webfont-master/css/materialdesignicons.min.css">
+</head>
+
+<body>
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #28a745;">
+        <a class="navbar-brand">
+            <img src="icons/home.svg" onclick="aviso()" style="width: 48px; height: auto;">
+        </a>
+
+        <script>
+            function aviso() {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Em construção',
+                    text: 'Es',
+                    footer: '<a href>Why do I have this issue?</a>'
+                })
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Em construção',
+                    html: '<p style="text-aling = justify"> Estamos em Construção, por favor, volte em breve 😉😉'
+                })
+            }
+        </script>
+
+        <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div id="my-nav" class="collapse navbar-collapse font-weight-bold">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a onclick="aviso()" class="nav-link" href="#">Equipamentos<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a onclick="aviso()" class="nav-link" href="#">Produtos<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a onclick="aviso()" class="nav-link" href="#">Reagentes<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a onclick="aviso()" class="nav-link" href="#">Prontuário<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="jumbotron" style="background-image: url(img/jumbotron.jpg); background-repeat: no-repeat; background-size: cover; margin:0px;">
+        <h1 class="display-4 text-center text-light font-weight-bold">Açúcar e Álcool</h1>
+        <p class="lead text-center text-light font-weight-bold">Repositório</p>
+        <hr class="my-4">
+        <p class="text-center text-light font-weight-bold">Produtos, Equipamentos e Reagentes</p>
+    </div>
+
+
+    <div class="container mb-4">
+        <div class="row">
+            <div class="col-12 col-md-6 mt-4">
+                <p class="border text-justify" style="height: 100%;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, dignissimos quam ipsam aperiam minus expedita officiis voluptatum quia laborum eveniet quas recusandae eius nobis. Unde minus excepturi illo ipsam fugiat?</p>
+            </div>
+            <div class="col-12 col-md-6 mt-4">
+                <p class="border text-justify" style="height: 100%;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, dignissimos quam ipsam aperiam minus expedita officiis voluptatum quia laborum eveniet quas recusandae eius nobis. Unde minus excepturi illo ipsam fugiat?</p>
+            </div>
+            <div class="col-12 col-md-8 mt-4">
+                <p class="border text-justify" style="height: 100%;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, dignissimos quam ipsam aperiam minus expedita officiis voluptatum quia laborum eveniet quas recusandae eius nobis. Unde minus excepturi illo ipsam fugiat?</p>
+            </div>
+            <div class="col-12 col-md-4 mt-4">
+                <p class="border text-justify" style="height: 100%;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, dignissimos quam ipsam aperiam minus expedita officiis voluptatum quia laborum eveniet quas recusandae eius nobis. Unde minus excepturi illo ipsam fugiat?</p>
+            </div>
+            <div class="col-12 col-md-9 mt-4">
+                <p class="border text-justify" style="height: 100%;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, dignissimos quam ipsam aperiam minus expedita officiis voluptatum quia laborum eveniet quas recusandae eius nobis. Unde minus excepturi illo ipsam fugiat?</p>
+            </div>
+            <div class="col-12 col-md-3 mt-4">
+                <p class="border text-justify" style="height: 100%;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, dignissimos quam ipsam aperiam minus expedita officiis voluptatum quia laborum eveniet quas recusandae eius nobis. Unde minus excepturi illo ipsam fugiat?</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card text-center text-light" style="background-color: #1a1a1a;">
+        Todos os Direitos Reservados ©2019-2022
+    </div>
+
+    <script src="js/jquery-3.4.1.js "></script>
+    <script src="js/bootstrap.min.js "></script>
+</body>
+
+</html>
