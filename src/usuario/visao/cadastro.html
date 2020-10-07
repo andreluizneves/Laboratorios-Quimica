@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="shortcut icon" href="../recursos/img/addcadastro.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link rel="stylesheet" href="../../../recursos/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../recursos/css/cadastro.css">
+</head>
+
+<body class="grad">
+    <div class="container">
+        <div class="row">
+            <div class="caixa">
+                <h1 class="text-center mb-4">Cadastrar</h1>
+                <div class="img-user text-center">
+                    <img src="../../../recursos/img/professores.svg" id="imagem">
+                </div>
+                <div class="form-group">
+                    <label for="my-select">Você é um:</label>
+                    <select onchange="selecao()" id="my-select" class="form-control" name="">
+                        <option value="professor(a)">Professor(a)</option>
+                        <option value="aluno(a)">Aluno(a)</option>
+                    </select>
+                </div>
+                <div class="campo" id="ra">
+                    <input type='number' placeholder="RA" max="5">
+                </div>
+                <div class="campo" id="rm">
+                    <input type='number' placeholder="RM" max="5">
+                </div>
+                <div class="campo mt-4" id="email">
+                    <input type='text' placeholder="Email" max="5">
+                </div>
+                <div class="campo mt-4">
+                    <input type="text" placeholder="Nome completo">
+                </div>
+                <div class="campo mt-4">
+                    <input type='password' placeholder="Criar senha">
+                </div>
+                <a>
+                    <button onclick="cadastro()" class="btn btn-success btn-block mt-4 font-weight-bold cadastro">
+                        Cadastrar
+                    </button>
+                </a>
+                <a href="../../../index.html">
+                    <button class="btn btn-primary btn-block mt-3 font-weight-bold ">
+                        Já tenho uma conta
+                    </button>
+                </a>
+            </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../../../recursos/js/jquery-3.5.1.min.js "></script>
+    <script src="../../../recursos/js/bootstrap.min.js "></script>
+    <script src="../../../recursos/js/cadastro.js"></script>
+
+
+</body>
+
+</html3

@@ -1,0 +1,73 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.link {
+    text-decoration: none !important;
+}
+
+.grad {
+    background: linear-gradient(-105deg, #5a3c4a, #0b0d2efd 45%, #1c174be7 100%);
+    background-size: 100% 100%;
+    height: 100vh;
+}
+
+.caixa {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 300px;
+    color: white;
+    padding: 20px;
+    border-radius: 45px 5px 45px 5px;
+    box-shadow: black 0 20px 20px;
+}
+
+.caixa .titulo {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.caixa .campo input {
+    width: 100%;
+    background: transparent;
+    color: white;
+    border: none;
+    outline: none;
+    letter-spacing: 1px;
+    border-bottom: 1px solid white;
+}
+
+.cadastro {
+    text-align: center;
+}
+
+.img-user>img {
+    background-color: white;
+    border-radius: 100%;
+    height: 100px;
+}
+
+.form-group>.form-control {
+    background: rgb(22, 22, 53);
+}
+
+option {
+    color: white !important;
+}
+
+a>button {
+    text-decoration: none;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+#rm {
+    display: none;
+}

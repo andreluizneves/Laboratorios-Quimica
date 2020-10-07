@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../recursos/img/casa.svg" type="image/x-icon" width="100%">
+    <title>Menu Iniciar</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <link rel="stylesheet" href="../../../recursos/libs/MaterialDesign/MaterialDesign-Webfont-master/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../../recursos/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../recursos/libs/css/all.css">
+    <link rel="stylesheet" href="../../../recursos/css/menu.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #28a745;">
+        <a class="navbar-brand">
+            <img src="../../../recursos/img/casa.svg" onclick="aviso()" style="width: 48px; height: auto;">
+        </a>
+
+        <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample02">
+            <ul class="navbar-nav mr-auto font-weight-bold">
+                <li class="nav-item active">
+                    <a onclick="aviso()" class="nav-link" href="#">Equipamentos<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a onclick="aviso()" class="nav-link" href="#">Reagentes<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a onclick="aviso()" class="nav-link" href="#">Vidrarias<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a onclick="aviso()" class="nav-link" href="#">Prontuário<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="../../principal/visao/contato.html">Fale Conosco<span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            <a href="../../../index.html"><button class="btn btn-primary block mr-3">Login</button></a>
+            <a data-toggle="modal" class="links" href="#cinco-s"><button class="btn btn-primary block">Uso do 5'S</button></a>
+
+        </div>
+    </nav>
+
+    <div class="jumbotron" style="background-image: url(../../../recursos/img/jumbotron.jpg); background-repeat: no-repeat; background-size: cover; margin:0px;">
+        <h1 class="display-4 text-center text-light font-weight-bold">Açúcar e Álcool</h1>
+        <p class="lead text-center text-light font-weight-bold">Repositório</p>
+        <hr class="my-4">
+        <p class="text-center text-light font-weight-bold">Equipamentos, Reagentes e Vidrarias</p>
+    </div>
+
+
+    <div class="container mt-4">
+        <div class="row">
+            <table class="table table-dark text-center font-weight-bold" border="2">
+                <tbody style="background-color: white;">
+                    <tr>
+                        <td style="background-color: rgb(52, 58, 64);">
+                            Nome
+                        </td>
+                        <td style="background-color: rgb(52, 58, 64);">
+                            Quantidade
+                        </td>
+                        <td style="background-color: rgb(52, 58, 64);">
+                            Laboratório
+                        </td>
+                    </tr>
+                    <tr>
+
+                        <td style="background-color: rgb(131, 135, 139);">
+                            Béquer de 50ml
+                        </td>
+
+                        <td style="background-color: rgb(131, 135, 139);">
+                            2 unidades
+                        </td>
+
+                        <td style="background-color: rgb(131, 135, 139);">
+                            Interno
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: rgb(131, 135, 139);">
+                            Permanganato de Potássio
+                        </td>
+
+                        <td style="background-color: rgb(131, 135, 139);">
+                            800gr
+                        </td>
+
+                        <td style="background-color: rgb(131, 135, 139);">
+                            Externo
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: rgb(131, 135, 139);">
+                            Água Destilada
+                        </td>
+
+                        <td style="background-color: rgb(131, 135, 139);">
+                            500ml
+                        </td>
+
+                        <td style="background-color: rgb(131, 135, 139);">
+                            Interno
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: rgb(131, 135, 139);">
+                            Hidróxido de Sódio
+                        </td>
+
+                        <td style="background-color: rgb(131, 135, 139);">
+                            230gr
+                        </td>
+
+                        <td style="background-color: rgb(131, 135, 139);">
+                            Interno
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: rgb(131, 135, 139);">
+                            Bismutato de Sódio
+                        </td>
+
+                        <td style="background-color: rgb(131, 135, 139);">
+                            890gr
+                        </td>
+
+                        <td style="background-color: rgb(131, 135, 139);">
+                            Externo
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer class="rodape">
+        <div class="container">
+            <p class="mt-2">Todos os Direitos Reservados &copy;2019-2022</p>
+            <p>
+                <a href="https://www.facebook.com/Laborat%C3%B3rios-do-A%C3%A7%C3%BAcar-e-%C3%81lcool-Cafel%C3%A2ndia-SP-104466114733394/" class="links"><i class="fab fa-facebook icon "></i></a>
+                <i class="fab fa-github icon"></i>
+            </p>
+        </div>
+    </footer>
+
+    <div id="cinco-s" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content corpo-cinco-s">
+                <div class="modal-header justify-content-center">
+                    <h1 class="modal-title font-weight-bold" id="my-modal-title">Uso do 5'S</h1>
+                </div>
+                <div class="modal-body modal-1">
+                    <div class="row">
+                        <div class="col-12 col-md-12 text-justify">
+                            <h1>
+                                O que é?
+                            </h1>
+                            <p>
+                                5S é um programa de gestão de qualidade empresarial desenvolvido no Japão que visa aperfeiçoar aspectos como organização, limpeza e padronização. A junção no número “5” com a letra “S” vem de cinco palavras japonesas que começam com S:
+                            </p>
+                            <ul>
+                                <li> Seiri – Senso de utilização</li>
+                                <li> Seiton – Senso de organização</li>
+                                <li> Seiso – Senso de limpeza </li>
+                                <li> Seiketsu – Senso de padronização </li>
+                                <li> Shitsuke – Senso de disciplina. </li>
+                            </ul>
+                            <h1>
+                                O seu uso nos Laboratórios
+                            </h1>
+                            <p>
+                                O seu uso nos laboratórios internos e externos da escola ajudarão numa melhor organização dos itens armazenados nos armários, promovendo melhor disponibilidade desses itens de uma melhor visualização para que seja possível preparar uma aula prática futura
+                                de determinado item.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" data-dismiss="modal" type="button">FECHAR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../recursos/js/jquery-3.5.1.min.js"></script>
+    <script src="../../../recursos/js/bootstrap.min.js"></script>
+    <script>
+        function aviso() {
+            Swal.fire({
+                icon: 'error',
+                title: 'Em construção',
+                html: '<p style = "text-align=justify " > Estamos em Construção, por favor, volte em breve😉😉'
+            })
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+.rodape .container {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.rodape {
+    padding: 0.5rem 0;
+    color: #999;
+    background-color: #000000;
+    border-top: 0.05rem solid #e5e5e5;
+}
+
+.icon {
+    font-size: 2rem;
+}
+
+.corpo-cinco-s {
+    color: white;
+    background-image: linear-gradient(to top, rgb(62, 63, 160), rgb(39, 103, 221));
+}
+
+.links {
+    text-decoration: none;
+    color: white;
+}
+
+.links:hover {
+    color: rgba(255, 255, 255, 0.493);
+}
