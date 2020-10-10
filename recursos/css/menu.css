@@ -27,3 +27,26 @@
 .links:hover {
     color: rgba(255, 255, 255, 0.493);
 }
+
+.topnav {
+    overflow: hidden;
+    background-color: #28a745;
+}
+
+.topnav a {
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    padding: 6px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav ul li:hover {
+    width: inherit;
+    background-color: #28a74679;
+    color: white;
+    -webkit-box-shadow: 0px 0px 10px #055c1a inset;
+    -moz-box-shadow: 0px 0px 10px #055c1a inset;
+    box-shadow: 0 -10px 0.8px #055c1971 inset;
+}

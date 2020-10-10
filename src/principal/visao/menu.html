@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #28a745;">
+    <nav class="navbar navbar-expand-lg navbar-light topnav">
         <a class="navbar-brand">
             <img src="../../../recursos/img/casa.svg" onclick="aviso()" style="width: 48px; height: auto;">
         </a>
@@ -23,24 +23,29 @@
 
         <div class="collapse navbar-collapse" id="navbarsExample02">
             <ul class="navbar-nav mr-auto font-weight-bold">
-                <li class="nav-item active">
-                    <a onclick="aviso()" class="nav-link" href="#">Equipamentos<span class="sr-only">(current)</span></a>
+
+                <li class="nav-item active nav-link">
+                    <a onclick="aviso()" class="" href="#">Equipamentos<span class="sr-only">(current)</span>
+                    </a>
+
                 </li>
-                <li class="nav-item active">
-                    <a onclick="aviso()" class="nav-link" href="#">Reagentes<span class="sr-only">(current)</span></a>
+                <li class="nav-item active nav-link">
+                    <a onclick="aviso()" class="" href="#">Reagentes<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item active">
-                    <a onclick="aviso()" class="nav-link" href="#">Vidrarias<span class="sr-only">(current)</span></a>
+                <li class="nav-item active nav-link">
+                    <a onclick="aviso()" class="" href="#">Vidrarias<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item active">
-                    <a onclick="aviso()" class="nav-link" href="#">Prontuário<span class="sr-only">(current)</span></a>
+                <li class="nav-item active nav-link">
+                    <a onclick="aviso()" class="" href="#">Prontuário<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="../../principal/visao/contato.html">Fale Conosco<span class="sr-only">(current)</span></a>
+                <li class="nav-item active nav-link">
+                    <a class="" href="../../contato/visao/contato.html">Fale Conosco<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
-            <a href="../../../index.html"><button class="btn btn-primary block mr-3">Login</button></a>
+            <a href="../../login/visao/login.html"><button class="btn btn-primary block mr-3">Login</button></a>
             <a data-toggle="modal" class="links" href="#cinco-s"><button class="btn btn-primary block">Uso do 5'S</button></a>
+
+
 
         </div>
     </nav>
@@ -167,7 +172,7 @@
                             <ul>
                                 <li> Seiri – Senso de utilização</li>
                                 <li> Seiton – Senso de organização</li>
-                                <li> Seiso – Senso de limpeza </li>
+                                <li>Seiso – Senso de limpeza </li>
                                 <li> Seiketsu – Senso de padronização </li>
                                 <li> Shitsuke – Senso de disciplina. </li>
                             </ul>
@@ -188,10 +193,17 @@
         </div>
     </div>
 
+
     <script src="../../../recursos/js/jquery-3.5.1.min.js"></script>
     <script src="../../../recursos/js/bootstrap.min.js"></script>
     <script>
         function aviso() {
+            Swal.fire({
+                icon: 'error',
+                title: 'Em construção',
+                text: 'Es',
+                footer: '<a href>Why do I have this issue?</a>'
+            })
             Swal.fire({
                 icon: 'error',
                 title: 'Em construção',
