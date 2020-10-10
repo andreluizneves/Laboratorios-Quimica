@@ -39,33 +39,15 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `repositorio_quimica`.`tipo_usuario`
+-- Table `repositorio_quimica`.`professor`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `repositorio_quimica`.`tipo_usuario` (
-  `id_tipousuairo` INT NOT NULL AUTO_INCREMENT,
-  `nome` VARCHAR(45) NOT NULL,
-  `somente_visualizacao` VARCHAR(1) NULL,
-  PRIMARY KEY (`id_tipousuairo`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `repositorio_quimica`.`usuarios`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `repositorio_quimica`.`usuarios` (
+CREATE TABLE IF NOT EXISTS `repositorio_quimica`.`professor` (
   `id_usuario` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(100) NOT NULL,
   `email` VARCHAR(100) NOT NULL,
-  `ra` INT NOT NULL,
+  `ra` VARCHAR(5) NOT NULL,
   `senha` VARCHAR(45) NOT NULL,
-  `id_tipousuairo` INT NOT NULL,
-  PRIMARY KEY (`id_usuario`),
-  INDEX `fk_usuarios_tipo_usuairo1_idx` (`id_tipousuairo` ASC),
-  CONSTRAINT `fk_usuarios_tipo_usuairo1`
-    FOREIGN KEY (`id_tipousuairo`)
-    REFERENCES `repositorio_quimica`.`tipo_usuario` (`id_tipousuairo`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`id_usuario`))
 ENGINE = InnoDB;
 
 
@@ -81,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `repositorio_quimica`.`relatorios` (
   INDEX `fk_relatorios_professores_idx` (`professores_ID_professores` ASC),
   CONSTRAINT `fk_relatorios_professores`
     FOREIGN KEY (`professores_ID_professores`)
-    REFERENCES `repositorio_quimica`.`usuarios` (`id_usuario`)
+    REFERENCES `repositorio_quimica`.`professor` (`id_usuario`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -183,6 +165,19 @@ CREATE TABLE IF NOT EXISTS `repositorio_quimica`.`relatorios_vidrarias` (
     REFERENCES `repositorio_quimica`.`vidrarias` (`id_vidrarias`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `repositorio_quimica`.`aluno`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `repositorio_quimica`.`aluno` (
+  `id_aluno` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(100) NOT NULL,
+  `email` VARCHAR(100) NOT NULL,
+  `rm` VARCHAR(5) NOT NULL,
+  `senha` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id_aluno`))
 ENGINE = InnoDB;
 
 

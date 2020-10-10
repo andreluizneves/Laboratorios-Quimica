@@ -2,7 +2,17 @@
 
     date_default_timezone_set("America/Sao_Paulo");
 
-    define('DBHOST', 'localhost');
-    define('DBUSER', 'root');
-    define('DBPASSWORD', 'root');
-    define('DBNAME', 'tarefas');
+    $host = 'localhost';
+    $user = 'root';
+    $senha = 'root';
+    $banco = 'repositorio_quimica';
+
+    /*
+        SITE DE HOSPEDAGEM
+    
+        $host = 'sql207.epizy.com';
+        $user = 'epiz_26905374';
+        $senha = 'tal8eafvTreXrz';
+        $banco = 'epiz_26905374_app_juridico';
+        
+    */
