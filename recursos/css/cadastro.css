@@ -7,10 +7,6 @@
     align-items: center;
 }
 
-.link {
-    text-decoration: none !important;
-}
-
 .grad {
     background: linear-gradient(-105deg, #5a3c4a, #0b0d2efd 45%, #1c174be7 100%);
     background-size: 100% 100%;
@@ -58,16 +54,4 @@
 
 option {
     color: white !important;
-}
-
-a>button {
-    text-decoration: none;
-}
-
-input[type=number]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-}
-
-#rm {
-    display: none;
 }

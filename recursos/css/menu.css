@@ -3,6 +3,13 @@
     margin-bottom: 0;
 }
 
+.jumbotron {
+    background-image: url(../../recursos/img/jumbotron.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+}
+
 .rodape {
     padding: 0.5rem 0;
     color: #999;
