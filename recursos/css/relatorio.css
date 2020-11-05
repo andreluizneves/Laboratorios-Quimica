@@ -1,0 +1,40 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.banner {
+    background-image: url('../img/equipamento.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 4.6rem;
+    height: 200px;
+}
+
+.nav {
+    background-color: #24ca4b;
+    height: 75px;
+}
+
+.nav a {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.nav-link {
+    width: 65px;
+    height: auto;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: 2.5rem;
+    background-color: white;
+    border-radius: 100%;
+}
+
+.icone-user {
+    width: 48px;
+    height: auto;
+    margin-right: 15px;
+}

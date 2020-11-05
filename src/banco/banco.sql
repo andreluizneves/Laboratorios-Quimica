@@ -11,7 +11,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema repositorio_quimica
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `repositorio_quimica` DEFAULT CHARACTER SET utf8 ;
+CREATE DATABASE IF NOT EXISTS `repositorio_quimica` DEFAULT CHARACTER SET utf8 ;
 USE `repositorio_quimica` ;
 
 -- -----------------------------------------------------
@@ -42,12 +42,12 @@ ENGINE = InnoDB;
 -- Table `repositorio_quimica`.`professor`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `repositorio_quimica`.`professor` (
-  `id_usuario` INT NOT NULL AUTO_INCREMENT,
+  `id_professor` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(100) NOT NULL,
   `email` VARCHAR(100) NOT NULL,
   `ra` VARCHAR(5) NOT NULL,
   `senha` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id_usuario`))
+  PRIMARY KEY (`id_professor`))
 ENGINE = InnoDB;
 
 
@@ -58,12 +58,12 @@ CREATE TABLE IF NOT EXISTS `repositorio_quimica`.`relatorios` (
   `id_relatorios` INT NOT NULL AUTO_INCREMENT,
   `data_hora` DATETIME NOT NULL,
   `descricao` VARCHAR(255) NOT NULL,
-  `professores_ID_professores` INT NOT NULL,
+  `id_professor` INT NOT NULL,
   PRIMARY KEY (`id_relatorios`),
-  INDEX `fk_relatorios_professores_idx` (`professores_ID_professores` ASC),
+  INDEX `fk_relatorios_professores_idx` (`id_professor` ASC),
   CONSTRAINT `fk_relatorios_professores`
-    FOREIGN KEY (`professores_ID_professores`)
-    REFERENCES `repositorio_quimica`.`professor` (`id_usuario`)
+    FOREIGN KEY (`id_professor`)
+    REFERENCES `repositorio_quimica`.`professor` (`id_professor`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;

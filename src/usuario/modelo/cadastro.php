@@ -6,30 +6,82 @@
 
         $requestData = $_REQUEST;
         $tipousuario = $requestData['tipo-usuario'];
-        
+
+     // Verificação do tipo de usuario
         if($tipousuario == 'professor(a)'){
-            $sql = "INSERT INTO professor (nome, email, ra, senha) VALUES ('$requestData[nome]', '$requestData[email]', '$requestData[ra]', '$requestData[senha]')";
+
+        // Verificação de espaço em branco
             if($requestData['nome']  == '' || $requestData['email'] == '' || $requestData['ra'] == '' || $requestData['senha'] == '' ){
+                
                 $dados = array(
-                    'mensagem' => 'Há campos em vazios que precisam ser preenchidos',
+                    'mensagem' => 'Há campos vazios que precisam ser preenchidos',
                     'icone' => 'error'
                 );
                 echo json_encode($dados, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);
                 exit;
+
+            } else {
+
+            // Senão houver espaço em brancon haverá a Query desse RA no Banco já cadastrado
+                $sql ="SELECT * FROM professor WHERE ra = $requestData[ra]";
+                $resultado = mysqli_query($conexao, $sql);
+                $linha = mysqli_num_rows($resultado);
+
+            // Verificação do número de registros no Banco com esse RA
+                if($linha == 1){
+
+                    $dados = array(
+                        'mensagem' => 'RA já cadastrado',
+                        'icone' => 'error'
+                    );
+                    echo json_encode($dados, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);
+                    exit;
+
+                } else{
+
+                // Senão houver sido cadastrado, cria-se a Query para cadastros do novo RA
+                    $sql = "INSERT INTO professor (nome, email, ra, senha) VALUES ('$requestData[nome]', '$requestData[email]', '$requestData[ra]', '$requestData[senha]')";
+
+                }
             }
         } else{
-            $sql = "INSERT INTO aluno (nome, email, rm, senha) VALUES ('$requestData[nome]', '$requestData[email]', '$requestData[rm]', '$requestData[senha]')";
+
+        // Verificação de espaço em branco
             if($requestData['nome']  == '' || $requestData['email'] == '' || $requestData['rm'] == '' || $requestData['senha'] == '' ){
+
                 $dados = array(
-                    'mensagem' => 'Há campos em vazios que precisam ser preenchidos',
+                    'mensagem' => 'Há campos vazios que precisam ser preenchidos',
                     'icone' => 'error'
                 );
                 echo json_encode($dados, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);
                 exit;
+
+            } else{
+
+            // Senão houver espaço em brancon haverá a Query desse RM no Banco já cadastrado
+                $sql ="SELECT * FROM aluno WHERE rm = $requestData[rm]";
+                $resultado = mysqli_query($conexao, $sql);
+                $linha = mysqli_num_rows($resultado);
+    
+                 // Verificação do número de registros no Banco com esse RM
+                if($linha == 1){
+                    $dados = array(
+                        'mensagem' => 'RM já cadastrado',
+                        'icone' => 'error'
+                    );
+                    echo json_encode($dados, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);
+                    exit;
+                
+                } else{
+                    
+                // Senão houver sido cadastrado, cria-se a Query para cadastros do novo RM
+                    $sql = "INSERT INTO aluno (nome, email, rm, senha) VALUES ('$requestData[nome]', '$requestData[email]', '$requestData[rm]', '$requestData[senha]')";
+
+                }
             }
         }
 
-
+        // Realização a Query do cadastro
         $resultado = mysqli_query($conexao, $sql);
 
         if($resultado){
@@ -43,7 +95,7 @@
                 'icone' => 'error'
             );
         }       
-        
+
         mysqli_close($conexao);
     }
 

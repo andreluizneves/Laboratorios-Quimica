@@ -13,6 +13,6 @@
         $host = 'sql207.epizy.com';
         $user = 'epiz_26905374';
         $senha = 'tal8eafvTreXrz';
-        $banco = 'epiz_26905374_app_juridico';
+        $banco = 'epiz_26905374_repositorio_quimica';
         
     */

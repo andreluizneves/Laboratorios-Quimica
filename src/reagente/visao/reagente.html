@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../recursos/img/casa.svg" type="image/x-icon" width="100%">
+    <title>Reagente</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <link rel="stylesheet" href="../../../recursos/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../recursos/css/equipamento.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg nav fixed-top">
+        <div class="dropdown">
+            <img src="../../../recursos/img/desenvolvedor.png" class='icone-user' button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="dropdown-menu" aria-labelledby="dLabel">
+                <a href="">
+                    <li class="nav-item active nav-link">
+                        <span>
+                            <img src="../../../recursos/img/casa.svg" class='icone-dropdown'>Menu
+                        </span>
+                    </li>
+                </a>
+                <a href="">
+                    <li class="nav-item active nav-link">
+                        <span>
+                        <img src="../../../recursos/img/icone-edit.png" class='icone-dropdown'>Editar Perfil
+                    </span>
+                    </li>
+                </a>
+                <a href="">
+                    <li class="nav-item active nav-link">
+                        <span>
+                            <img src="../../../recursos/img/icone-contato.png" class='icone-dropdown'>Fale Conosco
+                        </span>
+                    </li>
+                </a>
+                <a href="">
+                    <li class="nav-item active nav-link">
+                        <span>
+                            <img src="../../../recursos/img/icone-sair.png" class='icone-dropdown'>Sair
+                        </span>
+                    </li>
+                </a>
+            </div>
+        </div>
+
+        <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample02">
+            <ul class="navbar-nav mr-auto font-weight-bold">
+                <li class="nav-item active nav-link">
+                    <a class="usuario"></a>
+                </li>
+                <li class="nav-item active nav-link">
+                    <a class="usuario"></a>
+                </li>
+                <li class="nav-item active nav-link">
+                    <a href="../../../src/principal/visao/equipamentos.html">Visualizar Estoque<span class="sr-only ">(current)</span> </a>
+                </li>
+                <li class="nav-item active nav-link editor">
+                    <a href="../../../src/principal/visao/reagentes.html ">Editar<span class="sr-only ">(current)</span></a>
+                </li>
+            </ul>
+            <span>
+                <img src="../../../recursos/img/btn-noturno.png" alt="">
+                <input type="checkbox" aria-label="night-mode" class="switch">
+            </span>
+        </div>
+    </nav>
+
+    <div class="jumbotron banner d-flex align-items-center justify-content-center">
+        <div class="row">
+            <div class="col-12 col-md-12">
+                <h1 class="display-1 text-center font-weight-bold text-black">Reagentes</h1>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../recursos/js/jquery-3.5.1.min.js"></script>
+    <script src="../../../recursos/js/bootstrap.min.js"></script>
+    <script src="../controle/reagente.js"></script>
+</body>
+
+</html>
+
+</html>

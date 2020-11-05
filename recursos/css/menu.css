@@ -1,13 +1,19 @@
+html {
+    scroll-behavior: smooth;
+}
+
 .rodape .container {
     text-align: center;
     margin-bottom: 0;
 }
 
-.jumbotron {
-    background-image: url(../../recursos/img/jumbotron.jpg);
-    background-repeat: no-repeat;
+.banner {
+    background-image: url('../img/jumbotron.jpg');
+    background-position: center;
     background-size: cover;
-    margin: 0px;
+    background-repeat: no-repeat;
+    border-radius: 0px !important;
+    height: 500px;
 }
 
 .rodape {
@@ -17,13 +23,13 @@
     border-top: 0.05rem solid #e5e5e5;
 }
 
-.icon {
-    font-size: 2rem;
-}
-
 .corpo-cinco-s {
     color: white;
     background-image: linear-gradient(to top, rgb(62, 63, 160), rgb(39, 103, 221));
+}
+
+.icon {
+    font-size: 2rem;
 }
 
 .links {
@@ -35,25 +41,68 @@
     color: rgba(255, 255, 255, 0.493);
 }
 
-.topnav {
-    overflow: hidden;
-    background-color: #28a745;
+.nav {
+    background-color: #24ca4b;
+    height: 75px;
 }
 
-.topnav a {
+.nav a {
     color: #000;
     font-weight: bold;
-    text-align: center;
-    padding: 6px 16px;
     text-decoration: none;
     font-size: 17px;
 }
 
-.topnav ul li:hover {
-    width: inherit;
-    background-color: #28a74679;
-    color: white;
-    -webkit-box-shadow: 0px 0px 10px #055c1a inset;
-    -moz-box-shadow: 0px 0px 10px #055c1a inset;
-    box-shadow: 0 -10px 0.8px #055c1971 inset;
+.icone-dropdown {
+    width: 30px;
+    height: auto;
+    padding-right: 8px;
+    padding-bottom: 5px;
+}
+
+.icone-user {
+    width: 65px;
+    height: auto;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: 2.5rem;
+    background-color: white;
+    border-radius: 100%;
+}
+
+.logo-aa {
+    width: 420px;
+}
+
+.maps {
+    width: 100%;
+    height: 500px;
+}
+
+.mapouter {
+    position: relative;
+    text-align: right;
+    height: 500px;
+    width: 808px;
+}
+
+.gmap_canvas {
+    overflow: hidden;
+    background: none!important;
+    height: 500px;
+    width: 808px;
+}
+
+.dropdown-menu li {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+    background-color: rgb(202, 200, 200);
+    transition: 0.5s;
+}
+
+.usuario {
+    cursor: none;
 }

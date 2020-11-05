@@ -1,3 +1,14 @@
+window.onload = function() {
+    $.ajax({
+        dataType: 'json',
+        url: '../modelo/seguranca.php',
+        success: function(dados) {
+            if (dados.logado == 'sim') {
+                $(location).attr('href', '../../../menu.html')
+            }
+        }
+    });
+}
 $(document).ready(function() {
 
     $('.seletor').on('change', function() {
