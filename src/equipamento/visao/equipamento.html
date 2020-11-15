@@ -10,62 +10,65 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../../recursos/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../recursos/css/equipamento.css">
+    <link rel="stylesheet" href="../../../recursos/libs/css/all.css">
+    <link rel="shortcut icon" href="../../../recursos/img/icons/icon4.png" type="image/x-icon">
 </head>
 
 <body>
-
-    <nav class="navbar navbar-expand-lg nav fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top nav">
         <div class="dropdown">
-            <img src="" class='icone-user' button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img class='icone-user' button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            </button>
             <div class="dropdown-menu" aria-labelledby="dLabel">
-                <a href="">
-                    <li class="nav-item active nav-link">
-                        <span>
-                            <img src="../../../recursos/img/casa.svg" class='icone-dropdown'>Menu
-                        </span>
-                    </li>
-                </a>
-                <a href="">
-                    <li class="nav-item active nav-link">
-                        <span>
-                        <img src="../../../recursos/img/icone-edit.png" class='icone-dropdown'>Editar Perfil
+
+                <li class="nav-item active nav-link btn-menu">
+                    <span>
+                        <img src="../../../recursos/img/icons/casa.svg" class='icone-dropdown'>Menu
                     </span>
-                    </li>
-                </a>
-                <a href="">
-                    <li class="nav-item active nav-link">
-                        <span>
-                            <img src="../../../recursos/img/icone-contato.png" class='icone-dropdown'>Fale Conosco
-                        </span>
-                    </li>
-                </a>
-                <a href="">
-                    <li class="nav-item active nav-link">
-                        <span>
-                            <img src="../../../recursos/img/icone-sair.png" class='icone-dropdown'>Sair
-                        </span>
-                    </li>
-                </a>
+                </li>
+
+                <li class="nav-item active nav-link btn-edit-perfil">
+                    <span>
+                        <img src="../../../recursos/img/icons/config.png" class='icone-dropdown'>Editar Perfil
+                    </span>
+                </li>
+
+                <li class="nav-item active nav-link btn-contato">
+                    <span>
+                        <img src="../../../recursos/img/icons/contato.png" class='icone-dropdown'>Fale Conosco
+                    </span>
+                </li>
+
+                <li class="nav-item active nav-link btn-sair">
+                    <span>
+                        <img src="../../../recursos/img/icons/exit.png" class='icone-dropdown'>Sair
+                    </span>
+                </li>
+
             </div>
+
         </div>
 
-        <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+        <li class="nav-item active nav-link">
+            <a class="usuario"></a>
+        </li>
+        <li class="nav-item active nav-link">
+            <a class="usuario"></a>
+        </li>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+          <span class="navbar-toggler-icon"></span>
+          
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarsExample02">
-            <ul class="navbar-nav mr-auto font-weight-bold">
-                <li class="nav-item active nav-link">
-                    <a class="usuario"></a>
-                </li>
-                <li class="nav-item active nav-link">
-                    <a class="usuario"></a>
-                </li>
-                <li class="nav-item active nav-link">
-                    <a href="../../../src/principal/visao/equipamentos.html">Visualizar Estoque<span class="sr-only ">(current)</span> </a>
-                </li>
-                <li class="nav-item active nav-link editor">
-                    <a href="../../../src/principal/visao/reagentes.html ">Editar<span class="sr-only ">(current)</span></a>
-                </li>
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <li class="nav-item active nav-link">
+                <a href="src/">Visualizar<span class="sr-only">(current)</span> </a>
+            </li>
+            <li class="nav-item active nav-link">
+                <a href="src/">Editar<span class="sr-only">(current)</span></a>
+            </li>
+
             </ul>
         </div>
     </nav>
@@ -80,6 +83,7 @@
     <script src="../../../recursos/js/jquery-3.5.1.min.js"></script>
     <script src="../../../recursos/js/bootstrap.min.js"></script>
     <script src="../controle/equipamento.js"></script>
+    <script src="../../../recursos/libs/js/fontawesome.js"></script>
 </body>
 
 </html>

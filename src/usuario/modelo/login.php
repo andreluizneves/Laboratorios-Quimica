@@ -2,7 +2,6 @@
 
     include('../../banco/conexao.php');
 
-
     if($conexao){
 
         session_start(); 
@@ -36,8 +35,10 @@
 
                     $informacoes = mysqli_fetch_assoc($resultado);
 
+                    $_SESSION['id'] = $informacoes['id_professor'];
                     $_SESSION['nome'] = $informacoes['nome'];
                     $_SESSION['ra'] = $informacoes['ra'];
+                    $_SESSION['email'] = $informacoes['email'];
                     $_SESSION['tipo_user'] = $tipousuario;
                     $_SESSION['login'] = TRUE;
                     
@@ -80,7 +81,8 @@
                     $informacoes = mysqli_fetch_assoc($resultado);
 
                     $_SESSION['nome'] = $informacoes['nome'];
-                    $_SESSION['rm'] = $requestData['rm'];
+                    $_SESSION['ra'] = $informacoes['rm'];
+                    $_SESSION['email'] = $informacoes['email'];
                     $_SESSION['tipo_user'] = $tipousuario;
                     $_SESSION['login'] = TRUE;
                     

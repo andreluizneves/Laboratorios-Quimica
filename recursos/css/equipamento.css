@@ -9,10 +9,11 @@ html {
     background-repeat: no-repeat;
     margin-top: 4.6rem;
     height: 200px;
+    margin-bottom: 0;
 }
 
 .nav {
-    background-color: #24ca4b;
+    background-color: rgb(23, 216, 48);
     height: 75px;
 }
 
@@ -38,4 +39,14 @@ html {
     font-size: 2.5rem;
     background-color: white;
     border-radius: 100%;
+}
+
+.dropdown-menu li {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+    background-color: rgb(202, 200, 200);
+    transition: 0.25s;
 }

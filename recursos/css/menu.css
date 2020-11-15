@@ -41,11 +41,6 @@ html {
     color: rgba(255, 255, 255, 0.493);
 }
 
-.nav {
-    background-color: #24ca4b;
-    height: 75px;
-}
-
 .nav a {
     color: #000;
     font-weight: bold;

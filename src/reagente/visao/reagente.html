@@ -8,68 +8,68 @@
     <title>Reagente</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <link rel="stylesheet" href="../../../recursos/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../recursos/css/equipamento.css">
+    <link rel="stylesheet" href="../../../recursos/css/reagente.css">
+    <link rel="stylesheet" href="../../../recursos/libs/css/all.css">
+    <link rel="shortcut icon" href="../../../recursos/img/icons/icon3.png" type="image/x-icon">
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg nav fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light nav" style="background-color: rgb(23, 216, 48);">
         <div class="dropdown">
-            <img src="../../../recursos/img/desenvolvedor.png" class='icone-user' button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img class='icone-user' button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            </button>
             <div class="dropdown-menu" aria-labelledby="dLabel">
-                <a href="">
-                    <li class="nav-item active nav-link">
-                        <span>
-                            <img src="../../../recursos/img/casa.svg" class='icone-dropdown'>Menu
-                        </span>
-                    </li>
-                </a>
-                <a href="">
-                    <li class="nav-item active nav-link">
-                        <span>
-                        <img src="../../../recursos/img/icone-edit.png" class='icone-dropdown'>Editar Perfil
+
+                <li class="nav-item active nav-link btn-menu">
+                    <span>
+                        <img src="../../../recursos/img/icons/casa.svg" class='icone-dropdown'>Menu
                     </span>
-                    </li>
-                </a>
-                <a href="">
-                    <li class="nav-item active nav-link">
-                        <span>
-                            <img src="../../../recursos/img/icone-contato.png" class='icone-dropdown'>Fale Conosco
-                        </span>
-                    </li>
-                </a>
-                <a href="">
-                    <li class="nav-item active nav-link">
-                        <span>
-                            <img src="../../../recursos/img/icone-sair.png" class='icone-dropdown'>Sair
-                        </span>
-                    </li>
-                </a>
+                </li>
+
+                <li class="nav-item active nav-link btn-edit-perfil">
+                    <span>
+                        <img src="../../../recursos/img/icons/config.png" class='icone-dropdown'>Editar Perfil
+                    </span>
+                </li>
+
+                <li class="nav-item active nav-link btn-contato">
+                    <span>
+                        <img src="../../../recursos/img/icons/contato.png" class='icone-dropdown'>Fale Conosco
+                    </span>
+                </li>
+
+                <li class="nav-item active nav-link btn-sair">
+                    <span>
+                        <img src="../../../recursos/img/icons/exit.png" class='icone-dropdown'>Sair
+                    </span>
+                </li>
+
             </div>
+
         </div>
 
-        <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+        <li class="nav-item active nav-link">
+            <a class="usuario"></a>
+        </li>
+        <li class="nav-item active nav-link">
+            <a class="usuario"></a>
+        </li>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+          <span class="navbar-toggler-icon"></span>
+          
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarsExample02">
-            <ul class="navbar-nav mr-auto font-weight-bold">
-                <li class="nav-item active nav-link">
-                    <a class="usuario"></a>
-                </li>
-                <li class="nav-item active nav-link">
-                    <a class="usuario"></a>
-                </li>
-                <li class="nav-item active nav-link">
-                    <a href="../../../src/principal/visao/equipamentos.html">Visualizar Estoque<span class="sr-only ">(current)</span> </a>
-                </li>
-                <li class="nav-item active nav-link editor">
-                    <a href="../../../src/principal/visao/reagentes.html ">Editar<span class="sr-only ">(current)</span></a>
-                </li>
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <li class="nav-item active nav-link">
+                <a href="">Visualizar<span class="sr-only">(current)</span> </a>
+            </li>
+            <li class="nav-item active nav-link">
+                <a href="">Editar<span class="sr-only">(current)</span></a>
+            </li>
+
             </ul>
-            <span>
-                <img src="../../../recursos/img/btn-noturno.png" alt="">
-                <input type="checkbox" aria-label="night-mode" class="switch">
-            </span>
         </div>
     </nav>
 
@@ -81,9 +81,58 @@
         </div>
     </div>
 
+    <nav class="navbar navbar-expand-lg operadores-lab d-flex justify-content-center">
+
+        <div class="dropdown mr-5">
+
+            <input value="Laboratório Interno" type="button" class='btn-primary btn btn-block' button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+            <div class="dropdown-menu" aria-labelledby="dLabel">
+
+                <li class="nav-item active nav-link btn-view-interno">
+                    <span>
+                        <img src="../../../recursos/img/icons/view.svg" class='icone-dropdown'>Visualizar
+                    </span>
+                </li>
+
+                <li class="nav-item active nav-link btn-view-interno">
+                    <span>
+                        <img src="../../../recursos/img/icons/edit.png" class='icone-dropdown'>Editar
+                    </span>
+                </li>
+
+            </div>
+        </div>
+
+        <div class="dropdown">
+
+            <input value="Laboratório Externo" type="button" class='btn-primary btn btn-block btn-lab_externo' button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+            <div class="dropdown-menu" aria-labelledby="dLabel">
+
+                <li class="nav-item active nav-link btn-view-externo">
+                    <span>
+                        <img src="../../../recursos/img/icons/view.svg" class='icone-dropdown'>Visualizar
+                    </span>
+                </li>
+
+                <li class="nav-item active nav-link btn-edit-externo">
+                    <span>
+                        <img src="../../../recursos/img/icons/edit.png" class='icone-dropdown'>Editar
+                    </span>
+                </li>
+
+            </div>
+        </div>
+
+        <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
     <script src="../../../recursos/js/jquery-3.5.1.min.js"></script>
     <script src="../../../recursos/js/bootstrap.min.js"></script>
     <script src="../controle/reagente.js"></script>
+    <script src="../../../recursos/libs/js/fontawesome.js"></script>
 </body>
 
 </html>

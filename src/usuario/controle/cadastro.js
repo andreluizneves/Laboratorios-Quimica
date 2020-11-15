@@ -13,14 +13,14 @@ $(document).ready(function() {
 
     $('.seletor').on('change', function() {
         if ($('#rm').css('display') == 'none') {
-            $('.img').attr('src', '../../../recursos/img/alunos.svg')
+            $('.img').attr('src', '../../../recursos/img/icons/alunos.svg')
             $('#rm').show(490)
             $('#ra').hide()
             $('#ra').prop('disabled', true)
             $('#rm').prop('disabled', false)
             $('#ra').val('')
         } else {
-            $('.img').attr('src', '../../../recursos/img/professores.svg')
+            $('.img').attr('src', '../../../recursos/img/icons/professores.svg')
             $('#rm').hide()
             $('#ra').show(490)
             $('#ra').prop('disabled', false)

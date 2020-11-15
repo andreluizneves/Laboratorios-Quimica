@@ -9,11 +9,11 @@ window.onload = function() {
                 $(location).attr('href', 'index.html')
             } else {
                 if (dados.tipo_user == 'professor(a)') {
-                    $('.icone-user').attr('src', '../../../recursos/img/professores.svg')
+                    $('.icone-user').attr('src', 'recursos/img/icons/professores.svg')
                     $('.usuario:first').append("Professor(a): ", dados.nome)
                     $('.usuario:last').append("RA: ", dados.ra)
                 } else {
-                    $('.icone-user').attr('src', '../../../recursos/img/alunos.svg')
+                    $('.icone-user').attr('src', 'recursos/img/icons/alunos.svg')
                     $('.usuario:first').append("Aluno(a): ", dados.nome)
                     $('.usuario:last').append("RM: ", dados.rm)
                 }
@@ -22,6 +22,15 @@ window.onload = function() {
     })
 }
 $(document).ready(function() {
+    $('.btn-menu').click(function() {
+        $(location).attr('href', '#topo')
+    })
+    $('.btn-edit-perfil').click(function() {
+        $(location).attr('href', 'src/usuario/visao/editar-perfil.html')
+    })
+    $('.btn-contato').click(function() {
+        $(location).attr('href', 'src/usuario/visao/contato.html')
+    })
     $('.btn-sair').click(function() {
         $.ajax({
             type: 'POST',

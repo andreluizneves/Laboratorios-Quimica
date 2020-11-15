@@ -9,6 +9,7 @@ html {
     background-repeat: no-repeat;
     margin-top: 4.6rem;
     height: 200px;
+    margin-bottom: 0;
 }
 
 .nav {
@@ -23,7 +24,14 @@ html {
     font-size: 17px;
 }
 
-.nav-link {
+.icone-dropdown {
+    width: 30px;
+    height: auto;
+    padding-right: 8px;
+    padding-bottom: 5px;
+}
+
+.icone-user {
     width: 65px;
     height: auto;
     margin-right: 10px;
@@ -33,8 +41,12 @@ html {
     border-radius: 100%;
 }
 
-.icone-user {
-    width: 48px;
-    height: auto;
-    margin-right: 15px;
+.dropdown-menu li {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+    background-color: rgb(202, 200, 200);
+    transition: 0.25s;
 }
