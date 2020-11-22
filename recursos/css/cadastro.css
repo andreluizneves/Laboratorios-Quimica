@@ -13,6 +13,10 @@
     height: 100vh;
 }
 
+#rm {
+    display: none;
+}
+
 .caixa {
     background-color: rgba(0, 0, 0, 0.5);
     width: 400px;

@@ -28,8 +28,12 @@ html {
     background-image: linear-gradient(to top, rgb(62, 63, 160), rgb(39, 103, 221));
 }
 
-.icon {
+.icon-rodape {
     font-size: 2rem;
+}
+
+.icon {
+    font-size: 1.225rem;
 }
 
 .links {
@@ -41,18 +45,15 @@ html {
     color: rgba(255, 255, 255, 0.493);
 }
 
+.nav {
+    background-color: rgb(23, 216, 48);
+}
+
 .nav a {
     color: #000;
     font-weight: bold;
     text-decoration: none;
     font-size: 17px;
-}
-
-.icone-dropdown {
-    width: 30px;
-    height: auto;
-    padding-right: 8px;
-    padding-bottom: 5px;
 }
 
 .icone-user {

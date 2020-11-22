@@ -7,7 +7,7 @@
         $requestData = $_REQUEST;
         $tipousuario = $requestData['tipo-usuario'];
 
-     // Verificação do tipo de usuario
+      // Verificação do tipo de usuario
         if($tipousuario == 'professor(a)'){
 
         // Verificação de espaço em branco
@@ -23,7 +23,7 @@
             } else {
 
             // Senão houver espaço em brancon haverá a Query desse RA no Banco já cadastrado
-                $sql ="SELECT * FROM professor WHERE ra = $requestData[ra]";
+                $sql ="SELECT * FROM professores WHERE ra = $requestData[ra]";
                 $resultado = mysqli_query($conexao, $sql);
                 $linha = mysqli_num_rows($resultado);
 
@@ -40,7 +40,7 @@
                 } else{
 
                 // Senão houver sido cadastrado, cria-se a Query para cadastros do novo RA
-                    $sql = "INSERT INTO professor (nome, email, ra, senha) VALUES ('$requestData[nome]', '$requestData[email]', '$requestData[ra]', '$requestData[senha]')";
+                    $sql = "INSERT INTO professores (nome, email, ra, senha) VALUES ('$requestData[nome]', '$requestData[email]', '$requestData[ra]', '$requestData[senha]')";
 
                 }
             }
@@ -59,7 +59,7 @@
             } else{
 
             // Senão houver espaço em brancon haverá a Query desse RM no Banco já cadastrado
-                $sql ="SELECT * FROM aluno WHERE rm = $requestData[rm]";
+                $sql ="SELECT * FROM alunos WHERE rm = $requestData[rm]";
                 $resultado = mysqli_query($conexao, $sql);
                 $linha = mysqli_num_rows($resultado);
     
@@ -75,7 +75,7 @@
                 } else{
                     
                 // Senão houver sido cadastrado, cria-se a Query para cadastros do novo RM
-                    $sql = "INSERT INTO aluno (nome, email, rm, senha) VALUES ('$requestData[nome]', '$requestData[email]', '$requestData[rm]', '$requestData[senha]')";
+                    $sql = "INSERT INTO alunos (nome, email, rm, senha) VALUES ('$requestData[nome]', '$requestData[email]', '$requestData[rm]', '$requestData[senha]')";
 
                 }
             }

@@ -18,11 +18,11 @@
                     'icone' => 'error'
                 );
                 echo json_encode($dados, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);
-                exit;  // --------- Quebra de código sem campos vazios ----------- //
+                exit;  
                 
             } else{
 
-                $sql = "SELECT * FROM professor WHERE ra = $requestData[ra] AND senha = '$requestData[senha]'";
+                $sql = "SELECT * FROM professores WHERE ra = $requestData[ra] AND senha = '$requestData[senha]'";
                 $resultado = mysqli_query($conexao, $sql);
                 $linha = mysqli_num_rows($resultado);
 
@@ -63,11 +63,11 @@
                     'icone' => 'error'
                 );
                 echo json_encode($dados, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);
-                exit;  // --------- Quebra de código sem campos vazios ----------- //
+                exit;  
                 
             } else{
 
-                $sql = "SELECT * FROM aluno WHERE rm = $requestData[rm] AND senha = '$requestData[senha]'";
+                $sql = "SELECT * FROM alunos WHERE rm = $requestData[rm] AND senha = '$requestData[senha]'";
                 $resultado = mysqli_query($conexao, $sql);
                 $linha = mysqli_num_rows($resultado);
 
@@ -81,7 +81,7 @@
                     $informacoes = mysqli_fetch_assoc($resultado);
 
                     $_SESSION['nome'] = $informacoes['nome'];
-                    $_SESSION['ra'] = $informacoes['rm'];
+                    $_SESSION['rm'] = $informacoes['rm'];
                     $_SESSION['email'] = $informacoes['email'];
                     $_SESSION['tipo_user'] = $tipousuario;
                     $_SESSION['login'] = TRUE;
@@ -105,7 +105,7 @@
             'icone' => 'error'
         );
         echo json_encode($dados, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);
-        exit;  // --------- Quebra de código sem campos vazios ----------- //
+        exit;  
     }
 
     echo json_encode($dados, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);

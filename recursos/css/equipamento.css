@@ -3,13 +3,18 @@ html {
 }
 
 .banner {
-    background-image: url('../img/equipamento.png');
+    background-image: url('../img/banner.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     margin-top: 4.6rem;
     height: 200px;
     margin-bottom: 0;
+}
+
+.icon {
+    margin-right: 5px;
+    font-size: 1.225rem;
 }
 
 .nav {
@@ -24,11 +29,9 @@ html {
     font-size: 17px;
 }
 
-.icone-dropdown {
-    width: 30px;
-    height: auto;
-    padding-right: 8px;
-    padding-bottom: 5px;
+.icon {
+    margin-right: 5px;
+    font-size: 1.225rem;
 }
 
 .icone-user {

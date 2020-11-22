@@ -1,4 +1,5 @@
-window.onload = function() {
+$(document).ready(function() {
+
     $.ajax({
         type: 'POST',
         dataType: 'json',
@@ -20,8 +21,7 @@ window.onload = function() {
             }
         }
     })
-}
-$(document).ready(function() {
+
     $('.btn-menu').click(function() {
         $(location).attr('href', '#topo')
     })

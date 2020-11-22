@@ -1,4 +1,5 @@
-window.onload = function() {
+$(document).ready(function() {
+
     $.ajax({
         dataType: 'json',
         url: 'src/usuario/modelo/seguranca.php',
@@ -8,9 +9,6 @@ window.onload = function() {
             }
         }
     });
-}
-
-$(document).ready(function() {
 
     $('.seletor').on('change', function() {
         if ($('#rm').css('display') == 'none') {
