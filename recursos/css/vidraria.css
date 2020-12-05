@@ -17,6 +17,10 @@ html {
     height: 75px;
 }
 
+.conteudo {
+    box-shadow: 7px -2px 7px 2px rgba(0, 0, 0, 0.36);
+}
+
 .nav a {
     color: #000;
     font-weight: bold;

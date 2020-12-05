@@ -13,10 +13,14 @@ $(document).ready(function() {
                     $('.icone-user').attr('src', 'recursos/img/icons/professores.svg')
                     $('.usuario:first').append("Professor(a): ", dados.nome)
                     $('.usuario:last').append("RA: ", dados.ra)
+                    $('.loading:first').remove()
+                    $('.loading:last').remove()
                 } else {
                     $('.icone-user').attr('src', 'recursos/img/icons/alunos.svg')
                     $('.usuario:first').append("Aluno(a): ", dados.nome)
                     $('.usuario:last').append("RM: ", dados.rm)
+                    $('.loading:first').remove()
+                    $('.loading:last').remove()
                 }
             }
         }

@@ -1,153 +1,54 @@
-    html {
-        scroll-behavior: smooth;
-    }
-    
-    .banner {
-        background-image: url('../img/banner.png');
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        margin-top: 4.6rem;
-        height: 200px;
-        margin-bottom: 0;
-    }
-    
-    .nav {
-        background-color: rgb(23, 216, 48);
-        height: 75px;
-    }
-    
-    .nav a {
-        color: #000;
-        font-weight: bold;
-        text-decoration: none;
-        font-size: 17px;
-    }
-    
-    .icon {
-        margin-right: 5px;
-        font-size: 1.225rem;
-    }
-    
-    .icone-user {
-        width: 65px;
-        height: auto;
-        margin-right: 10px;
-        margin-left: 10px;
-        font-size: 2.5rem;
-        background-color: white;
-        border-radius: 100%;
-    }
-    
-    .dropdown-menu li {
-        font-weight: bold;
-        cursor: pointer;
-    }
-    
-    .dropdown-menu li:hover {
-        background-color: rgb(202, 200, 200);
-        transition: 0.25s;
-    }
-    
-    .tela1 {
-        background-color: rgb(31, 165, 49);
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    }
-    
-    .tela2 {
-        background-color: rgb(160, 235, 91);
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    }
-    
-    .close {
-        position: absolute;
-        left: 10px;
-        bottom: 10px;
-        color: red;
-    }
-    
-    .tempo {
-        position: relative;
-        left: 100px;
-    }
-    
-    .tempo2 {
-        position: relative;
-        left: 100px;
-    }
-    
-    h4 {
-        color: rgba(255, 0, 0, 0.623);
-    }
-    
-    fieldset {
-        background-color: white;
-        border: solid;
-    }
-    
-    label {
-        padding-left: 10px;
-    }
-    
-    .botao {
-        position: absolute;
-        left: 10px;
-        bottom: 40px;
-    }
-    
-    .reag {
-        text-align: center;
-    }
-    
-    .form-control1 {
-        display: unset;
-        width: 300px;
-        height: 27px;
-        color: #495057;
-        background-color: #fff;
-        background-clip: padding-box;
-        border: 1px solid #ced4da;
-        border-radius: 0.25rem;
-        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    }
-    
-    .form-control2 {
-        display: unset;
-        width: 100px;
-        height: 27px;
-        color: #495057;
-        background-color: #fff;
-        background-clip: padding-box;
-        border: 1px solid #ced4da;
-        border-radius: 0.25rem;
-        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    }
-    
-    .form-control1:focus {
-        color: #495057;
-        background-color: #fff;
-        border-color: #80bdff;
-        outline: 0;
-        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-    }
-    
-    .form-control2:focus {
-        color: #495057;
-        background-color: #fff;
-        border-color: #80bdff;
-        outline: 0;
-        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-    }
-    
-    .caixa {
-        border: solid;
-        margin-left: 15px;
-        padding-bottom: 90px;
-    }
-    
-    .caixa2 {
-        border: dashed;
-        color: gray;
-        margin-left: 15px;
-        text-align: center;
-    }
+html {
+    scroll-behavior: smooth;
+}
+
+.banner {
+    background-image: url('../img/banner.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 4.6rem;
+    height: 200px;
+    margin-bottom: 0;
+}
+
+.nav {
+    background-color: rgb(23, 216, 48);
+    height: 75px;
+}
+
+.nav a {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.icon {
+    margin-right: 5px;
+    font-size: 1.225rem;
+}
+
+.conteudo {
+    box-shadow: 7px -2px 7px 2px rgba(0, 0, 0, 0.36);
+}
+
+.icone-user {
+    width: 65px;
+    height: auto;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: 2.5rem;
+    background-color: white;
+    border-radius: 100%;
+}
+
+.dropdown-menu li {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+    background-color: rgb(202, 200, 200);
+    transition: 0.25s;
+}

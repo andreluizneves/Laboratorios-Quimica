@@ -5,21 +5,21 @@ $(document).ready(function() {
         url: '../modelo/seguranca.php',
         success: function(dados) {
             if (dados.logado == 'sim') {
-                $(location).attr('href', '../../../menu.html')
+                $(location).attr('href', '/menu.html')
             }
         }
     });
 
     $('.seletor').on('change', function() {
         if ($('#rm').css('display') == 'none') {
-            $('.img').attr('src', '../../../recursos/img/icons/alunos.svg')
+            $('.img').attr('src', 'recursos/img/icons/alunos.svg')
             $('#rm').show(490)
             $('#ra').hide()
             $('#ra').prop('disabled', true)
             $('#rm').prop('disabled', false)
             $('#ra').val('')
         } else {
-            $('.img').attr('src', '../../../recursos/img/icons/professores.svg')
+            $('.img').attr('src', 'recursos/img/icons/professores.svg')
             $('#rm').hide()
             $('#ra').show(490)
             $('#ra').prop('disabled', false)
@@ -37,7 +37,7 @@ $(document).ready(function() {
         $.ajax({
             type: 'POST',
             dataType: 'json',
-            url: '../modelo/cadastro.php',
+            url: 'src/usuario/modelo/cadastro.php',
             async: true,
             data: dados,
             success: function(dados) {

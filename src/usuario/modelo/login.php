@@ -8,6 +8,7 @@
     
         $requestData = $_REQUEST;
         $tipousuario = $requestData['tipo-usuario'];
+        $senha = base64_encode($requestData[senha]);
         
         if($tipousuario == 'professor(a)'){
 
@@ -22,7 +23,7 @@
                 
             } else{
 
-                $sql = "SELECT * FROM professores WHERE ra = $requestData[ra] AND senha = '$requestData[senha]'";
+                $sql = "SELECT * FROM professores WHERE ra = $requestData[ra] AND senha = '$senha'";
                 $resultado = mysqli_query($conexao, $sql);
                 $linha = mysqli_num_rows($resultado);
 
@@ -67,7 +68,7 @@
                 
             } else{
 
-                $sql = "SELECT * FROM alunos WHERE rm = $requestData[rm] AND senha = '$requestData[senha]'";
+                $sql = "SELECT * FROM alunos WHERE rm = $requestData[rm] AND senha = '$senha'";
                 $resultado = mysqli_query($conexao, $sql);
                 $linha = mysqli_num_rows($resultado);
 

@@ -1,0 +1,55 @@
+<div class="row botao">
+    <div class="col-12 col-md-12 col-lg-12 col-sm-12 mb-2">
+        <button class="btn btn-primary btn-view-relatorio"></i> Visualizar Relatórios</button>
+    </div>
+</div>
+<div class="row conteudo">
+    <fieldset class="mt-3 col-12 col-md-12 col-sm-12 col-lg-12 center">
+        <form class="form" id="form-relatorio" name="form-reagente">
+            <label>Data e Hora</label>
+            <input class="form-control1 input" type="text" name="data_hora" id="data_hora"><br>
+            <label class="mt-1">Descricao</label>
+            <input class="form-control2 input" type="text" name="descricao" id="descricao"><br>
+            <label>Professor</label>
+            <select name="lab" id="lab">
+                            <option value="" class="lab">Interno</option></select>
+            <label class="tempo">Tempo:</label>
+            <select class="tempo2" name="tempo" id="tempo">
+                            <option value="1">1 aula (50min)</option>
+                            <option value="2">2 aulas (1h 40min)</option>
+                            <option value="3">3 aulas (2h 30min)</option></select><br>
+            <hr>
+            <label>Usados:</label>&nbsp;&nbsp;
+            <input type="checkbox" name="equipamentos" id="equipamentos" value="equipamentos"> Equipamentos</input>&nbsp;&nbsp;
+            <input type="checkbox" name="Reagentes" id="Reagentes" value="Reagentes"> Reagentes</input>&nbsp;&nbsp;
+            <input type="checkbox" name="vidrarias" id="vidrarias" value="vidrarias"> Vidrarias</input>
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 col-sm-6 col-md-6 caixa">
+                        <p class="mt-2 reag">Reagentes: <button class="btn btn-success">Pesquisar</button></p>
+                    </div>
+                    <div class="col-2 col-sm-2 col-md-2 caixa2">
+                        <p>Vidrarias</p>
+                    </div>
+                    <div class="col-2 col-sm-2 col-md-2 caixa2">
+                        <p>Equipamentos</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <label>Descrição, ocorridos ou anotações</label>
+                            <textarea name="" id="" placeholder="Insira aqui..." cols="30" rows="4" class="form-control"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-outline-success btn-send" type="button">Relatar</button>
+        </form>
+    </fieldset>
+</div>
+
+
+<script src="../controle/list-relatorio.js"></script>
+<script src="../controle/new-relatorio.js"></script>
+<script src="../controle/view-relatorio.js"></script>

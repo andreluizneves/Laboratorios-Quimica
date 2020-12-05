@@ -17,6 +17,10 @@ html {
     font-size: 1.225rem;
 }
 
+.conteudo {
+    box-shadow: 7px -2px 7px 2px rgba(0, 0, 0, 0.36);
+}
+
 .nav {
     background-color: rgb(23, 216, 48);
     height: 75px;

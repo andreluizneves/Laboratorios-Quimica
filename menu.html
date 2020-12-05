@@ -14,139 +14,164 @@
 <body>
 
     <script src="src/usuario/controle/menu.js"></script>
-    <nav class="navbar navbar-expand-lg navbar-light nav fixed-top">
-        <div class="dropdown">
-            <img class='icone-user' button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dLabel">
 
-                <li class="nav-item active nav-link btn-menu">
-                    <span>
-                        <i class="fa fa-home icon"></i> Menu
-                    </span>
-                </li>
 
-                <li class="nav-item active nav-link btn-edit-perfil">
-                    <span>
-                        <i class="fa fa-comment-dots icon"></i> Editar Perfil
-                    </span>
-                </li>
 
-                <li class="nav-item active nav-link btn-contato">
-                    <span>
-                        <i class="fa fa-comment-dots icon"></i> Fale Conosco
-                    </span>
-                </li>
 
-                <li class="nav-item active nav-link btn-sair">
-                    <span>
-                        <i class="fa fa-sign-out-alt icon"></i> Sair
-                    </span>
-                </li>
+    <div class="wrapper">
 
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Bootstrap Sidebar</h3>
             </div>
 
-        </div>
-
-        <li class="nav-item active nav-link">
-            <a class="usuario"></a>
-        </li>
-        <li class="nav-item active nav-link">
-            <a class="usuario"></a>
-        </li>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarNav">
-
-            <li class="nav-item active nav-link">
-                <a href="src/equipamento/visao/equipamento.html">Equipamentos<span class="sr-only">(current)</span> </a>
-            </li>
-            <li class="nav-item active nav-link">
-                <a href="src/reagente/visao/reagente.html">Reagentes<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active nav-link">
-                <a href="src/vidraria/visao/vidraria.html">Vidrarias<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active nav-link">
-                <a href="src/relatorio/visao/relatorio.html">Relatórios<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active nav-link">
-                <a href="src/usuario/visao/contato.html">Fale Conosco<span class="sr-only">(current)</span></a>
-            </li>
+            <ul class="list-unstyled components">
+                <p>Dummy Heading</p>
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#">Home 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Home 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Home 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#">Page 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Portfolio</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
             </ul>
-        </div>
-    </nav>
 
-    <div class="jumbotron banner d-flex align-items-center justify-content-center mt-5" id="topo">
-        <div class="row">
-            <div class="col-12 col-md-12">
-                <h1 class="display-1 text-center font-weight-bold text-light">Laboratórios de Química</h1>
-                <h4 class="text-center font-weight-bold text-light">Sistema para controle e manejo do estoque</h4>
+            <ul class="list-unstyled CTAs">
+                <li>
+                    <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
+                </li>
+                <li>
+                    <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+                </li>
+            </ul>
+        </nav>
+
+
+
+
+
+        <div id="content">
+
+            <div class="jumbotron banner d-flex align-items-center justify-content-center " id="topo">
+                <div class="row">
+                    <div class="col-12 col-md-12">
+                        <h1 class="display-1 text-center font-weight-bold text-light">Laboratórios de Química</h1>
+                        <h4 class="text-center font-weight-bold text-light">Sistema para controle e manejo do estoque</h4>
+                    </div>
+                </div>
             </div>
+
+
+
+
+            <div class="container mt-4">
+
+                <div class="row">
+
+                    <div class="col-12 col-md-6 text-justify text-dark">
+                        <h1 class="text-danger">Técnico em Açúcar e Álcool</h1>
+                        <p>
+                            Com este curso você pode trabalhar no setor de Energia Sucroalcooleira. Vai aprender sobre os processos de produção industrial que usam a cana de açúcar como fonte energética para diferentes finalidades. Pode trabalhar em indústrias químicas, petroquímicas,
+                            de fertilizantes e em fazendas e laboratórios.
+                        </p>
+                        <h1 class="text-danger">Objetivos do Curso</h1>
+                        <p>
+                            Realizar análises físico-químicas, microbiológicas e instrumentais de matérias-primas, produtos e subproduto, operar e supervisionar processos da produção de açúcar e álcool (etanol) de acordo com procedimentos e normas técnicas, legislação de qualidade,
+                            ambientais, de saúde e segurança.
+                        </p>
+                    </div>
+
+                    <div class="col-12 col-md-6 d-flex justify-content-center">
+                        <img src="recursos/img/logoaa.svg" class="logo-aa">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-md-6 text-justify text-dark">
+                        <h1 class="text-danger">Técnico em Química</h1>
+
+                        <p>
+                            Neste curso você vai conhecer insumos, equipamentos e métodos usados pela indústria química. Vai atuar no desenvolvimento de produtos e materiais, além da área de vendas e assistência técnica. Também vai entender processos laboratoriais, de análises químicas,
+                            físico-químicas e microbiológicas.
+                        </p>
+                        <h1 class="text-danger">Objetivos do Curso</h1>
+                        <p>
+                            Realizar amostragens, análises químicas, físico-químicas, instrumentais e microbiológicas, operar processos e atuar no desenvolvimento de produtos e serviços da área de Química e gestão técnica dos processos, zelando por padrões de qualidade e pela integridade
+                            de pessoas, do meio ambiente e das instalações.
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-6 d-flex justify-content-center">
+                        <img src="recursos/img/logoaa.svg" class="logo-aa">
+                    </div>
+                </div>
+
+            </div>
+
+            <footer class="rodape">
+                <div class="container">
+                    <p class="mt-2">Todos os Direitos Reservados &copy;2019-2022</p>
+                    <p>
+                        <a href="https://www.facebook.com/acucar.alcoolcafelandia.7" class="links"><i class="fab fa-facebook icon-rodape"></i></a>
+                        <i class="fab fa-github icon-rodape"></i>
+                    </p>
+                </div>
+            </footer>
         </div>
     </div>
 
-    <div class="container mt-4">
 
-        <div class="row">
 
-            <div class="col-12 col-md-6 text-justify text-dark">
-                <h1 class="text-danger">Técnico em Açúcar e Álcool</h1>
-                <p>
-                    Com este curso você pode trabalhar no setor de Energia Sucroalcooleira. Vai aprender sobre os processos de produção industrial que usam a cana de açúcar como fonte energética para diferentes finalidades. Pode trabalhar em indústrias químicas, petroquímicas,
-                    de fertilizantes e em fazendas e laboratórios.
-                </p>
-                <h1 class="text-danger">Objetivos do Curso</h1>
-                <p>
-                    Realizar análises físico-químicas, microbiológicas e instrumentais de matérias-primas, produtos e subproduto, operar e supervisionar processos da produção de açúcar e álcool (etanol) de acordo com procedimentos e normas técnicas, legislação de qualidade,
-                    ambientais, de saúde e segurança.
-                </p>
-            </div>
-
-            <div class="col-12 col-md-6 d-flex justify-content-center">
-                <img src="recursos/img/logoaa.svg" class="logo-aa">
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12 col-md-6 text-justify text-dark">
-                <h1 class="text-danger">Técnico em Química</h1>
-
-                <p>
-                    Neste curso você vai conhecer insumos, equipamentos e métodos usados pela indústria química. Vai atuar no desenvolvimento de produtos e materiais, além da área de vendas e assistência técnica. Também vai entender processos laboratoriais, de análises químicas,
-                    físico-químicas e microbiológicas.
-                </p>
-                <h1 class="text-danger">Objetivos do Curso</h1>
-                <p>
-                    Realizar amostragens, análises químicas, físico-químicas, instrumentais e microbiológicas, operar processos e atuar no desenvolvimento de produtos e serviços da área de Química e gestão técnica dos processos, zelando por padrões de qualidade e pela integridade
-                    de pessoas, do meio ambiente e das instalações.
-                </p>
-            </div>
-            <div class="col-12 col-md-6 d-flex justify-content-center">
-                <img src="recursos/img/logoaa.svg" class="logo-aa">
-            </div>
-        </div>
-
-    </div>
-
-    <footer class="rodape">
-        <div class="container">
-            <p class="mt-2">Todos os Direitos Reservados &copy;2019-2022</p>
-            <p>
-                <a href="https://www.facebook.com/acucar.alcoolcafelandia.7" class="links"><i class="fab fa-facebook icon-rodape"></i></a>
-                <i class="fab fa-github icon-rodape"></i>
-            </p>
-        </div>
-    </footer>
-
-    <script src="recursos/js/jquery-3.5.1.min.js"></script>
     <script src="recursos/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="recursos/js/all.min.js"></script>
     <script src="src/usuario/controle/menu.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#sidebarCollapse').on('click', function() {
+                $('#sidebar, #content').toggleClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
 </body>
 
 </html>
