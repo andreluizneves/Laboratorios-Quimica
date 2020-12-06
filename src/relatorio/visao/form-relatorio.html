@@ -1,55 +1,155 @@
 <div class="row botao">
     <div class="col-12 col-md-12 col-lg-12 col-sm-12 mb-2">
-        <button class="btn btn-primary btn-view-relatorio"></i> Visualizar Relatórios</button>
+        <button class="btn btn-primary btn-list-relatorio"></i> Visualizar Relatórios</button>
     </div>
 </div>
-<div class="row conteudo">
-    <fieldset class="mt-3 col-12 col-md-12 col-sm-12 col-lg-12 center">
-        <form class="form" id="form-relatorio" name="form-reagente">
-            <label>Data e Hora</label>
-            <input class="form-control1 input" type="text" name="data_hora" id="data_hora"><br>
-            <label class="mt-1">Descricao</label>
-            <input class="form-control2 input" type="text" name="descricao" id="descricao"><br>
-            <label>Professor</label>
-            <select name="lab" id="lab">
-                            <option value="" class="lab">Interno</option></select>
-            <label class="tempo">Tempo:</label>
-            <select class="tempo2" name="tempo" id="tempo">
-                            <option value="1">1 aula (50min)</option>
-                            <option value="2">2 aulas (1h 40min)</option>
-                            <option value="3">3 aulas (2h 30min)</option></select><br>
-            <hr>
-            <label>Usados:</label>&nbsp;&nbsp;
-            <input type="checkbox" name="equipamentos" id="equipamentos" value="equipamentos"> Equipamentos</input>&nbsp;&nbsp;
-            <input type="checkbox" name="Reagentes" id="Reagentes" value="Reagentes"> Reagentes</input>&nbsp;&nbsp;
-            <input type="checkbox" name="vidrarias" id="vidrarias" value="vidrarias"> Vidrarias</input>
-            <div class="container">
-                <div class="row">
-                    <div class="col-6 col-sm-6 col-md-6 caixa">
-                        <p class="mt-2 reag">Reagentes: <button class="btn btn-success">Pesquisar</button></p>
-                    </div>
-                    <div class="col-2 col-sm-2 col-md-2 caixa2">
-                        <p>Vidrarias</p>
-                    </div>
-                    <div class="col-2 col-sm-2 col-md-2 caixa2">
-                        <p>Equipamentos</p>
+<div class="conteudo">
+    <fieldset class="mt-3">
+        <form class="form" id="form-relatorio">
+            <div class="row">
+                <div class="col-6">
+                    <label>Professor(a)</label>
+                    <input class="form-control input" type="text" name="professor(a)" id="professor(a)"><br>
+                </div>
+                <div class="col-6">
+                    <label>Título do Relatório</label>
+                    <input class="form-control input" type="text" name="titulo" id="titulo"><br>
+                </div>
+                <div class="col-3">
+                    <label>Data e Hora</label>
+                    <input class="form-control input" type="datetime" name="data_hora" id="data_hora"><br>
+                </div>
+                <div class="col-9">
+                    <label>Descrição</label>
+                    <textarea class="form-control input" type="text" name="descricao" id="descricao" cols="30" rows="10"></textarea> <br>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label>Laboratório da aula exercida</label>
+                        <select id="laboratorio" class="form-control" name="laboratorio">
+                        <option value="">Selecione o Laboratório</option>
+                        <option value="externo">Externo</option>
+                        <option value="interno">Interno</option>
+                        <option value="ambos">Ambos</option>
+                    </select>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12 col-sm-12 col-md-12">
-                        <div class="form-group">
-                            <label>Descrição, ocorridos ou anotações</label>
-                            <textarea name="" id="" placeholder="Insira aqui..." cols="30" rows="4" class="form-control"></textarea>
-                        </div>
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <label>Tempo da Aula</label>
+                        <select id="tempo" class="form-control" name="tempo">
+                        <option value="">Selecione o período de tempo</option>
+                        <option value="00:50:00">1 aula (50 min)</option>
+                        <option value="01:40:00">2 aulas (1h 40min)</option>
+                        <option value="02:30:00">3 aulas (2h 30min)</option>
+                        <option value="03:20:00">4 aulas (3h 20min)</option>
+                    </select>
                     </div>
                 </div>
+                <div class="col-12">
+                    <label>O que foi utilizado:</label> <br>
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-primary btn-select-equip" type="button">Selecionar Equipamentos</button>
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-primary btn-select-reag" type="button">Selecionar Reagentes</button>
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-primary btn-select-vidr" type="button">Selecionar Vidrarias</button>
+                </div>
+
+                <div class="col-12">
+                    <button class="btn btn-outline-success btn-send" type="button">Relatar</button></div>
+                <br>
             </div>
-            <button class="btn btn-outline-success btn-send" type="button">Relatar</button>
         </form>
     </fieldset>
 </div>
 
 
 <script src="../controle/list-relatorio.js"></script>
+<script src="../controle/list-equipamento-relatorio.js"></script>
+<script src="../controle/list-reagente-relatorio.js"></script>
+<script src="../controle/list-vidraria-relatorio.js"></script>
 <script src="../controle/new-relatorio.js"></script>
 <script src="../controle/view-relatorio.js"></script>
+
+
+<!-- Modal -->
+<div id="modal-equip" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-modal="true">
+    <div class="modal-dialog modal-dialog-centered modal-lgg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title font-weight-bold text-dark" id="my-modal-title">Equipamentos</h1>
+            </div>
+            <div class="modal-body">
+                <p class="text-left font-weight-bold">
+                    Para selecionar o Equiamento utilizado, clique uma vez sobre o mesmo <br> Para deselecionar o Equipamento, clique duas vezes sobre o Equipamento selecionada
+                </p>
+                <div class="row equipamento" style="height:480px; overflow: scroll; overflow-x: hidden;">
+
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary btn-salvar-equip">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modal-reag" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-modal="true">
+    <div class="modal-dialog modal-dialog-centered modal-lgg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title font-weight-bold text-dark" id="my-modal-title">Reagentes</h1>
+            </div>
+            <div class="modal-body">
+                <p class="text-left font-weight-bold">
+                    Para selecionar o Reagente utilizado, clique uma vez sobre o mesmo <br> Para deselecionar o Reagente, clique duas vezes sobre o Reagente selecionada
+                </p>
+                <div class="row reagente" style="height:480px; overflow: scroll; overflow-x: hidden;">
+
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary btn-salvar-reag">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modal-vidr" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-modal="true">
+    <div class="modal-dialog modal-dialog-centered modal-lgg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title font-weight-bold text-dark" id="my-modal-title">Vidrarias</h1>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-6">
+                        <p class="text-left font-weight-bold">
+                            Para selecionar a Vidraria utilizada, clique uma vez sobre a mesma <br> Para deselecionar a Vidraria, clique duas vezes sobre a Vidraria selecionada
+                        </p>
+                    </div>
+                    <div class="col-6">
+                        <button class="btn btn-danger btn-vidraria-quebrada">Houve quebra de vidrarias</button>
+                    </div>
+                </div>
+                <div class="row vidraria" style="height:480px; overflow: scroll; overflow-x: hidden;">
+
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary btn-salvar-vidraria">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>

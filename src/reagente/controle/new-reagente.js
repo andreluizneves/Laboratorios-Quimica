@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    $('#table-cliente').on('click', 'button.btn-visualizar', function(e) {})
     $('.btn-new-reagente').click(function() {
         $('.container-fluid').empty()
         $('.container-fluid').load('form-reagente.html')

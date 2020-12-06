@@ -1,3 +1,0 @@
-<?php
-
-ech 'ois'

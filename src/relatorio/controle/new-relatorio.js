@@ -1,9 +1,29 @@
 $(document).ready(function() {
-    $('.btn-new-relatorio').click(function() {
-        $('.container-fluid').empty()
-        $('.container-fluid').load('form-relatorio.html')
+
+    $('#equipamento').click(function() {
+        $('.seletor-equipamento').toggleClass('d-none')
+    })
+    $('#vidraria').click(function() {
+        $('.seletor-vidraria').toggleClass('d-none')
+    })
+    $('#reagente').click(function() {
+        $('.seletor-reagente').toggleClass('d-none')
     })
 
+    $('.btn-new-relatorio').click(function() {
+        $('.container').empty()
+        $('.container').load('form-relatorio.html')
+    })
+
+    $('.btn-select-equip').click(function() {
+        $('#modal-equip').modal('show')
+    })
+    $('.btn-select-reag').click(function() {
+        $('#modal-reag').modal('show')
+    })
+    $('.btn-select-vidr').click(function() {
+        $('#modal-vidr').modal('show')
+    })
     $('.btn-send').click(function(e) {
 
         e.preventDefault()

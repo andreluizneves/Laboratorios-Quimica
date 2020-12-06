@@ -9,4 +9,3 @@
 
     $resultado = mysqli_query($conexao, $sql);
     echo($sql);
-    

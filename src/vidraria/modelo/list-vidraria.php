@@ -34,12 +34,10 @@
 
         $dados = array(
             'msg' => "Erro [042]" . "<br>" . "Ocorreu um erro interno no servidor 😕",
-            'icone' => 'error',
-            'causa' => $conexao
+            'icone' => 'error'
         );
         echo json_encode($dados, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);
         exit;
-
     }
     
     echo json_encode($dados, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);

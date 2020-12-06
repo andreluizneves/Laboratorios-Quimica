@@ -1,3 +1,13 @@
+<?php
+
+    session_start();
+
+    if(isset($_SESSION['login'])){
+        header('Location: menu.php');
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -7,7 +17,7 @@
     <title>Login</title>
     <link rel="shortcut icon" href="recursos/img/icons/cadeado.svg" type="image/x-icon">
     <link rel="stylesheet" href="recursos/css/bootstrap.min.css">
-    <link rel="stylesheet" href="recursos/css/login.css">
+    <link rel="stylesheet" href="recursos/css/index.css">
 </head>
 
 <body class="grad">
@@ -25,23 +35,23 @@
                         <option value="aluno(a)">Aluno(a)</option>
                     </select>
                     <div class="campo mt-3">
-                        <input class='input' name='ra' type='text' placeholder="RA" id='ra' maxlength="5">
+                        <input class='input' name='ra' type='text' placeholder="RA" id='ra'>
                     </div>
                     <div class="campo mt-3">
-                        <input class='input' name='rm' type='text' placeholder="RM" id="rm" maxlength="5" disabled>
+                        <input class='input' name='rm' type='text' placeholder="RM" id="rm" disabled>
                     </div>
                     <div class="campo mt-4">
                         <input class='input' name='senha' type='password' id="senha" placeholder="Senha">
                     </div>
-                    <div class="mt-3 font-weight-bold"><a href="src/usuario/visao/recuperar-senha.html">Esqueci a Senha</a></div>
+                    <div class="mt-3 font-weight-bold btn-esqueceu-senha">
+                            Esqueceu a senha?
+                    </div>
                     <button type="button" class="btn btn-primary btn-block mt-3 btn-login font-weight-bold">
                         Entrar
                     </button>
-                    <a href="cadastro.html">
-                        <button type="button" class="btn btn-success btn-block mt-3 font-weight-bold">
-                            Cadastrar
-                        </button>
-                    </a>
+                    <button type="button" class="btn btn-success btn-block mt-3 font-weight-bold btn-cadastro">
+                        Cadastrar
+                    </button>
                 </form>
             </div>
         </div>

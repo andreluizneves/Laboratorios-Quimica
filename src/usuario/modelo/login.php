@@ -6,13 +6,13 @@
 
         session_start(); 
     
-        $requestData = $_REQUEST;
-        $tipousuario = $requestData['tipo-usuario'];
-        $senha = base64_encode($requestData[senha]);
+        $request = $_POST;
+        $tipousuario = $request['tipo-usuario'];
+        $senha = base64_encode($request[senha]);
         
         if($tipousuario == 'professor(a)'){
 
-            if($requestData['ra']  == '' || $requestData['senha'] == ''){
+            if($request['ra']  == '' || $request['senha'] == ''){
 
                 $dados = array(
                     'mensagem' => 'Há campos vazios que precisam ser preenchidos',
@@ -23,7 +23,7 @@
                 
             } else{
 
-                $sql = "SELECT * FROM professores WHERE ra = $requestData[ra] AND senha = '$senha'";
+                $sql = "SELECT * FROM professores WHERE ra = $request[ra] AND senha = '$senha'";
                 $resultado = mysqli_query($conexao, $sql);
                 $linha = mysqli_num_rows($resultado);
 
@@ -57,7 +57,7 @@
             
         } else {
 
-            if($requestData['rm']  == '' || $requestData['senha'] == ''){
+            if($request['rm']  == '' || $request['senha'] == ''){
 
                 $dados = array(
                     'mensagem' => 'Há campos vazios que precisam ser preenchidos',
@@ -68,7 +68,7 @@
                 
             } else{
 
-                $sql = "SELECT * FROM alunos WHERE rm = $requestData[rm] AND senha = '$senha'";
+                $sql = "SELECT * FROM alunos WHERE rm = $request[rm] AND senha = '$senha'";
                 $resultado = mysqli_query($conexao, $sql);
                 $linha = mysqli_num_rows($resultado);
 

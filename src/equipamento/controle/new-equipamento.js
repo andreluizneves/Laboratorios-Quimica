@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    $('#table-equipamento').on('click', 'button.btn-visualizar', function(e) {})
     $('.btn-new-equipamento').click(function() {
         $('.container-fluid').empty()
         $('.container-fluid').load('form-equipamento.html')

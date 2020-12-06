@@ -1,15 +1,5 @@
 $(document).ready(function() {
 
-    $.ajax({
-        dataType: 'json',
-        url: 'src/usuario/modelo/seguranca.php',
-        success: function(dados) {
-            if (dados.logado == 'sim') {
-                $(location).attr('href', 'menu.html')
-            }
-        }
-    });
-
     $('.seletor').on('change', function() {
         if ($('#rm').css('display') == 'none') {
             $('.img').attr('src', 'recursos/img/icons/alunos.svg')
@@ -28,7 +18,13 @@ $(document).ready(function() {
         }
     })
 
+    $('.btn-esqueceu-senha').click(function() {
+        $(location).attr('href', 'recuperar-senha.php')
+    })
     $('#rm, #ra').mask('00000')
+    $('.btn-cadastro').click(function() {
+        $(location).attr('href', 'cadastrar.php')
+    })
 
     $('.btn-login').click(function(e) {
 
@@ -53,8 +49,8 @@ $(document).ready(function() {
                 if (dados.icone == 'success') {
                     $('.input').val('')
                     setTimeout(() => {
-                        $(location).attr('href', 'menu.html')
-                    }, 1250);
+                        $(location).attr('href', 'menu.php')
+                    }, 1150);
                 }
             }
         });

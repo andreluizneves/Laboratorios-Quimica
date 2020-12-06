@@ -1,3 +1,12 @@
+<?php
+
+    session_start();
+
+    if(isset($_SESSION['login'])){
+        header('Location: menu.php');
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -26,10 +35,10 @@
                         <option value="aluno(a)">Aluno(a)</option>
                     </select>
                     <div class="campo mt-3">
-                        <input class='input' name='ra' type='text' placeholder="RA" id='ra' maxlength="5">
+                        <input class='input' name='ra' type='text' placeholder="RA" id='ra'>
                     </div>
                     <div class="campo mt-3">
-                        <input class='input' name='rm' type='text' placeholder="RM" id="rm" maxlength="5" disabled>
+                        <input class='input' name='rm' type='text' placeholder="RM" id="rm" disabled>
                     </div>
                     <div class="campo mt-4">
                         <input class='input' name='email' type='text' id="email" placeholder="Email">
@@ -40,23 +49,21 @@
                     <div class="campo mt-4">
                         <input class='input' name='senha' type='password' id="senha" placeholder="Criar senha">
                     </div>
-                    <button class="btn btn-success btn-block mt-4 font-weight-bold btn-cadastro">
-                    Cadastrar
+                    <button type="button" class="btn btn-success btn-block mt-4 font-weight-bold btn-cadastrar">
+                        Cadastrar
                     </button>
                 </form>
-                <a href="index.html">
-                    <button class="btn btn-primary btn-block mt-3 font-weight-bold ">
-                        Já tenho uma conta
-                    </button>
-                </a>
+                <button type="button" class="btn btn-primary btn-block mt-3 font-weight-bold btn-voltar">
+                    Já tenho uma conta
+                </button>
             </div>
         </div>
     </div>
-
     <script src="recursos/js/jquery-3.5.1.min.js "></script>
     <script src="recursos/js/bootstrap.min.js "></script>
+    <script src="recursos/libs/jQuery Mask/jquery.mask.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="src/usuario/controle/cadastro.js"></script>
 </body>
 
-</html3
+</html>

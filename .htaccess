@@ -1,0 +1,5 @@
+#Bloqueia a listagem de diretórios.
+
+#options All -Indexes
+
+ErrorDocument 403 "Acesso Bloqueado"

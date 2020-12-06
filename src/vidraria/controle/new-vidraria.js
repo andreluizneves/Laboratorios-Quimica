@@ -1,12 +1,27 @@
 $(document).ready(function() {
-    $('#table-vidraria').on('click', 'button.btn-visualizar', function(e) {})
     $('.btn-new-vidraria').click(function() {
+        $('.cards-vidrarias').empty()
+        $('.cards-vidrarias-quebradas').empty()
         $('.container-fluid').empty()
         $('.container-fluid').load('form-vidraria.html')
     })
     $('.btn-view-vidraria').click(function() {
+        $('.cards-vidrarias').empty()
+        $('.cards-vidrarias-quebradas').empty()
         $('.container-fluid').empty()
         $('.container-fluid').load('list-vidraria.html')
+    })
+    $('.btn-view-vidraria-quebrada').click(function() {
+        $('.cards-vidrarias').empty()
+        $('.cards-vidrarias-quebradas').empty()
+        $('.container-fluid').empty()
+        $('.container-fluid').load('list-vidraria-quebrada.html')
+    })
+    $('.btn-new-vidraria-quebrada').click(function() {
+        $('.cards-vidrarias').empty()
+        $('.cards-vidrarias-quebradas').empty()
+        $('.container-fluid').empty()
+        $('.container-fluid').load('form-vidraria-quebrada.html')
     })
 
     $('.btn-send').click(function(e) {

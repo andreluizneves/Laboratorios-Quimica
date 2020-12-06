@@ -31,13 +31,13 @@
             if($resultado){
                 $dados = array(
                     'icone' => 'success',
-                    'msg' => 'Equipamento catalogado com êxito',
-                    'sql' => $sql
+                    'msg' => 'Equipamento catalogado com êxito'
                 );
             }else{
                 $dados = array(
                     'icone' => 'error',
-                    'msg' => 'Erro ao catalogar o equipamento'
+                    'msg' => 'Erro ao catalogar o equipamento',
+                    'sql' => $sql
                 );
             }
 

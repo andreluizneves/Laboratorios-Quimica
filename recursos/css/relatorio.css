@@ -12,6 +12,10 @@ html {
     margin-bottom: 0;
 }
 
+.modal-lgg {
+    max-width: 94%;
+}
+
 .nav {
     background-color: rgb(23, 216, 48);
     height: 75px;

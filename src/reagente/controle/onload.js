@@ -7,7 +7,7 @@ $(document).ready(function() {
         async: true,
         success: function(dados) {
             if (dados.logado == 'não') {
-                $(location).attr('href', '../../../index.html')
+                $(location).attr('href', '../../../index.php')
             } else {
                 if (dados.tipo_user == 'professor(a)') {
                     $('.icone-user').attr('src', '../../../recursos/img/icons/professores.svg')
@@ -27,10 +27,10 @@ $(document).ready(function() {
     })
 
     $('.btn-menu').click(function() {
-        $(location).attr('href', '../../../menu.html')
+        $(location).attr('href', '../../../menu.php')
     })
     $('.btn-editar-perfil').click(function() {
-        $(location).attr('href', '../../usuario/visao/editar-perfil.html')
+        $(location).attr('href', '../../../usuario/visao/editar-perfil.php')
     })
     $('.btn-contato').click(function() {
         $(location).attr('href', '../../usuario/visao/contato.html')
@@ -42,6 +42,6 @@ $(document).ready(function() {
             url: '../../usuario/modelo/logout.php',
             async: true,
         })
-        $(location).attr('href', '../../../index.html')
+        $(location).attr('href', '../../../index.php')
     })
 })

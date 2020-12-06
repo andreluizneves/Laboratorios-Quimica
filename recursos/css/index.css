@@ -17,6 +17,11 @@
     height: 100vh;
 }
 
+.btn-esqueceu-senha {
+    color: aqua;
+    cursor: pointer;
+}
+
 .caixa {
     background-color: rgba(0, 0, 0, 0.5);
     width: 320px;
@@ -56,7 +61,7 @@
     background: rgb(22, 22, 53);
 }
 
-option {
+select {
     color: white !important;
 }
 

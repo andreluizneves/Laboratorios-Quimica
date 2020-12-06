@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Perfil</title>
-    <link rel="stylesheet" href="../../../recursos/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../../recursos/css/editar-perfil.css">
-    <link rel="stylesheet" href="../../../recursos/libs/css/all.css">
+    <link rel="stylesheet" href="recursos/css/bootstrap.min.css">
+    <link rel="stylesheet" href="recursos/css/editar-perfil.css">
+    <link rel="stylesheet" href="recursos/libs/css/all.css">
 </head>
 
 <body>
@@ -37,10 +37,10 @@
         </div>
     </div>
 
-    <script src="../../../recursos/js/jquery-3.5.1.min.js"></script>
-    <script src="../../../recursos/js/bootstrap.min.js"></script>
+    <script src="recursos/js/jquery-3.5.1.min.js"></script>
+    <script src="recursos/js/bootstrap.min.js"></script>
     <script src="../controle/editar-perfil.js"></script>
-    <script src="../../../recursos/libs/js/fontawesome.js"></script>
+    <script src="recursos/libs/js/fontawesome.js"></script>
 </body>
 
 </html>

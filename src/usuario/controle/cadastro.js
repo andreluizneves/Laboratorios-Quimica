@@ -1,15 +1,5 @@
 $(document).ready(function() {
 
-    $.ajax({
-        dataType: 'json',
-        url: '../modelo/seguranca.php',
-        success: function(dados) {
-            if (dados.logado == 'sim') {
-                $(location).attr('href', '/menu.html')
-            }
-        }
-    });
-
     $('.seletor').on('change', function() {
         if ($('#rm').css('display') == 'none') {
             $('.img').attr('src', 'recursos/img/icons/alunos.svg')
@@ -28,7 +18,12 @@ $(document).ready(function() {
         }
     })
 
-    $('.btn-cadastro').click(function(e) {
+    $('#rm, #ra').mask('00000')
+    $('.btn-voltar').click(function() {
+        $(location).attr('href', 'index.php')
+    })
+
+    $('.btn-cadastrar').click(function(e) {
 
         e.preventDefault()
 

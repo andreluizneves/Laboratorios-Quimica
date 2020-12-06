@@ -46,6 +46,10 @@
     text-align: center;
 }
 
+select {
+    color: white !important;
+}
+
 .img-user>img {
     background-color: white;
     border-radius: 100%;
@@ -54,8 +58,4 @@
 
 .form-group>.form-control {
     background: rgb(22, 22, 53);
-}
-
-option {
-    color: white !important;
 }

@@ -6,7 +6,7 @@
 
         $request = $_POST;
 
-        if($request['nome'] == "" || $request['quantidade'] == "" || $request['laboratorio'] == "" ){
+        if($request['nome'] == "" || $request['quantidade'] == "" || $request['laboratorio'] == ""  || $request['medida'] == "") {
             
             $dados = array(
                 'msg' => 'Há campos vazios que precisam ser preenchidos',
@@ -24,7 +24,7 @@
                 $lab = 3;
             }
 
-            $sql = "INSERT INTO reagentes (nome, quantidade , id_lab) VALUES ('$request[nome]', '$request[quantidade]', '$lab')";
+            $sql = "INSERT INTO reagentes (nome, quantidade, medida, id_lab) VALUES ('$request[nome]', '$request[quantidade]', '$request[medida]', '$lab')";
 
             $resultado = mysqli_query($conexao, $sql);
 
@@ -37,7 +37,8 @@
             }else{
                 $dados = array(
                     'icone' => 'error',
-                    'msg' => 'Erro ao catalogar o reagente'
+                    'msg' => 'Erro ao catalogar o reagente',
+                    'sql' => $sql
                 );
             }
 

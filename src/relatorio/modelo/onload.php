@@ -4,25 +4,24 @@
     
     session_start();
 
-    if($_SESSION['login'] == Null){
+    if(!isset($_SESSION['login'])){
         $dados = array(
             'logado' => 'não',
-            'tipo_user' => $_SESSION['tipo_user']
         );
-    } else{
+    }else{
         if($_SESSION['tipo_user'] == 'professor(a)'){
             $dados = array(
                 'logado' => 'sim',
                 'nome' => $_SESSION['nome'],
                 'ra' => $_SESSION['ra'],
-                'tipo_user' => $_SESSION['tipo_user']
+                'tipo_user' => 'professor(a)'
             );
         } else{
             $dados = array(
                 'logado' => 'sim',
                 'nome' => $_SESSION['nome'],
                 'rm' => $_SESSION['rm'],
-                'tipo_user' => $_SESSION['tipo_user']
+                'tipo_user' => 'aluno(a)'
             );
         }
     }

@@ -5,37 +5,24 @@
 </div>
 <hr>
 <div class="row conteudo">
-    <div class="col-12">
-        <table class="table table-hover table-responsive-sm display compact cell-border" id="table-relatorio" style="width: 100%;">
-            <thead class="thead-dark">
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Data Hora</th>
-                    <th scope="col">Descricao</th>
-                    <th scope="col">Professor</th>
-                    <th scope="col">Operações</th>
-                </tr>
-            </thead>
-        </table>
+    <div class="col-12 cards-relatorios">
     </div>
 </div>
 
 <!-- Chamada dos JS da camada Controle -->
 <script src="../controle/list-relatorio.js"></script>
 <script src="../controle/new-relatorio.js"></script>
+<script src="../controle/view-relatorio.js"></script>
 
 <!-- Modal -->
-<div class="modal fade" id="modal-relatorio" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content modal-lg">
+<div id="modal-relatorio" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-modal="true">
+    <div class="modal-dialog modal-dialog-centered modal-lgg" role="document">
+        <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
+                <h1 class="modal-title font-weight-bold text-light" id="my-modal-title"></h1>
             </div>
             <div class="modal-body">
-                ...
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -44,3 +31,36 @@
         </div>
     </div>
 </div>
+<!--
+
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6 text-left">
+                        <div class="font-weight-bold">
+                            Professor(a): ${dado.nome}
+                        </div>
+                        <br>
+                        <div class="mt-3">
+                            Laboratório ${dado.laboratorio}
+                        </div>
+                    </div>
+                    <div class="col-6 text-right">
+                        <div class="font-weight-bold">
+                            ${dado.data_hora}
+                        </div>
+                        <div class="mb-2 mt-2">
+                            <img style="width: 16px;" src="recursos/img/icons/icon1.png" alt=""> &nbsp;
+                            <img style="width: 16px;" src="recursos/img/icons/icon1.png" alt=""> &nbsp;
+                            <img style="width: 16px;" src="recursos/img/icons/icon1.png" alt=""> &nbsp;
+                            <img style="width: 16px;" src="recursos/img/icons/icon1.png" alt="">
+                        </div>
+                        <div>
+                            <button><i class="fas fa-pen"></i></button>
+                            <button><i class="fas fa-eye"></i></button>
+                            <button><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+-->
