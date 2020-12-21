@@ -16,6 +16,9 @@
                 'ra' => $_SESSION['ra'],
                 'tipo_user' => 'professor(a)'
             );
+            $_SESSION['ids_equipamento'] = array();
+            $_SESSION['ids_reagente'] = array();
+            $_SESSION['ids_vidraria'] = array();
         } else{
             $dados = array(
                 'logado' => 'sim',

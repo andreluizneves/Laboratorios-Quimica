@@ -1,17 +1,36 @@
 $(document).ready(function() {
-    $('.btn-new-equipamento').click(function() {
-        $('.container-fluid').empty()
-        $('.container-fluid').load('form-equipamento.html')
-    })
-    $('.btn-view-equipamento').click(function() {
-        $('.container-fluid').empty()
-        $('.container-fluid').load('list-equipamento.html')
-    })
 
-    $('.btn-send').click(function(e) {
+    $('.btn-form').click(function() {
+        $('.equipamentos').empty()
+        $('.equipamentos').load('form-equipamento.html')
+        $('.col-form').addClass('d-none')
+        $('.col-btn').addClass('d-none')
+        $('.col-list').removeClass('d-none')
+        $('.text-titulo').text('NOVO EQUIPAMENTO')
+        $('.conteudo').addClass('p-3')
+        $('.conteudo').addClass('m-3')
+        $("#pesquisa").attr('disabled', true)
+        $("#pesquisa").val('')
+        $("#pesquisa").css('background-colo', 'grey')
+    })
+    $('.btn-list').click(function() {
+        $('.equipamentos').empty()
+        $('.equipamentos').load('list-equipamento.html')
+        $('.col-form').removeClass('d-none')
+        $('.col-list').addClass('d-none')
+        $('.col-btn').removeClass('d-none')
+        $('.text-titulo').text('EQUIPAMENTO')
+        $('.conteudo').removeClass('p-3')
+        $('.conteudo').removeClass('m-3')
+        $("#pesquisa").attr('disabled', false)
+        $("#pesquisa").val('')
+        $("#pesquisa").css('background-colo', 'white')
+    })
+    $('.equipamentos').on('click', 'button.btn-send', function(e) {
+
         e.preventDefault()
 
-        var dados = $('#form-equipamento').serialize();
+        let dados = new FormData(document.getElementById('form-equipamento'))
 
         $.ajax({
             type: 'POST',
@@ -19,6 +38,10 @@ $(document).ready(function() {
             url: '../modelo/new-equipamento.php',
             async: true,
             data: dados,
+            nimeType: 'multipart/form-data',
+            cache: false,
+            contentType: false,
+            processData: false,
             success: function(dados) {
                 Swal.fire({
                     icon: dados.icone,

@@ -2,11 +2,13 @@
 
     include('../../banco/conexao.php');
 
+    session_start();
+
     if($conexao){
 
         $request = $_POST;
         $filtro = trim($request['filtro']);
-        $sql = "SELECT nome, numero_patrimonio, descricao, id_lab FROM equipamentos WHERE nome LIKE '%".$filtro."%' ORDER BY nome";
+        $sql = "SELECT nome, numero_patrimonio, descricao, foto FROM equipamentos WHERE nome LIKE '%".$filtro."%' ORDER BY nome";
         $resultado = mysqli_query($conexao, $sql);
         
         while($linha = mysqli_fetch_assoc($resultado)){
@@ -15,7 +17,8 @@
         
         $dados = array(
             'dados' => $dadosTipo,
-            'status' => 'ok'
+            'status' => 'ok',
+            'user' => $_SESSION['tipo_user']
         );
 
         mysqli_close($conexao);
@@ -23,8 +26,7 @@
     } else{
         $dados = array(
             'mensagem' => "Erro [042]" . "<br>" . "Ocorreu um erro interno no servidor 😕",
-            'icone' => 'error',
-            'sql' => $sql
+            'icone' => 'error'
         );
         exit;
     }

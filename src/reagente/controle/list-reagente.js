@@ -1,35 +1,81 @@
 $(document).ready(function() {
+
     $.ajax({
+        type: 'POST',
         dataType: 'json',
         url: '../modelo/list-reagente.php',
         success: function(dados) {
             if (dados.status == 'ok') {
-                for (const dado of dados.dados) {
+                if (dados.user == 'professor(a)') {
+                    for (const dado of dados.dados) {
 
-                    $('.cards-reagentes').append(`
-                        <div class="col-12 col-md-3 col-sm-12 col-lg-2">
-                            <div class="card mb-4 shadow-sm">
-                                <h2 class="text-center">
+                        $('.reagentes').append(`
+                        <div class="col-12 col-md-6 col-sm-6 col-lg-3 text-dark">
+                            <div class="card mb-4 item">
+                                <h4 class="text-center mb-2 mt-2 font-weight-bold nome">
                                     ${dado.nome}
-                                </h2>
-                                <img class="card-img-top mt-4" height="150px" src="${dado.foto}">
+                                </h4>
+                                <p class="text-center">
+                                    <img class="card-img-top img" height="200px" src="${dado.foto}">
+                                </p>
                                 <div class="card-body">
-                                    <p class="card-text">
-                                        Quantidade: ${dado.quantidade}${dado.medida}
+                                    <p class="card-text font-weight-bold num_pa">
+                                        Quantidade:
                                     </p>
+                                    <p class="card-text">
+                                        ${dado.quantidade}${dado.medida}
+                                    </p>
+                                    <div class="botoes">
+                                        <button id="${dado.id_reagente}" title="Editar" class='btn btn-warning btn-edit-reagente'><i class="fas fa-pen"></i></button>
+                                        <button id="${dado.id_reagente}" title="Visualizar" class='btn btn-primary btn-view-reagente'><i class="fas fa-eye"></i></button>
+                                        <button id="${dado.id_reagente}" title="Deletar" class='btn btn-danger btn-delete-reagente'><i class="fas fa-trash"></i></button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
                     `)
+                    }
+                } else {
+                    for (const dado of dados.dados) {
+
+                        $('.reagentes').append(`
+                        <div class="col-12 col-md-6 col-sm-6 col-lg-3 text-dark">
+                            <div class="card mb-4 item">
+                                <h4 class="text-center mb-2 mt-2 font-weight-bold nome">
+                                    ${dado.nome}
+                                </h4>
+                                <p class="text-center">
+                                    <img class="card-img-top img" height="200px" src="${dado.foto}">
+                                </p>
+                                <div class="card-body">
+                                    <p class="card-text font-weight-bold num_pa">
+                                        Quantidade:
+                                    </p>
+                                    <p class="card-text">
+                                        ${dado.quantidade}${dado.medida}
+                                    </p>
+                                    <div class="botoes">
+                                        <button id="${dado.id_reagente}" title="Visualizar" class='btn btn-primary btn-view-reagente'><i class="fas fa-eye"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `)
+                    }
                 }
             } else {
-                $('.cards-reagentes').append(`Nada encontrado nos registros`)
+                $('.reagentes').append(`<div class="col-12 col-col-12 col-sm-12 col-lg-12">
+                                            <h2 class="text-center">
+                                                Nada encontrado nos registros
+                                            </h2>
+                                        </div>`)
             }
         }
     });
-    $('#pesquisa').keyup(function() {
 
+    $('#pesquisa').keyup(function() {
+        $('.col-form').removeClass('d-none')
+        $('.col-list').addClass('d-none')
         var dados = $('#caixa-pesquisa').serialize();
 
         $.ajax({
@@ -39,32 +85,76 @@ $(document).ready(function() {
             async: true,
             data: dados,
             success: function(dados) {
+                if (dados.dados != null) {
 
-                if (dados.status == 'ok') {
-                    $('.cards-reagentes').empty()
-                    for (const dado of dados.dados) {
+                    $('.reagentes').empty()
+                    if (dados.user == 'professor(a)') {
+                        for (const dado of dados.dados) {
 
-                        $('.cards-reagentes').append(`
-
-                            <div class="col-12 col-md-3 col-sm-12 col-lg-2">
-                                <div class="card mb-4 shadow-sm">
-                                    <h2 class="text-center">
+                            $('.reagentes').append(`
+                            <div class="col-12 col-md-6 col-sm-6 col-lg-3 text-dark">
+                                <div class="card mb-4 item">
+                                    <h4 class="text-center mb-2 mt-2 font-weight-bold nome">
                                         ${dado.nome}
-                                    </h2>
-                                    <img class="card-img-top mt-4" height="150px" src="${dado.foto}">
+                                    </h4>
+                                    <p class="text-center">
+                                        <img class="card-img-top img" height="200px" src="${dado.foto}">
+                                    </p>
                                     <div class="card-body">
-                                        <p class="card-text">
-                                            Quantidade: ${dado.quantidade}${dado.medida}
+                                        <p class="card-text font-weight-bold num_pa">
+                                            Quantidade:
                                         </p>
+                                        <p class="card-text">
+                                            ${dado.quantidade}${dado.medida}
+                                        </p>
+                                        <div class="botoes">
+                                            <button id="${dado.id_reagente}" title="Editar" class='btn btn-warning btn-edit-reagente'><i class="fas fa-pen"></i></button>
+                                            <button id="${dado.id_reagente}" title="Visualizar" class='btn btn-primary btn-view-reagente'><i class="fas fa-eye"></i></button>
+                                            <button id="${dado.id_reagente}" title="Deletar" class='btn btn-danger btn-delete-reagente'><i class="fas fa-trash"></i></button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+
                         `)
+                        }
+                    } else {
+                        for (const dado of dados.dados) {
+
+                            $('.reagentes').append(`
+                            <div class="col-12 col-md-6 col-sm-6 col-lg-3 text-dark">
+                                <div class="card mb-4 item">
+                                    <h4 class="text-center mb-2 mt-2 font-weight-bold nome">
+                                        ${dado.nome}
+                                    </h4>
+                                    <p class="text-center">
+                                        <img class="card-img-top img" height="200px" src="${dado.foto}">
+                                    </p>
+                                    <div class="card-body">
+                                        <p class="card-text font-weight-bold num_pa">
+                                            Quantidade:
+                                        </p>
+                                        <p class="card-text">
+                                            ${dado.quantidade}${dado.medida}
+                                        </p>
+                                        <div class="botoes">
+                                            <button id="${dado.id_reagente}" title="Visualizar" class='btn btn-primary btn-view-reagente'><i class="fas fa-eye"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        `)
+                        }
                     }
                 } else {
-                    $('.cards-reagentes').append(`Nada encontrado nos registros`)
+                    $(".reagentes").empty()
+                    $('.reagentes').append(`<div class="col-12 col-col-12 col-sm-12 col-lg-12">
+                                                <h2 class="text-center">
+                                                    Nada encontrado nos registros
+                                                </h2>
+                                            </div>`)
                 }
-
             }
         });
     })

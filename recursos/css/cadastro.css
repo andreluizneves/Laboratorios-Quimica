@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Palanquin+Dark&display=swap');
+* {
+    font-family: 'Palanquin Dark', sans-serif;
+    font-size: 18px;
+}
+
 .container {
     width: 100vw;
     height: 100vh;

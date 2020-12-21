@@ -1,35 +1,43 @@
 $(document).ready(function() {
 
-    $('#equipamento').click(function() {
-        $('.seletor-equipamento').toggleClass('d-none')
+    $('.relatorios').on('click', 'button.btn-select-equipamento', function() {
+        $("#modal-equipamento").modal('show')
     })
-    $('#vidraria').click(function() {
-        $('.seletor-vidraria').toggleClass('d-none')
+    $('.relatorios').on('click', 'button.btn-select-reagente', function() {
+        $("#modal-reagente").modal('show')
     })
-    $('#reagente').click(function() {
-        $('.seletor-reagente').toggleClass('d-none')
+    $('.relatorios').on('click', 'button.btn-select-vidraria', function() {
+        $("#modal-vidraria").modal('show')
+    })
+    $('.btn-form').click(function() {
+        $('.relatorios').empty()
+        $('.relatorios').load('form-relatorio.html')
+        $('.col-form').addClass('d-none')
+        $('.col-list').removeClass('d-none')
+        $('.text-titulo').text('NOVO RELATÓRIO')
+        $("#pesquisa").attr('disabled', true)
+        $("#pesquisa").val('')
+        $("#pesquisa").css('background-colo', 'grey')
+        $('.conteudo').addClass('p-3')
+        $('.conteudo').addClass('m-3')
+    })
+    $('.btn-list').click(function() {
+        $('.relatorios').empty()
+        $('.relatorios').load('list-relatorio.html')
+        $('.col-form').removeClass('d-none')
+        $('.col-list').addClass('d-none')
+        $('.text-titulo').text('RELATÓRIO')
+        $("#pesquisa").val('')
+        $("#pesquisa").css('background-colo', 'white')
+        $("#pesquisa").attr('disabled', false)
+        $('.conteudo').removeClass('p-3')
+        $('.conteudo').removeClass('m-3')
     })
 
-    $('.btn-new-relatorio').click(function() {
-        $('.container').empty()
-        $('.container').load('form-relatorio.html')
-    })
-
-    $('.btn-select-equip').click(function() {
-        $('#modal-equip').modal('show')
-    })
-    $('.btn-select-reag').click(function() {
-        $('#modal-reag').modal('show')
-    })
-    $('.btn-select-vidr').click(function() {
-        $('#modal-vidr').modal('show')
-    })
-    $('.btn-send').click(function(e) {
+    $('.relatorios').on('click', 'button.btn-relatar', function(e) {
 
         e.preventDefault()
-
         var dados = $('#form-relatorio').serialize();
-
         $.ajax({
             type: 'POST',
             dataType: 'json',
@@ -44,6 +52,8 @@ $(document).ready(function() {
                 })
                 if (dados.icone == 'success') {
                     $('.input').val('')
+                    $('.relatorios').empty()
+                    $('.relatorios').load('form-relatorio.html')
                 }
             }
         });

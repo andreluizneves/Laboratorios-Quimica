@@ -9,66 +9,37 @@ $(document).ready(function() {
             if (dados.status == 'ok') {
                 for (const dado of dados.dados) {
 
-                    $('.vidraria').append(`
-                    
-                    <div class="col-12 col-md-3 col-sm-12 col-lg-2 item-vidraria">
-                        <div class="card mb-4 shadow-sm item" name="${dado.nome}">
-                            <h2 class="text-center">
+                    $('.vidrarias').append(`
+                    <div class="col-12 col-md-3 col-sm-6 col-lg-3 text-dark">
+                        <div class="card mb-4 item-vidraria" enviado="false" id="${dado.id_vidraria}" nome="${dado.nome}" style="cursor:pointer;" selecionado="false">
+                            <h4 class="text-center mb-2 mt-2 font-weight-bold nome">
                                 ${dado.nome}
-                            </h2>
-                            <img class="card-img-top mt-4" height="150px" src="${dado.foto}">
+                            </h4>
+                            <p class="text-center">
+                                <img class="card-img-top img" height="200px" src="../../vidraria/${dado.foto.substring(3)}">
+                            </p>
                             <div class="card-body">
-                                <p class="card-text">
-                                    Quantidade: ${dado.descricao}
+                                <p class="card-text font-weight-bold num_pa">
+                                    Quantidade:
                                 </p>
-                                <p class="card-text font-weight-bold">
-                                    Quantidade: ${dado.quantidade}
+                                <p class="card-text">
+                                    ${dado.quantidade} unidades
                                 </p>
                             </div>
                         </div>
-                        <form id="vidraria_utilizadas">
-                            <input name='${dado.nome}v' style="display:none" value=''>
-                        </form>
                     </div>
                     `)
                 }
-
-                $('.vidraria').append(`
-                <script>
-
-                    $('.item').click(function() {
-                        $(this).css('border', 'blue 4px solid')
-                        var selecionado_id3 = "input[name='" + $(this).attr('name') + "v" + "']"
-                        $(selecionado_id3).val('selecionado')
-                    })
-                           
-                    $('.item').dblclick(function() {
-                        $(this).removeAttr('style')
-                        var selecionado_id3 = "input[name='" + $(this).attr('name') + "v" + "']"
-                        $(selecionado_id3).val('')
-                    })
-
-                    $('btn-salvar-vidr').click(function(){
-                        alert(selecionados)
-                    })
-                    $('btn-vidraria-quebrada').click(function(){
-                        
-                    })
-                           
-                </script>`)
             } else {
-                $('.vidraria').append(`
-           
-                    Nada encontrado nos registros
-
-                `)
+                $('.vidrarias').append(`<div class="col-12 col-col-12 col-sm-12 col-lg-12 mt-4">
+                                            <h2 class="text-center">
+                                                Nada encontrado nos registros
+                                            </h2>
+                                        </div>`)
             }
-
         }
     });
     $('.btn-salvar-vidraria').click(function() {
-        $('#modal-vidr').modal('hide')
+        $('#modal-vidraria').modal('hide')
     })
-
-
 })

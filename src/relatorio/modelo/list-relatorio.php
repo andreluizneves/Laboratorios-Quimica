@@ -2,12 +2,14 @@
 
     include('../../banco/conexao.php');
 
+    session_start();
+
     if($conexao){
         
-        $sql = "SELECT DATE_FORMAT(data_hora, '%d/%m/%Y ás %H:%i:%s') as data_hora, titulo, 
+        $sql = "SELECT id_relatorio, DATE_FORMAT(data_hora, '%d/%m/%Y ás %H:%i:%s') as data_hora, titulo, 
         p.nome as nome_professor, l.nome AS laboratorio FROM relatorios r
         INNER JOIN professores p ON p.id_professor = r.id_professor
-        INNER JOIN labs l ON l.id_lab = r.id_lab WHERE 1=1";
+        INNER JOIN labs l ON l.id_lab = r.id_lab ORDER BY titulo ASC";
         $resultado = mysqli_query($conexao, $sql);
         $linha = mysqli_num_rows($resultado);
 
@@ -25,7 +27,8 @@
 
             $dados = array(
                 'dados' => $dadosTipo,
-                'status' => 'ok'
+                'status' => 'ok',
+                'user' => $_SESSION['tipo_user']
             );
         }
 

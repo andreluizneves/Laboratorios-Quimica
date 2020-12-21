@@ -38,7 +38,7 @@
                     exit;
 
                 } else{
-                $senha = base64_encode($request[senha]);
+                $senha = base64_encode($request['senha']);
                 // Senão houver sido cadastrado, cria-se a Query para cadastros do novo RA
                     $sql = "INSERT INTO professores (nome, email, ra, senha) VALUES ('$request[nome]', '$request[email]', '$request[ra]', '$senha')";
 
@@ -74,7 +74,7 @@
                 
                 } else{
                     
-                $senha = base64_encode($request[senha]);
+                $senha = base64_encode($request['senha']);
                 // Senão houver sido cadastrado, cria-se a Query para cadastros do novo RM
                     $sql = "INSERT INTO alunos (nome, email, rm, senha) VALUES ('$request[nome]', '$request[email]', '$request[rm]', '$senha')";
 

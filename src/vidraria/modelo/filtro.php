@@ -2,11 +2,13 @@
 
     include('../../banco/conexao.php');
 
+    session_start();
+
     if($conexao){
 
         $request = $_POST;
         $filtro = trim($request['filtro']);
-        $sql = "SELECT nome, quantidade, descricao, id_lab FROM vidrarias WHERE nome LIKE '%".$filtro."%' ORDER BY nome";
+        $sql = "SELECT * FROM vidrarias WHERE nome LIKE '%".$filtro."%' ORDER BY nome";
         $resultado = mysqli_query($conexao, $sql);
         
         while($linha = mysqli_fetch_assoc($resultado)){
@@ -15,7 +17,8 @@
         
         $dados = array(
             'dados' => $dadosTipo,
-            'status' => 'ok'
+            'status' => 'ok',
+            'user' => $_SESSION['tipo_user']
         );
 
         mysqli_close($conexao);
@@ -26,7 +29,6 @@
             'icone' => 'error',
             'sql' => $sql
         );
-        exit;
     }
     
     echo json_encode($dados, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);

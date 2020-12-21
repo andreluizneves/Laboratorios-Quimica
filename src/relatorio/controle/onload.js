@@ -10,26 +10,38 @@ $(document).ready(function() {
                 $(location).attr('href', '../../../index.php')
             } else {
                 if (dados.tipo_user == 'professor(a)') {
-                    $('.icone-user').attr('src', '../../../recursos/img/icons/professores.svg')
-                    $('.usuario:first').append("Professor(a): ", dados.nome)
-                    $('.usuario:last').append("RA: ", dados.ra)
-                    $('.container').empty()
-                    $('.container').load('list-relatorio.html')
+                    $('.fotoUser').attr('src', '../../../recursos/img/icons/professores.svg')
+                    $('.nomeUser').append("Professor(a): ", dados.nome)
+                    $('.loginUser').append("RA: ", dados.ra)
+                    $("#nome").val(dados.nome)
                 } else {
-                    $('.icone-user').attr('src', '../../../recursos/img/icons/alunos.svg')
-                    $('.usuario:first').append("Aluno(a): ", dados.nome)
-                    $('.usuario:last').append("RM: ", dados.rm)
-                    $('.container').empty()
-                    $('.container').load('list-relatorio.html')
+                    $('.fotoUser').attr('src', '../../../recursos/img/icons/alunos.svg')
+                    $('.nomeUser').append("Aluno(a): ", dados.nome)
+                    $('.loginUser').append("RM: ", dados.rm)
+                    $(".btn-form").addClass('d-none')
                 }
             }
         }
     })
+    $('.caixa').click(function() {
+        $('#sidebar2').toggleClass('active')
+        $('#seta2').toggleClass('d-none')
+        $('#seta').toggleClass('d-block')
+    })
     $('.btn-menu').click(function() {
         $(location).attr('href', '../../../menu.php')
     })
-    $('.btn-editar-perfil').click(function() {
+    $('.btn-edit-perfil').click(function() {
         $(location).attr('href', '../../../editar-perfil.php')
+    })
+    $('.btn-reagentes').click(function() {
+        $(location).attr('href', '../../reagente/visao/reagente.html')
+    })
+    $('.btn-vidrarias').click(function() {
+        $(location).attr('href', '../../vidraria/visao/vidraria.html')
+    })
+    $('.btn-equipamentos').click(function() {
+        $(location).attr('href', '../../equipamento/visao/equipamento.html')
     })
     $('.btn-contato').click(function() {
         $(location).attr('href', '../../usuario/visao/contato.html')
@@ -38,8 +50,7 @@ $(document).ready(function() {
         $.ajax({
             type: 'POST',
             dataType: 'json',
-            url: '../../usuario/modelo/logout.php',
-            async: true,
+            url: '../../usuario/modelo/logout.php'
         })
         $(location).attr('href', '../../../index.php')
     })

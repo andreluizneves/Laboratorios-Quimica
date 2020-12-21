@@ -1,40 +1,51 @@
-<div class="row botao">
-    <div class="col-12 col-md-12 col-lg-12 col-sm-12 mb-2">
-        <button class="btn btn-primary btn-view-equipamento"><i class="fas fa-eye"></i> Visualizar equipamento</button>
-    </div>
-</div>
-<div class="conteudo">
+<div class="col-12 col-md-12 col-sm-12 col-lg-12">
+    <style>
+        @media screen and (max-device-width: 480px) {
+            #foto-form {
+                font-size: 0.7rem;
+            }
+        }
+        
+        @media screen and (max-device-width: 480px) {
+            #foto-form {
+                font-size: 0.6rem;
+            }
+        }
+    </style>
     <form class="form" id="form-equipamento" name="form-equipamento">
         <div class="row">
-            <div class="form-group col-6">
+            <div class="form-group col-md-5 col-lg-5 col-12 col-sm-12">
                 <label for="nome" class="col-form-label font-weight-bold">Nome:</label>
                 <input type="text" id="nome" name="nome" class="form-control input">
             </div>
-            <div class="form-group col-3">
+            <div class="form-group col-lg-7 col-md-7 col-12 col-sm-12">
                 <label for="num_patrimonio" class="col-form-label font-weight-bold">Número de Patrimônio:</label>
-                <input type="text" class="form-control input" id="quantidade" name="num_patrimonio">
+                <input type="number" class="form-control input" id="num_patrimonio" name="num_patrimonio">
             </div>
-            <div class="form-group col-3">
+        </div>
+        <div class="row">
+            <div class="form-group col-9-lg col-md-9 col-12 col-sm-12">
                 <label for="descricao" class="col-form-label font-weight-bold">Descrição:</label>
-                <input type="text" class="form-control input" id="descricao" name="descricao">
+                <textarea class="form-control input" style="resize: none;" rows="5" id="descricao" name="descricao"></textarea>
             </div>
-            <div class="form-group col-3">
-                <label for="seletor-lab">Selecione o Laboratório o qual o equipamento está armazenado</label>
+            <div class="form-group col-3-lg col-md-3 col-12 col-sm-12">
+                <label for="seletor-lab" class="font-weight-bold">Selecione o Laboratório o qual o equipamento está armazenado</label>
                 <select id="seletor-lab" class="form-control input" name="laboratorio">
                     <option value="">Selecione o Laboratório</option>
                     <option value="externo">Externo</option>
                     <option value="interno">Interno</option>
                     <option value="ambos">Ambos</option>
                 </select>
-            </div>
-            <div class="form-group col-3">
-                <label for="foto">Imagem</label>
-                <input id="foto" class="form-control-file" type="file" name="foto">
+                <div class="form-group mt-3">
+                    <label for="foto-form" class="font-weight-bold">Foto</label>
+                    <input id="foto-form" class="form-control-file input" type="file" name="foto">
+                </div>
             </div>
         </div>
-        <button class="btn btn-outline-success btn-send" type="button">Catalogar</button>
+        <div class="row">
+            <div class="form-group col-12-lg col-md-12 col-sm-12 col-12">
+                <button class="btn btn-success btn-send btn-block font-weight-bold" type="button">CATALOGAR</button>
+            </div>
+        </div>
     </form>
 </div>
-
-<!-- Controles -->
-<script src="../controle/new-equipamento.js"></script>

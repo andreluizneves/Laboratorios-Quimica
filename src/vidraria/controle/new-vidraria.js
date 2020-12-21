@@ -1,34 +1,77 @@
 $(document).ready(function() {
-    $('.btn-new-vidraria').click(function() {
-        $('.cards-vidrarias').empty()
-        $('.cards-vidrarias-quebradas').empty()
-        $('.container-fluid').empty()
-        $('.container-fluid').load('form-vidraria.html')
+    $('.btn-form').click(function() {
+        $('.vidrarias').empty()
+        $('.vidrarias').load('form-vidraria.html')
+        $('.col-form').addClass('d-none')
+        $('.col-list').removeClass('d-none')
+        $('.text-titulo').text('NOVA VIDRARIA')
+        $('.conteudo').addClass('p-3')
+        $('.conteudo').addClass('m-3')
+        $("#pesquisa").attr('disabled', true)
+        $("#pesquisa").val('')
+        $("#pesquisa").css('background-colo', 'grey')
     })
-    $('.btn-view-vidraria').click(function() {
-        $('.cards-vidrarias').empty()
-        $('.cards-vidrarias-quebradas').empty()
-        $('.container-fluid').empty()
-        $('.container-fluid').load('list-vidraria.html')
+    $('.btn-list').click(function() {
+        $('.vidrarias').empty()
+        $('.vidrarias').load('list-vidraria.html')
+        $('.col-form').removeClass('d-none')
+        $('.col-list').addClass('d-none')
+        $('.text-titulo').text('VIDRARIA')
+        $('.conteudo').removeClass('p-3')
+        $('.conteudo').removeClass('m-3')
+        $("#pesquisa").attr('disabled', false)
+        $("#pesquisa").val('')
+        $("#pesquisa").css('background-colo', 'white')
     })
-    $('.btn-view-vidraria-quebrada').click(function() {
-        $('.cards-vidrarias').empty()
-        $('.cards-vidrarias-quebradas').empty()
-        $('.container-fluid').empty()
-        $('.container-fluid').load('list-vidraria-quebrada.html')
+    $('.btn-form-q').click(function() {
+        $('.vidrarias').empty()
+        $('.vidrarias').load('form-vidraria-quebrada.html')
+        $('.col-form-q').addClass('d-none')
+        $('.col-list-q').removeClass('d-none')
+        $('.text-titulo').text('NOVA VIDRARIA QUEBRADA')
+        $('.conteudo').addClass('p-3')
+        $('.conteudo').addClass('m-3')
+        $("#pesquisa-quebrada").attr('disabled', true)
+        $("#pesquisa-quebrada").val('')
+        $("#pesquisa-quebrada").css('background-colo', 'grey')
+
     })
-    $('.btn-new-vidraria-quebrada').click(function() {
-        $('.cards-vidrarias').empty()
-        $('.cards-vidrarias-quebradas').empty()
-        $('.container-fluid').empty()
-        $('.container-fluid').load('form-vidraria-quebrada.html')
+    $('.btn-list-q').click(function() {
+        $('.vidrarias').empty()
+        $('.vidrarias').load('list-vidraria-quebrada.html')
+        $('.col-form-q').removeClass('d-none')
+        $('.col-list-q').addClass('d-none')
+        $('.text-titulo').text('VIDRARIAS QUEBRADAS')
+        $('.conteudo').removeClass('p-3')
+        $('.conteudo').removeClass('m-3')
+        $("#pesquisa-quebrada").attr('disabled', false)
+        $("#pesquisa-quebrada").val('')
+        $("#pesquisa-quebrada").css('background-colo', 'white')
+    })
+    $('.btn-trocar').click(function() {
+        $('.bg-pesquisa').addClass('d-none')
+        $('.quebrada').removeClass('d-none')
+        $('.vidrarias').empty()
+        $('.col-form-q').removeClass('d-none')
+        $('.col-list-q').addClass('d-none')
+        $('.text-titulo').text('VIDRARIAS QUEBRADAS')
+        $('.vidrarias').load('list-vidraria-quebrada.html')
+    })
+    $('.btn-trocar-q').click(function() {
+        $('.bg-pesquisa').removeClass('d-none')
+        $('.quebrada').addClass('d-none')
+        $('.text-titulo').text('VIDRARIAS')
+        $('.col-list').addClass('d-none')
+        $('.col-form').removeClass('d-none')
+        $('.vidrarias').empty()
+        $('.vidrarias').load('list-vidraria.html')
     })
 
-    $('.btn-send').click(function(e) {
+    $('.vidrarias').on('click', 'button.btn-send', function(e) {
 
         e.preventDefault()
 
-        var dados = $('#form-vidraria').serialize();
+        let dados = new FormData(document.getElementById('form-vidraria'))
 
         $.ajax({
             type: 'POST',
@@ -36,6 +79,10 @@ $(document).ready(function() {
             url: '../modelo/new-vidraria.php',
             async: true,
             data: dados,
+            nimeType: 'multipart/form-data',
+            cache: false,
+            contentType: false,
+            processData: false,
             success: function(dados) {
                 Swal.fire({
                     icon: dados.icone,

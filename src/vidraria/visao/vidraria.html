@@ -5,79 +5,273 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../../../recursos/img/icons/icon2.png" type="image/x-icon">
-    <title>Vidraria</title>
+    <title>Vidrarias</title>
     <link rel="stylesheet" href="../../../recursos/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../recursos/css/vidraria.css">
     <link rel="stylesheet" href="../../../recursos/css/all.min.css">
 </head>
 
-<body>
+<body id="topo">
 
-    <nav class="navbar navbar-expand-lg fixed-top navbar-light nav">
-        <div class="dropdown">
-            <img class='icone-user' button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dLabel">
-
-                <li class="nav-item active nav-link btn-menu">
-                    <span>
-                        <i class="fa fa-home"></i> Menu
-                    </span>
-                </li>
-
-                <li class="nav-item active nav-link btn-edit-perfil">
-                    <span>
-                        <i class="fa fa-user-edit"></i> Editar Perfil
-                    </span>
-                </li>
-
-                <li class="nav-item active nav-link btn-contato">
-                    <span>
-                        <i class="fa fa-comment-dots"></i> Fale Conosco
-                    </span>
-                </li>
-
-                <li class="nav-item active nav-link btn-sair">
-                    <span>
-                        <i class="fa fa-sign-out-alt"></i> Sair
-                    </span>
-                </li>
-
+    <div class="sideall">
+        <div id="sidebar2">
+            <div class="toogle-btn caixa row d-flex justify-content-center align-content-center">
+                <center class="btn-toggle">
+                    <i id="seta" class="far fa-arrow-alt-circle-left d-none"></i>
+                    <i id="seta2" class="far fa-arrow-alt-circle-right"></i>
+                </center>
             </div>
-
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <center>
+                        <img src="" class="fotoUser">
+                    </center>
+                </div>
+                <ul class="list-unstyled components font-weight-bold">
+                    <li class="nomeUser">
+                    </li>
+                    <li class="loginUser">
+                        <span class="sr-only">(current)</span>
+                    </li>
+                    <li class="itens-navbar">
+                        <a href="#topo"><i class="fas fa-arrow-alt-circle-up"></i></i> Topo<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="itens-navbar btn-menu">
+                        <i class="fa fa-home icon"></i> Menu<span class="sr-only">(current)</span>
+                    </li>
+                    <li class="itens-navbar btn-equipamentos">
+                        <i class="fas fa-microscope"></i> Equipamentos<span class="sr-only">(current)</span>
+                    </li>
+                    <li class="itens-navbar btn-reagentes">
+                        <i class="fas fa-vials"></i> Reagentes<span class="sr-only">(current)</span>
+                    </li>
+                    <li class="itens-navbar btn-relatorios">
+                        <i class="fas fa-clipboard-list"></i> Relatórios<span class="sr-only">(current)</span>
+                    </li>
+                    <li class="itens-navbar btn-sair">
+                        <i class="fa fa-sign-out-alt"></i> Sair<span class="sr-only">(current)</span>
+                    </li>
+                </ul>
+            </nav>
         </div>
+    </div>
 
-        <li class="nav-item active nav-link">
-            <a class="usuario"></a>
-        </li>
-        <li class="nav-item active nav-link">
-            <a class="usuario"></a>
-        </li>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
-          <span class="navbar-toggler-icon"></span>
-          
-        </button>
-
-    </nav>
-    <div class="jumbotron banner d-flex align-items-center justify-content-center">
+    <div class="jumbotron banner d-flex align-items-center justify-content-center nbr">
         <div class="row">
-            <div class="col-12 col-md-12">
-                <h1 class="display-1 text-center font-weight-bold text-black">Vidraria</h1>
+            <div class="col-12 col-md-12 col-sm-12 col-lg-12">
+                <h1 class="display-1 text-center font-weight-bold text-titulo">VIDRARIAS</h1>
             </div>
         </div>
     </div>
 
-    <div class="container-fluid text-center mt-2">
 
+    <div class="container-fluid text-center">
+
+        <!-- Barra de Pesquisa -->
+        <div class="row bg-pesquisa">
+            <div class="col-12 col-md-7 col-sm-12 col-lg-6">
+                <form id="caixa-pesquisa">
+                    <input type="text" class="form-control pesquisa" id="pesquisa" placeholder="Pesquisar" name="filtro">
+                </form>
+            </div>
+            <div class="col-lg-3 col-md-3 coluna-botao col-12 col-sm-12 col-list d-none">
+                <button class="btn btn-primary btn-block btn-list font-weight-bold">
+                    <i class="fas fa-eye"></i> 
+                    Visualizar vidrarias
+                </button>
+            </div>
+            <div class="col-lg-3 col-md-3 coluna-botao col-12 col-sm-12 col-form">
+                <button class="btn btn-primary btn-block btn-form font-weight-bold">
+                    <i class="fas fa-plus"></i> 
+                    Catalogar vidrarias
+                </button>
+            </div>
+            <div class="col-lg-3 col-md-3 coluna-botao col-12 col-sm-12">
+                <button class="btn btn-primary btn-block btn-trocar font-weight-bold">
+                    VIDRARIAS QUEBRADAS
+                </button>
+            </div>
+        </div>
+
+        <div class="row bg-pesquisa quebrada d-none">
+            <div class="col-12 col-md-7 col-sm-12 col-lg-6">
+                <form id="caixa-pesquisa-quebrada">
+                    <input type="text" class="form-control pesquisa" id="pesquisa-quebrada" placeholder="Pesquisar" name="filtro">
+                </form>
+            </div>
+            <div class="col-lg-3 col-md-3 coluna-botao col-12 col-sm-12 col-list-q d-none">
+                <button class="btn btn-primary btn-block btn-list-q font-weight-bold">
+                    <i class="fas fa-eye"></i> 
+                    Visualizar Vidrarias Quebrada
+                </button>
+            </div>
+            <div class="col-lg-3 col-md-3 coluna-botao col-12 col-sm-12 col-form-q">
+                <button class="btn btn-primary btn-block btn-form-q font-weight-bold">
+                    <i class="fas fa-plus"></i> 
+                    Catalogar Vidrarias Quebrada
+                </button>
+            </div>
+            <div class="col-lg-3 col-md-3 coluna-botao col-12 col-sm-12">
+                <button class="btn btn-primary btn-block btn-trocar-q font-weight-bold">
+                    IR PARA VIDRARIAS
+                </button>
+            </div>
+        </div>
+
+        <!-- AVISO: Tudo que estiver dentro da class 'vidrarias', necessitará de uma Jquery diferente do .click() -->
+        <!-- Conteudo -->
+        <div class="row conteudo vidrarias">
+
+        </div>
+
+        <!-- Janelas Modais -->
+        <div class="modal fade" id="modal-vidraria" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lgg" role="document">
+                <style>
+                    @media screen and (min-width: 600px) {
+                        #foto,
+                        #foto2 {
+                            width: 300px;
+                            height: 400px;
+                        }
+                        .input-foto {
+                            display: unset !important;
+                            font-weight: bold;
+                        }
+                        #descricao {
+                            height: 175px;
+                            resize: none;
+                        }
+                    }
+                    
+                    @media screen and (max-device-width: 480px) {
+                        #foto,
+                        #foto2 {
+                            width: 175px;
+                            height: 200px;
+                        }
+                        .input-foto {
+                            font-size: 0.7rem;
+                        }
+                        .modal-lgg {
+                            max-width: none;
+                        }
+                        .edit-nome,
+                        .edit-nome-q {
+                            font-size: 1rem;
+                            width: 100%;
+                        }
+                        #descricao {
+                            height: 175px;
+                            resize: none;
+                        }
+                    }
+                    
+                    @media screen and (max-device-width: 480px) {
+                        .input-foto,
+                        .foto-q {
+                            font-size: 0.6rem;
+                        }
+                    }
+                </style>
+                <div class="modal-content">
+                    <form class="form" id="form-edit-vidraria" name="form-edit-vidraria">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="exampleModalLabel"></h2>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row d-flex align-items-center">
+                                <div class="col-lg-6 col-md-6 col-12 col-sm-12">
+                                    <img id="foto" src="">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-12 col-sm-12 mt-1">
+                                    <label class="font-weight-bold" style="margin-bottom: 0px !important;" for="descricao">Descrição</label>
+                                    <textarea name="descricao" class="form-control" id="descricao">
+                                    </textarea>
+                                    <div class="secao-foto">
+                                        <label class="font-weight-bold mt-1" style="margin-bottom: 0px !important;" for="foto">Foto</label><br>
+                                        <input type="file" class="form-control input-foto" name="foto">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-12 col-sm-12 mt-1" style="text-align: center;">
+                                    <label class="font-weight-bold" style="margin-bottom: 0px !important;" for="quantidade">Quantidade</label>
+                                    <input id="quantidade" class="form-control text-center" type="text" name="quantidade">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-12 col-sm-12 mt-1">
+                                    <label class="font-weight-bold lare" style="margin-bottom: 0px !important;" for="laboratorio">Laboratório</label>
+                                    <div class="form-group">
+                                        <select id="laboratorio" class="form-control" name="laboratorio">
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" name="id_vidraria" id="id_vidraria">
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger btn-fechar d-none" data-dismiss="modal">Fechar</button>
+                            <button type="button" class="btn btn-danger btn-cancelar d-none" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-warning btn-update d-none">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modal-vidraria-quebrada" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lgg" role="document">
+                <div class="modal-content">
+                    <form class="form" id="form-edit-vidraria-quebrada" name="form-edit-vidraria-quebrada">
+                        <div class="modal-header">
+                            <h2 class="modal-title" id="exampleModalLabel"></h2>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row d-flex align-items-center">
+                                <div class="col-lg-6 col-md-6 col-12 col-sm-12">
+                                    <img id="foto2" src="">
+                                </div>
+                                <div class="col-lg-5 col-md-5 col-12 col-sm-12 mt-1">
+                                    <label class="font-weight-bold" style="margin-bottom: 0px !important;" for="quantidade2">Quantidade</label>
+                                    <input id="quantidade2" class="form-control text-center" type="text" name="quantidade2">
+                                    <label class="font-weight-bold lare mt-1" style="margin-bottom: 0px !important;" for="relatorio">Relatório que quebrou</label>
+                                    <div class="form-group" style="margin-bottom: 0px !important;">
+                                        <select id="relatorio" class="form-control" name="relatorio">
+                                        </select>
+                                        <label class="font-weight-bold label-foto mt-1" style="margin-bottom: 0px !important;" for="foto-q">Foto</label>
+                                        <input type="file" id="foto-q" class="form-control foto-q" name="foto-q">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" name="id_vidraria_quebrada" id="id_vidraria_quebrada">
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger btn-fechar d-none" data-dismiss="modal">Fechar</button>
+                            <button type="button" class="btn btn-danger btn-cancelar d-none" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-warning btn-update-quebrada d-none">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <script src="../../../recursos/js/jquery-3.5.1.min.js"></script>
-    <script src="../../../recursos/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <script src="../../../recursos/js/all.min.js"></script>
+    <script src="../../../recursos/js/jquery-3.5.1.min.js "></script>
+    <script src="../../../recursos/js/bootstrap.min.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9 "></script>
+    <script src="../../../recursos/js/all.min.js "></script>
     <script src="../controle/onload.js"></script>
+    <script src="../controle/list-vidraria.js"></script>
+    <script src="../controle/new-vidraria.js"></script>
+    <script src="../controle/view-vidraria.js"></script>
+    <script src="../controle/edit-vidraria.js"></script>
+    <script src="../controle/update-vidraria.js"></script>
+    <script src="../controle/delete-vidraria.js"></script>
+    <script src="../controle/view-vidraria-quebrada.js"></script>
+    <script src="../controle/update-vidraria-quebrada.js"></script>
+    <script src="../controle/delete-vidraria-quebrada.js"></script>
+    <script src="../controle/edit-vidraria-quebrada.js"></script>
+    <script src="../controle/new-vidraria-quebrada.js"></script>
 </body>
-
-</html>
 
 </html>

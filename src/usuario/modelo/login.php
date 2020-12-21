@@ -8,7 +8,7 @@
     
         $request = $_POST;
         $tipousuario = $request['tipo-usuario'];
-        $senha = base64_encode($request[senha]);
+        $senha = base64_encode($request['senha']);
         
         if($tipousuario == 'professor(a)'){
 
@@ -48,10 +48,9 @@
 
                 } else{
                     $dados = array(
-                        'mensagem' => 'Credencias Incorretas',
+                        'mensagem' => 'Credênciais Incorretas',
                         'icone' => 'error'
                     );
-                    $_SESSION['login'] = FALSE;
                 }
             }
             
@@ -95,7 +94,6 @@
                         'mensagem' => 'Credencias Incorretas',
                         'icone' => 'error'
                     );
-                    $_SESSION['login'] = FALSE;
                 }
             }
         }

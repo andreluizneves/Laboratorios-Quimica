@@ -1,18 +1,35 @@
 $(document).ready(function() {
-    $('.btn-new-reagente').click(function() {
-        $('.container-fluid').empty()
-        $('.container-fluid').load('form-reagente.html')
+
+    $('.btn-form').click(function() {
+        $('.reagentes').empty()
+        $('.reagentes').load('form-reagente.html')
+        $('.col-form').addClass('d-none')
+        $('.col-list').removeClass('d-none')
+        $('.text-titulo').text('NOVO REAGENTE')
+        $('.conteudo').addClass('p-3')
+        $('.conteudo').addClass('m-3')
+        $("#pesquisa").attr('disabled', true)
+        $("#pesquisa").val('')
+        $("#pesquisa").css('background-colo', 'grey')
     })
-    $('.btn-view-reagente').click(function() {
-        $('.container-fluid').empty()
-        $('.container-fluid').load('list-reagente.html')
+    $('.btn-list').click(function() {
+        $('.reagentes').empty()
+        $('.reagentes').load('list-reagente.html')
+        $('.col-form').removeClass('d-none')
+        $('.col-list').addClass('d-none')
+        $('.text-titulo').text('REAGENTE')
+        $('.conteudo').removeClass('p-3')
+        $('.conteudo').removeClass('m-3')
+        $("#pesquisa").attr('disabled', false)
+        $("#pesquisa").val('')
+        $("#pesquisa").css('background-colo', 'white')
     })
 
-    $('.btn-send').click(function(e) {
+    $('.reagentes').on('click', 'button.btn-send', function(e) {
 
         e.preventDefault()
 
-        var dados = $('#form-reagente').serialize();
+        let dados = new FormData(document.getElementById('form-reagente'))
 
         $.ajax({
             type: 'POST',
@@ -20,6 +37,10 @@ $(document).ready(function() {
             url: '../modelo/new-reagente.php',
             async: true,
             data: dados,
+            nimeType: 'multipart/form-data',
+            cache: false,
+            contentType: false,
+            processData: false,
             success: function(dados) {
                 Swal.fire({
                     icon: dados.icone,

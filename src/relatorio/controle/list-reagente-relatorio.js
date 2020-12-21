@@ -1,62 +1,55 @@
 $(document).ready(function() {
 
     $.ajax({
+        type: 'POST',
         dataType: 'json',
         url: '../modelo/list-reagente-relatorio.php',
+        async: true,
         success: function(dados) {
             if (dados.status == 'ok') {
                 for (const dado of dados.dados) {
 
-                    $('.reagente').append(`
-                    <div class="col-12 col-md-3 col-sm-12 col-lg-2 item-reagente">
-                        <div class="card mb-4 shadow-sm item" name="${dado.nome}">
-                            <h2 class="text-center">
-                                ${dado.nome}
-                            </h2>
-                            <img class="card-img-top mt-4" height="150px" src="${dado.foto}">
-                            <div class="card-body">
-                                <p class="card-text">
-                                    Quantidade: ${dado.quantidade}${dado.medida}
-                                </p>
-                            </div>
-                            <div class="row quantidade invisible" name="${dado.nome}q">
-                                <div class="col-12"
-                                    <form id="reagente_utilizado">
-                                        Usei:<input name='${dado.nome}' style="width: 90px;" value=''><input style="width: 40px;" value='${dado.medida}' disabled>
+                    $('.reagentes').append(`
+                            <div class="col-12 col-md-6 col-sm-6 col-lg-3 text-dark">
+                                <div class="card mb-4 item-reagente" enviado="false" id="${dado.id_reagente}" name="${dado.nome}" style="cursor:pointer;" selecionado="false">
+                                    <h4 class="text-center mb-2 mt-2 font-weight-bold nome">
+                                        ${dado.nome}
+                                    </h4>
+                                    <p class="text-center">
+                                        <img class="card-img-top img" height="200px" src="../../reagente/${dado.foto.substring(3)}">
+                                    </p>
+                                    <div class="card-body">
+                                        <p class="card-text font-weight-bold num_pa">
+                                            Quantidade:
+                                        </p>
+                                        <p class="card-text">
+                                            ${dado.quantidade}${dado.medida}
+                                        </p>
+                                    </div>
+                                    <form id="usado_reagente_${dado.id_reagente}" class="form-reagente">
+                                        Usei: &nbsp; <input class='quantidade' type="number" ativo='true' style="width:80px" name='quantidade'>
+                                        <input value="${dado.medida}" disabled style="width:40px"> <input class='id d-none' name='id_reagente' value="${dado.id_reagente}">
                                     </form>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
                     `)
                 }
-                $('.reagente').append(`
-                <script>
-
-                    $('.item').click(function() {
-                        $(this).css('border', 'blue 4px solid')
-                        var selecionado_reagente = "div[name='" + $(this).attr('name') + "q" + "']"
-                        $(selecionado_reagente).removeClass('invisible')
-                    })
-                           
-                    $('.item').dblclick(function() {
-                        $(this).removeAttr('style')
-                        var selecionado_reagente = "div[name='" + $(this).attr('name') + "q" + "']"
-                        $(selecionado_reagente).addClass('invisible')
-                    })
-                           
-                </script>`)
+                $('.reagentes').append(`<script>   
+                                            $(document).ready(function() {
+                                                $('.form-reagente').hide()
+                                            })
+                                        </script>`)
             } else {
-                $('.reagente').append(`
-           
-                    Nada encontrado nos registros
-
-                `)
+                $('.reagentes').append(`<div class="col-12 col-col-12 col-sm-12 col-lg-12 mt-4">
+                                            <h2 class="text-center">
+                                                Nada encontrado nos registros
+                                            </h2>
+                                        </div>`)
             }
         }
     });
-    $('.btn-salvar-reag').click(function() {
-        $('#modal-reag').modal('hide')
+    $('.btn-salvar-reagente').click(function() {
+        $('#modal-reagente').modal('hide')
     })
+
 })

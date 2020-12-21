@@ -1,15 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Palanquin+Dark&display=swap');
+* {
+    font-family: 'Palanquin Dark', sans-serif;
+    font-size: 18px;
+}
+
 html {
     scroll-behavior: smooth;
 }
 
+body {
+    background: #e6e6e6;
+}
+
+.fotoUser {
+    width: 100px;
+    height: auto;
+    background-color: white;
+    border-radius: 100%;
+}
+
+.itens-navbar {
+    cursor: pointer;
+}
+
+.modal-lgg {
+    max-width: 95%;
+}
+
+.nomeUser,
+.loginUser {
+    word-wrap: break-word;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
 .banner {
-    background-image: url('../img/banner.png');
+    background-image: url('../img/equipamentos.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    margin-top: 4.6rem;
-    height: 200px;
-    margin-bottom: 0;
+    height: 250px;
+    margin: 0;
 }
 
 .icon {
@@ -17,8 +50,15 @@ html {
     font-size: 1.225rem;
 }
 
+.text-black {
+    color: #000;
+}
+
 .conteudo {
-    box-shadow: 7px -2px 7px 2px rgba(0, 0, 0, 0.36);
+    box-shadow: 0px 7px 16px 0px rgba(50, 50, 50, 1);
+    overflow: scroll;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .nav {
@@ -48,12 +88,285 @@ html {
     border-radius: 100%;
 }
 
-.dropdown-menu li {
-    font-weight: bold;
+.btn-form {
+    background-image: linear-gradient(to right, #16222A 0%, #3A6073 51%, #16222A 100%);
+    border: none !important;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 10px;
+    display: block;
+}
+
+.btn-form:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-send {
+    color: #000 !important;
+    background-image: linear-gradient(to right, #FDFC47 0%, #24FE41 51%, #FDFC47 100%);
+    border: none !important;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    border-radius: 10px;
+    display: block;
+}
+
+.btn-send:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-list {
+    background-image: linear-gradient(to right, #24C6DC 0%, #514A9D 51%, #24C6DC 100%);
+    border: none !important;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 10px;
+    display: block;
+}
+
+.btn-list:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.bg-pesquisa {
+    padding: 15px;
+    background-color: rgb(94, 255, 143);
+}
+
+.img {
+    text-align: center;
+    width: 300px;
+    height: 250px;
+}
+
+.card-body {
+    padding-top: 0px;
+}
+
+#sidebar2 {
+    position: fixed;
+    left: -310px;
+    transition: .4s;
+    z-index: 100
+}
+
+.equipamentos {
+    background-image: linear-gradient(315deg, #1f4037 0%, #99f2c8 85%);
+    padding-top: 25px !important;
+}
+
+.caixa {
     cursor: pointer;
 }
 
-.dropdown-menu li:hover {
-    background-color: rgb(202, 200, 200);
-    transition: 0.25s;
+.card {
+    padding-left: 8px;
+    padding-right: 8px;
+    overflow: hidden;
+    height: 455px;
+    padding-top: 2px;
+    background-image: url('../img/card.jpg');
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 1);
+}
+
+#sidebar2.active {
+    left: 0;
+}
+
+.text-titulo {
+    background-image: linear-gradient(to top, rgb(147, 246, 255) 40%, #88f31d 60%);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
+
+i {
+    font-size: 6.5rem !important;
+}
+
+#sidebar2 ul li {
+    list-style: none;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    padding: 15px 24px;
+}
+
+.nbr {
+    border-radius: 0px;
+}
+
+#sidebar2 .toogle-btn {
+    position: absolute;
+    top: 15px;
+    left: 320px;
+    height: 55px;
+    width: 110px;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+.toogle-btn span {
+    width: 45px;
+    height: 4px;
+    background: #fafafa;
+    display: block;
+    margin-top: 4px;
+}
+
+.caixa {
+    width: 110px;
+    background-color: #000000;
+    border-radius: 10px;
+    top: 30px;
+    left: 255px;
+}
+
+.btn-toggle {
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.caixa_conteudo {
+    height: 25px;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+}
+
+.sideall {
+    display: flex;
+    width: 100%;
+}
+
+#sidebar {
+    width: 250px;
+    top: 0;
+    left: 0;
+    height: 10000px;
+    z-index: 90;
+    background: rgb(98, 212, 113);
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+.num_pa {
+    margin-bottom: 2px;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: rgb(73, 180, 87);
+    ;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid rgb(73, 180, 87);
+}
+
+#sidebar ul li a {
+    font-size: 1.1em;
+    display: block;
+    width: 225px;
+}
+
+#sidebar ul li.itens-navbar:hover {
+    color: rgb(98, 212, 113);
+    background: #fff;
+    transition: all 0.3s;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+
+/* Responsível */
+
+@media screen and (max-width: 600px) {
+    .um {
+        background: #F9C;
+    }
+    span.lt600 {
+        display: inline-block;
+    }
+}
+
+.conteudo-list-responsivel {
+    padding: 1rem !important;
+    margin: 1rem !important;
+}
+
+
+/* min-width */
+
+@media screen and (min-width: 900px) {
+    .equipamentos {
+        padding: 1rem !important;
+        margin: 1rem !important;
+    }
+}
+
+
+/* min-width & max-width */
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+    .display-1 {
+        font-size: 3rem;
+    }
+}
+
+.modal-content {
+    background-image: url('../img/modal.jpg');
+}
+
+
+/* max device width */
+
+@media screen and (max-device-width: 480px) {
+    .display-1 {
+        font-size: 2rem !important;
+    }
+    .col-btn,
+    .col-form,
+    .col-list {
+        margin-top: 0.5rem !important;
+        font-size: 18px;
+    }
+    .components>li {
+        font-size: 16px !important;
+    }
 }

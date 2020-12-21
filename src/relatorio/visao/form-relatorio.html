@@ -1,155 +1,186 @@
-<div class="row botao">
-    <div class="col-12 col-md-12 col-lg-12 col-sm-12 mb-2">
-        <button class="btn btn-primary btn-list-relatorio"></i> Visualizar Relatórios</button>
-    </div>
-</div>
-<div class="conteudo">
-    <fieldset class="mt-3">
-        <form class="form" id="form-relatorio">
-            <div class="row">
-                <div class="col-6">
-                    <label>Professor(a)</label>
-                    <input class="form-control input" type="text" name="professor(a)" id="professor(a)"><br>
-                </div>
-                <div class="col-6">
-                    <label>Título do Relatório</label>
-                    <input class="form-control input" type="text" name="titulo" id="titulo"><br>
-                </div>
-                <div class="col-3">
-                    <label>Data e Hora</label>
-                    <input class="form-control input" type="datetime" name="data_hora" id="data_hora"><br>
-                </div>
-                <div class="col-9">
-                    <label>Descrição</label>
-                    <textarea class="form-control input" type="text" name="descricao" id="descricao" cols="30" rows="10"></textarea> <br>
-                </div>
-                <div class="col-6">
-                    <div class="form-group">
-                        <label>Laboratório da aula exercida</label>
-                        <select id="laboratorio" class="form-control" name="laboratorio">
-                        <option value="">Selecione o Laboratório</option>
-                        <option value="externo">Externo</option>
-                        <option value="interno">Interno</option>
-                        <option value="ambos">Ambos</option>
-                    </select>
+<div class="col-12 col-md-12 col-sm-12 col-lg-12">
+    <style>
+        @media screen and (max-device-width: 480px) {
+            .btn-secao {
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+    <form class="form" id="form-relatorio">
+        <div class="row">
+            <div class="col-lg-7 col-md-7 col-12 col-sm-12">
+                <label>Professor(a)</label>
+                <input class="form-control" disabled type="text" name="nome" id="nome"><br>
+            </div>
+
+            <div class="col-lg-5 col-md-5 col-12 col-sm-12">
+                <label>Título do Relatório</label>
+                <input class="form-control input" type="text" name="titulo" id="titulo"><br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-12 col-sm-12">
+                <div class="row">
+                    <div class="col-12 col-md-12 col-sm-12 col-lg-12">
+                        <div class="form-group">
+                            <label>Data</label>
+                            <input class="form-control input" placeholder="31/12/2020" type="date" name="data" id="data">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-sm-12 col-lg-12">
+                        <div class="form-group">
+                            <label>Hora</label>
+                            <input class="form-control input" placeholder="23:59:59" type="time" name="hora" id="hora">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-sm-12 col-lg-12">
+                        <div class="form-group">
+                            <label>Laboratório da aula exercida</label>
+                            <select id="laboratorio" class="form-control input" name="laboratorio">
+                                <option value="">Selecione o Laboratório</option>
+                                <option value="externo">Externo</option>
+                                <option value="interno">Interno</option>
+                                <option value="ambos">Ambos</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-sm-12 col-lg-12">
+                        <div class="form-group">
+                            <label>Tempo da Aula</label>
+                            <select id="tempo" class="form-control input" name="tempo">
+                                <option value="">Selecione o período de tempo</option>
+                                <option value="00:50:00">1 aula (50 min)</option>
+                                <option value="01:40:00">2 aulas (1h 40min)</option>
+                                <option value="02:30:00">3 aulas (2h 30min)</option>
+                                <option value="03:20:00">4 aulas (3h 20min)</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
-
-                <div class="col-6">
-                    <div class="form-group">
-                        <label>Tempo da Aula</label>
-                        <select id="tempo" class="form-control" name="tempo">
-                        <option value="">Selecione o período de tempo</option>
-                        <option value="00:50:00">1 aula (50 min)</option>
-                        <option value="01:40:00">2 aulas (1h 40min)</option>
-                        <option value="02:30:00">3 aulas (2h 30min)</option>
-                        <option value="03:20:00">4 aulas (3h 20min)</option>
-                    </select>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <label>O que foi utilizado:</label> <br>
-                </div>
-                <div class="col-4">
-                    <button class="btn btn-primary btn-select-equip" type="button">Selecionar Equipamentos</button>
-                </div>
-                <div class="col-4">
-                    <button class="btn btn-primary btn-select-reag" type="button">Selecionar Reagentes</button>
-                </div>
-                <div class="col-4">
-                    <button class="btn btn-primary btn-select-vidr" type="button">Selecionar Vidrarias</button>
-                </div>
-
-                <div class="col-12">
-                    <button class="btn btn-outline-success btn-send" type="button">Relatar</button></div>
+            </div>
+            <div class="col-lg-9 col-md-9 col-12 col-sm-12">
+                <label>Descrição</label>
+                <textarea class="form-control input" type="text" name="descricao" id="descricao" style="height: 356px;" cols="30" rows="10"></textarea>
                 <br>
             </div>
-        </form>
-    </fieldset>
+        </div>
+        <div class="row">
+            <div class="col-12 col-lg-12 col-md-12 col-sm-12">
+                <label>O que foi utilizado:</label>
+                <br>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 btn-secao">
+                <button class="btn btn-primary btn-select-equipamento" type="button">Selecionar Equipamentos</button>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 btn-secao">
+                <button class="btn btn-primary btn-select-reagente" type="button">Selecionar Reagentes</button>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 btn-secao">
+                <button class="btn btn-primary btn-select-vidraria" type="button">Selecionar Vidrarias</button>
+            </div>
+            <div class="col-12 btn-secao col-lg-12 col-md-12 col-sm-12">
+                <button class="btn btn-success btn-relatar mt-2" type="button">Relatar</button>
+            </div>
+        </div>
+    </form>
 </div>
 
-
-<script src="../controle/list-relatorio.js"></script>
-<script src="../controle/list-equipamento-relatorio.js"></script>
-<script src="../controle/list-reagente-relatorio.js"></script>
-<script src="../controle/list-vidraria-relatorio.js"></script>
-<script src="../controle/new-relatorio.js"></script>
-<script src="../controle/view-relatorio.js"></script>
-
-
 <!-- Modal -->
-<div id="modal-equip" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-modal="true">
+<div id="modal-equipamento" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-modal="true">
     <div class="modal-dialog modal-dialog-centered modal-lgg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title font-weight-bold text-dark" id="my-modal-title">Equipamentos</h1>
             </div>
             <div class="modal-body">
+                <h3 class="font-weight-bold aviso-equipamento" enviado='false'>
+                    Após informar o que foi usado, clique no botão <button disabled style="color: black;" class="btn btn-primary btn-salvar-equipamento">Salvar</button>
+                </h3>
                 <p class="text-left font-weight-bold">
-                    Para selecionar o Equiamento utilizado, clique uma vez sobre o mesmo <br> Para deselecionar o Equipamento, clique duas vezes sobre o Equipamento selecionada
+                    Para selecionar o Equipamento utilizado, clique uma vez sobre o mesmo <br> Para deselecionar o Equipamento, clique novamente no Equipamento selecionado
                 </p>
-                <div class="row equipamento" style="height:480px; overflow: scroll; overflow-x: hidden;">
-
+                <div class="row equipamentos" style="height:510px; overflow: scroll; overflow-x:hidden;">
 
                 </div>
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary btn-salvar-equip">Salvar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary btn-salvar-equipamento">Salvar</button>
             </div>
         </div>
     </div>
 </div>
-<div id="modal-reag" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-modal="true">
+<div id="modal-reagente" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-modal="true">
     <div class="modal-dialog modal-dialog-centered modal-lgg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title font-weight-bold text-dark" id="my-modal-title">Reagentes</h1>
             </div>
             <div class="modal-body">
+                <h3 class="font-weight-bold text-danger">Se a caixa de texto estiver vazio, automaticamente o reagente selecionado não será cadastrado no relatório!</h3>
+                <h3 class="font-weight-bold aviso-reagente">
+                    Após informar o total usado, clique no botão <button disabled style="color: black;" class="btn btn-primary btn-salvar-reagente">Salvar</button>
+                </h3>
                 <p class="text-left font-weight-bold">
                     Para selecionar o Reagente utilizado, clique uma vez sobre o mesmo <br> Para deselecionar o Reagente, clique duas vezes sobre o Reagente selecionada
                 </p>
-                <div class="row reagente" style="height:480px; overflow: scroll; overflow-x: hidden;">
-
+                <div class="row reagentes" style="height:510px; overflow: scroll; overflow-x:hidden;">
 
                 </div>
-
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary btn-salvar-reag">Salvar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary btn-salvar-reagente">Salvar</button>
             </div>
         </div>
     </div>
 </div>
-<div id="modal-vidr" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-modal="true">
+<div id="modal-vidraria" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-modal="true">
     <div class="modal-dialog modal-dialog-centered modal-lgg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title font-weight-bold text-dark" id="my-modal-title">Vidrarias</h1>
             </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-6">
-                        <p class="text-left font-weight-bold">
-                            Para selecionar a Vidraria utilizada, clique uma vez sobre a mesma <br> Para deselecionar a Vidraria, clique duas vezes sobre a Vidraria selecionada
-                        </p>
-                    </div>
-                    <div class="col-6">
-                        <button class="btn btn-danger btn-vidraria-quebrada">Houve quebra de vidrarias</button>
-                    </div>
+            <dv class="modal-body">
+                <h3 class="font-weight-bold aviso-vidraria" enviado='false'>
+                    Após informar o que foi usado, clique no botão <button disabled style="color: black;" class="btn btn-primary btn-salvar-vidraria">Salvar</button>
+                </h3>
+                <p class="text-left font-weight-bold">
+                    Para selecionar a Vidraria utilizado, clique uma vez sobre o mesmo <br> Para deselecionar a Vidraria, clique novamente na Vidraria selecionado
+                </p>
+                <div class="row vidrarias" style="height:510px; overflow: scroll; overflow-x:hidden;">
                 </div>
-                <div class="row vidraria" style="height:480px; overflow: scroll; overflow-x: hidden;">
-
-
-                </div>
-            </div>
+            </dv>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
                 <button type="button" class="btn btn-primary btn-salvar-vidraria">Salvar</button>
             </div>
         </div>
     </div>
 </div>
+<script>
+    $.ajax({
+        type: 'POST',
+        dataType: 'json',
+        url: '../modelo/onload.php',
+        async: true,
+        success: function(dados) {
+            if (dados.logado == 'não') {
+                $(location).attr('href', '../../../index.php')
+            } else {
+                if (dados.tipo_user == 'professor(a)') {
+                    $("#nome").val(dados.nome)
+                }
+            }
+        }
+    })
+    $("#data_hora").mask('99/99/9999 99:99:99')
+</script>
+
+<script src="../controle/select-equipamento.js"></script>
+<script src="../controle/select-reagente.js"></script>
+<script src="../controle/select-vidraria.js"></script>
+<script src="../controle/list-vidraria-relatorio.js"></script>
+<script src="../controle/list-equipamento-relatorio.js"></script>
+<script src="../controle/list-reagente-relatorio.js"></script>

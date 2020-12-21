@@ -2,9 +2,11 @@
 
     include('../../banco/conexao.php');
 
+    session_start();
+
     if($conexao){
 
-        $sql = "SELECT nome, quantidade, descricao, id_lab  FROM vidrarias WHERE 1=1";
+        $sql = "SELECT * FROM vidrarias ORDER BY nome ASC";
         $resultado = mysqli_query($conexao, $sql);
         $linha = mysqli_num_rows($resultado);
 
@@ -24,7 +26,8 @@
 
             $dados = array(
                 'dados' => $dadosTipo,
-                'status' => 'ok'
+                'status' => 'ok',
+                'user' => $_SESSION['tipo_user']
             );
         }
 
@@ -36,8 +39,7 @@
             'msg' => "Erro [042]" . "<br>" . "Ocorreu um erro interno no servidor 😕",
             'icone' => 'error'
         );
-        echo json_encode($dados, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);
-        exit;
+
     }
-    
+
     echo json_encode($dados, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);

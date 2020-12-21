@@ -4,7 +4,7 @@
 
     if($conexao){
 
-        $sql = "SELECT id_vidraria, nome, quantidade, descricao, id_lab  FROM vidrarias WHERE 1=1";
+        $sql = "SELECT * FROM vidrarias WHERE 1=1";
         $resultado = mysqli_query($conexao, $sql);
         $linha = mysqli_num_rows($resultado);
 
@@ -31,11 +31,14 @@
         mysqli_close($conexao);
 
     } else{
+
         $dados = array(
             'msg' => "Erro [042]" . "<br>" . "Ocorreu um erro interno no servidor 😕",
-            'icone' => 'error',
-            'causa' => $conexao
+            'icone' => 'error'
         );
+        echo json_encode($dados, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);
+        exit;
+
     }
     
     echo json_encode($dados, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);

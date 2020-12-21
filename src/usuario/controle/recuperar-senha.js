@@ -1,9 +1,5 @@
 $(document).ready(function() {
 
-    $('.btn-voltar').click(function() {
-        $(location).attr('href', 'index.php')
-    })
-
     $('.btn-recuperar-senha').click(function() {
         Swal.fire({
             icon: 'success',

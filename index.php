@@ -43,9 +43,6 @@
                     <div class="campo mt-4">
                         <input class='input' name='senha' type='password' id="senha" placeholder="Senha">
                     </div>
-                    <div class="mt-3 font-weight-bold btn-esqueceu-senha">
-                            Esqueceu a senha?
-                    </div>
                     <button type="button" class="btn btn-primary btn-block mt-3 btn-login font-weight-bold">
                         Entrar
                     </button>

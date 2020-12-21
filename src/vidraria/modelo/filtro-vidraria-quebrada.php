@@ -4,19 +4,10 @@
 
     if($conexao){
 
-        $request = $_POST;
-        $filtro = trim($request['filtro']);
-        $sql = "SELECT id_vidraria_quebrada, nome, quantidade, titulo, data_hora FROM vidrarias_quebradas v LEFT JOIN relatorios r ON v.id_relatorio = r.id_relatorio WHERE nome LIKE '%".$filtro."%' ORDER BY nome";
-        $resultado = mysqli_query($conexao, $sql);
-        
-        while($linha = mysqli_fetch_assoc($resultado)){
-            $dadosTipo[] = $linha;
+        $filtro = $request['search']['value'];
+        if(!empty($filtro)){
+            $sql .= " WHERE nome LIKE '%".$filtro."%' ORDER BY nome";
         }
-        
-        $dados = array(
-            'dados' => $dadosTipo,
-            'status' => 'ok'
-        );
 
         mysqli_close($conexao);
 

@@ -4,37 +4,18 @@
 
     if($conexao){
 
-        $requestData = $_REQUEST;
+        session_start();
 
-        if(!empty($requestData['draw']) || isset($requestData['draw'])){
+        $id_relatorio = $_SESSION['id-list'];
 
-            $colunas = $requestData['columns'];
+        $request = $_POST;
+
+        if(!empty($request['draw']) || isset($request['draw'])){
+
+            $colunas = $request['columns'];
 
             //1ª etapa para a consulta do DataTable
-            $sql = "SELECT id_relatorio, data_hora, descricao, id_professor FROM relatorios WHERE 1=1";
-
-            $resultado = mysqli_query($conexao, $sql);
-            $totalRegistros = mysqli_num_rows($resultado);
-
-            //2ª etapa para obter o total de registros filtrados
-            $filtro = $requestData['search']['value'];
-            if(!empty($filtro)){
-                $sql .= " AND (id_relatorio LIKE '$filtro%' ";
-                $sql .= " OR nome LIKE '$filtro%') "; 
-            }
-
-            $resultado = mysqli_query($conexao, $sql);
-            $totalFiltrados = mysqli_num_rows($resultado);
-
-            //3ª etapa obter a ordem juntamente o limite
-            $colunaOrdem = $requestData['order'][0]['column'];
-            $ordem = $colunas[$colunaOrdem]['data'];
-            $direcao = $requestData['order'][0]['dir'];
-
-            $inicio = $requestData['start'];
-            $tamanho = $requestData['length'];
-
-            $sql .= " ORDER BY $ordem $direcao LIMIT $inicio, $tamanho"; 
+            $sql = "SELECT r.id_relatorio, titulo, e.nome AS equipamento, rg.nome AS reagente, v.nome AS vidraria FROM relatorios r LEFT JOIN relatorios_equipamentos re ON r.id_relatorio = re.id_relatorio LEFT JOIN relatorios_reagentes rr ON r.id_relatorio = rr.id_relatorio LEFT JOIN relatorios_vidrarias rv ON r.id_relatorio = rv.id_relatorio LEFT JOIN equipamentos e ON re.id_equipamento = e.id_equipamento LEFT JOIN reagentes rg ON rr.id_reagente = rg.id_reagente LEFT JOIN vidrarias v ON rv.id_vidraria = v.id_vidraria WHERE r.id_relatorio = $id_relatorio";
 
             $resultado = mysqli_query($conexao, $sql);
             $dados = array();
@@ -43,10 +24,11 @@
             }
 
             $json_data = array(
-                "draw" => intval($requestData['draw']),
+                "draw" => intval($request['draw']),
                 "recordsTotal" => intval($totalRegistros),
                 "recordsFiltered" => intval($totalFiltrados),
-                "data" => $dados
+                "data" => $dados,
+                $sql
             );
 
         } else {
@@ -54,7 +36,8 @@
                 "draw" => 0,
                 "recordsTotal" => 0,
                 "recordsFiltered" => 0,
-                "data" => array()
+                "data" => array(),
+                $sql
             );
         }
 
@@ -65,7 +48,8 @@
             "draw" => 0,
             "recordsTotal" => 0,
             "recordsFiltered" => 0,
-            "data" => array()
+            "data" => array(),
+            $sql
         );
     }
 

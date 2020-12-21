@@ -1,6 +1,6 @@
 <?php
 
-    include('../../conexao.php');
+    include('../../banco/conexao.php');
     
     session_start();
 
