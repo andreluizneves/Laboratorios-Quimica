@@ -10,8 +10,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="shortcut icon" href="assets/img/icons/icone-login.svg" type="image/x-icon">
+    <title>Cadastro</title>
+    <link rel="shortcut icon" href="assets/img/icons/icone-cadastro.png" type="image/x-icon">
     <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="assets/fonts/fonte.css">
@@ -22,12 +22,12 @@
         <div class="formulario d-flex align-items-center">
             <div class="componentes text-center">
                 <h1 style="font-weight: bold;" class="text-center titulo font-weight-bold display-4 mb-4">
-                    Login
+                    Cadastro
                 </h1>
                 <div class="img-user mb-3 text-center">
                     <img height="120px" src="assets/img/professores.svg" class="img">
                 </div>
-                <form id="form-login">
+                <form id="form-cadastro">
                     <h4 class="text-left font-weight-bold">
                         Você é um:
                     </h4>
@@ -42,18 +42,24 @@
                         </select>
                     </div>
                     <div class="form-group mt-4">
+                        <input class="form-control" maxlength="50" name="nome" type="text" id="nome" placeholder="Nome completo">
+                    </div>
+                    <div class="form-group mt-4">
                         <input class="form-control" name="login" type="text" placeholder="RA" id="ra">
                         <input class="form-control" name="login" type="text" placeholder="RM" id="rm" style="display: none;" disabled>
                     </div>
                     <div class="form-group mt-4">
-                        <input class="form-control" name="senha" type="password" id="senha" placeholder="Senha">
+                        <input maxlength="60" class="form-control" name="email" type="text" id="email" placeholder="Email">
                     </div>
-                    <button type="button" class="btn btn-success btn-block mt-4 mb-5 btn-login font-weight-bold">
-                        Entrar
+                    <div class="form-group mt-4">
+                        <input class="form-control" name="senha" type="password" id="senha" placeholder="Criar senha">
+                    </div>
+                    <button type="button" class="btn btn-success btn-block mt-4 font-weight-bold btn-cadastrar">
+                        Cadastrar
                     </button>
                 </form>
                 <hr>
-                <a href="cadastro">Não registrado(a)? Crie sua conta</a>
+                <a href="/">Já tenho uma conta.</a>
             </div>
         </div>
         <div class="fundo d-flex align-items-center h-100 w-100">

@@ -1,0 +1,51 @@
+.banner {
+    background-image: url("../img/equipamentos.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 250px;
+    margin: 0;
+}
+
+#foto {
+    width: auto;
+    height: 400px;
+}
+
+@media screen and (min-width: 600px) {
+    .input-foto {
+        display: unset !important;
+        font-weight: bold;
+    }
+    #descricao {
+        height: 140px;
+        resize: none;
+    }
+}
+
+@media screen and (max-device-width: 480px) {
+    .input-nome {
+        width: 100% !important;
+    }
+    #foto {
+        height: auto;
+        width: 100%;
+    }
+    .input-foto {
+        font-size: 0.7rem;
+    }
+    .modal-lgg {
+        max-width: none;
+    }
+    .edit-nome {
+        font-size: 1rem;
+        width: 100%;
+    }
+    #descricao {
+        height: 175px;
+        resize: none;
+    }
+    #foto-form {
+        font-size: 0.7rem;
+    }
+}

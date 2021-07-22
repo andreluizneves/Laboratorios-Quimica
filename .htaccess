@@ -1,11 +1,18 @@
-#Bloqueia a listagem de diretórios.
-
 options All -Indexes
 
-ErrorDocument 403 "Acesso Bloqueado"
-# DO NOT REMOVE THIS LINE AND THE LINES BELLOW SSL_REDIRECT:laboratoriosquimica-cafelandia.online
+ErrorDocument 403 "Acesso bloqueado"
+
 RewriteEngine on
-RewriteCond %{HTTPS} off
-RewriteCond %{HTTP_HOST} (www\.)?laboratoriosquimica-cafelandia.online
-RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-# DO NOT REMOVE THIS LINE AND THE LINES BELLOW SSL_REDIRECT:laboratoriosquimica-cafelandia.online
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.js -f
+RewriteRule ^(.*)$ $1.js
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html

@@ -1,0 +1,518 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #e6e6e6;
+    visibility: hidden;
+}
+
+.card:hover {
+    filter: contrast(1.2) drop-shadow(2px 4px 6px black);
+}
+
+.card[selecionado=true] {
+    box-shadow: 0px 0px 0px 4px rgb(127 255 0 / 92)
+}
+
+.coluna-card {
+    transition: 1s;
+}
+
+.fotoUser {
+    width: 100px;
+    height: auto;
+    background-color: white;
+    border-radius: 100%;
+}
+
+.itens-navbar {
+    cursor: pointer;
+}
+
+.modal-lgg {
+    max-width: 95%;
+}
+
+.nomeUser,
+.loginUser {
+    word-wrap: break-word;
+}
+
+.icon {
+    margin-right: 5px;
+    font-size: 1.225rem;
+}
+
+.conteudo {
+    box-shadow: 0px 7px 16px 0px rgba(50, 50, 50, 1);
+    overflow: scroll;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+hr {
+    border: 1px solid white;
+}
+
+.rodape .container {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.rodape {
+    padding: 0.5rem 0;
+    color: #999;
+    background-color: #1b1b1b;
+}
+
+.nav {
+    background-color: rgb(23, 216, 48);
+    height: 75px;
+}
+
+.corpo-cinco-s {
+    color: white;
+    background-image: linear-gradient(to top, rgb(62, 63, 160), rgb(39, 103, 221));
+}
+
+.icon-rodape {
+    font-size: 2rem;
+}
+
+.caixa {
+    cursor: pointer;
+    width: 110px;
+    background-color: #000000;
+    border-radius: 10px;
+    top: 30px;
+    left: 255px;
+}
+
+.links {
+    text-decoration: none;
+    color: white;
+}
+
+.links:hover {
+    color: rgba(255, 255, 255, 0.493);
+}
+
+.logo-qui {
+    width: inherit;
+}
+
+.cinco-s {
+    background-image: url("../img/cinco-s-modal.jpg");
+    padding: 25px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.gradiente {
+    background-image: linear-gradient(to top, rgb(62, 63, 160), rgb(39, 103, 221));
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
+
+.nav a {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.icone-user {
+    width: 65px;
+    height: auto;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: 2.5rem;
+    background-color: white;
+    border-radius: 100%;
+}
+
+.btn-form,
+.btn-form-vidrarias,
+.btn-form-quebradas {
+    background-image: linear-gradient(to right, #16222A 0%, #3A6073 51%, #16222A 100%);
+    border: none !important;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 10px;
+    display: block;
+}
+
+.text-black {
+    color: #000;
+}
+
+.btn-form,
+.btn-form-quebradas:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-send,
+.btn-new-relatorio {
+    color: #000 !important;
+    background-image: linear-gradient(to right, #FDFC47 0%, #24FE41 51%, #FDFC47 100%);
+    border: none !important;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    border-radius: 10px;
+    display: block;
+}
+
+.btn-send,
+.btn-new-relatorio:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.lista-btns {
+    overflow: scroll;
+    height: 75vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.logo-aa {
+    width: 420px;
+}
+
+.text-black {
+    color: #000;
+}
+
+.text-green {
+    color: #15df44;
+}
+
+.btn-list,
+.btn-list-vidrarias,
+.btn-list-quebradas {
+    background-image: linear-gradient(to right, #24C6DC 0%, #514A9D 51%, #24C6DC 100%);
+    border: none !important;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 10px;
+    display: block;
+}
+
+.btn-list,
+.btn-list-quebradas:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.controle {
+    padding: 15px;
+    background-color: rgb(94, 255, 143);
+}
+
+.img {
+    text-align: center;
+    width: auto;
+    height: 220px;
+}
+
+.card-body {
+    padding-top: 0px;
+}
+
+#sidebar2 {
+    position: fixed;
+    left: -310px;
+    transition: .4s;
+    z-index: 100
+}
+
+#sidebar2.active {
+    left: 0;
+}
+
+.card {
+    padding-left: 8px;
+    padding-right: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    padding-top: 2px;
+    background-image: url("../img/card.jpg");
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 1);
+}
+
+i {
+    font-size: 6.5rem !important;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+.usuario {
+    cursor: none;
+}
+
+.maps {
+    width: 100%;
+    height: 500px;
+}
+
+.mapouter {
+    position: relative;
+    text-align: right;
+    height: 500px;
+    width: 808px;
+}
+
+.gmap_canvas {
+    overflow: hidden;
+    background: none!important;
+    height: 500px;
+    width: 808px;
+}
+
+.dropdown-menu li {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-toggle {
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.caixa_conteudo {
+    height: 25px;
+}
+
+#sidebar2 ul li {
+    list-style: none;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    padding: 15px 24px;
+}
+
+.text-titulo {
+    background-image: linear-gradient(to top, rgb(147, 246, 255) 40%, #88f31d 60%);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
+
+.nbr {
+    border-radius: 0px;
+}
+
+.sideall {
+    display: flex;
+    width: 100%;
+}
+
+#sidebar {
+    width: 250px;
+    top: 0;
+    left: 0;
+    height: 10000px;
+    z-index: 90;
+    background: rgb(98, 212, 113);
+    color: #fff;
+    transition: all 0.3s;
+}
+
+.icone-dev {
+    font-size: 1.25rem;
+}
+
+.text-verde {
+    color: #005337;
+}
+
+.text-azul {
+    color: #003171;
+}
+
+.devs>a {
+    font-size: 15px;
+    color: aqua;
+}
+
+.calendario,
+.relogio {
+    color: #13272e;
+}
+
+.tec-aa {
+    background-color: #26C281;
+    padding: 50px;
+}
+
+.tec-quimica {
+    background-color: #347b91;
+    padding: 50px;
+}
+
+.mapa {
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.devs>a:hover {
+    font-size: 15px;
+    color: aqua;
+    text-shadow: 0 0 4px #fff;
+}
+
+.toggle-btn span {
+    width: 45px;
+    height: 4px;
+    background: #fafafa;
+    display: block;
+    margin-top: 4px;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid rgb(73, 180, 87);
+}
+
+#sidebar ul li a {
+    font-size: 1.1em;
+    display: block;
+    width: 225px;
+}
+
+#sidebar2 .toggle-btn {
+    position: absolute;
+    top: 15px;
+    left: 320px;
+    height: 55px;
+    width: 110px;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+.p2px {
+    margin-bottom: 2px;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: rgb(73, 180, 87);
+}
+
+.modal-content {
+    background-color: #76b852;
+}
+
+#sidebar ul li.itens-navbar:hover {
+    color: rgb(98, 212, 113);
+    background: #fff;
+    transition: all 0.3s;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.titulo {
+    background-image: linear-gradient(315deg, #1f4037 0%, #99f2c8 85%);
+    padding-top: 25px !important;
+}
+
+.conteudo-list-responsivel {
+    padding: 1rem !important;
+    margin: 1rem !important;
+}
+
+.itens {
+    background-image: linear-gradient( 315deg, #1f4037 0%, #99f2c8 85%);
+    padding-top: 25px !important;
+}
+
+.modal-header {
+    display: block;
+}
+
+@media screen and (max-device-width: 480px) {
+    .lista-btns {
+        overflow-x: scroll;
+        overflow-y: scroll;
+    }
+    .display-1 {
+        font-size: 2rem !important;
+    }
+    .col-form,
+    .col-form-quebradas,
+    .col-list,
+    .col-list-quebradas {
+        margin-top: 0.5rem !important;
+        font-size: 18px;
+    }
+    .components>li {
+        font-size: 16px !important;
+    }
+    .modal-lgg {
+        max-width: none;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .itens {
+        padding: 1rem !important;
+        margin: 1rem !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .um {
+        background: #F9C;
+    }
+    span.lt600 {
+        display: inline-block;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+    .display-1 {
+        font-size: 2rem;
+    }
+}

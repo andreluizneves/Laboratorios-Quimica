@@ -1,0 +1,36 @@
+<div style="display:none" class="col-12 col-md-12 col-sm-12 col-lg-12 formulario">
+    <form class="form">
+        <div class="row d-flex justify-content-center">
+            <div class="form-group col-12 col-md-6 col-sm-12 col-lg-6">
+                <label for="vidrarias" class="font-weight-bold">Selecione a vidraria:</label>
+                <select id="vidrarias" class="form-control input" name="vidraria">
+                    <option value="">SELECIONE A VIDRARIA</option>
+                    {{ vidrarias }}
+                </select>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="form-group col-12 col-md-6 col-sm-12 col-lg-6">
+                <label for="vidrarias" class="font-weight-bold">Selecione a aula em que foi quebrada:</label>
+                <select id="relatorio" class="form-control input" name="relatorio">
+                    <option value="">SELECIONE A AULA</option>
+                    {{ aulas }}
+                </select>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="form-group col-12 col-md-6 col-sm-12 col-lg-6">
+                <label for="quantidade" class="col-form-label font-weight-bold">Quantidade quebrada em aula:</label>
+                <input type="number" class="form-control input text-center" id="quantidade" name="quantidade">
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="form-group col-lg-6 col-md-6 col-sm-12 col-12">
+                <button entidade="vidrarias-quebrada" class="btn btn-success btn-send btn-block font-weight-bold" type="button">CATALOGAR</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    $("#quantidade").mask("9999")
+</script>

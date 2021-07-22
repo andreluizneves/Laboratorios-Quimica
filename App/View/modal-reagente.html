@@ -1,0 +1,58 @@
+<form class="form">
+    <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">Visualizando o reagente:
+            <input type="text" value="{{ nome }}" maxlength="50" style="width: 60%;" name="nome" class="text-center input-nome">
+        </h2>
+    </div>
+    <div class="modal-body">
+        <div class="row d-flex align-items-center justify-content-center">
+            <div class="col-md-6 col-lg-6 col-12 col-sm-12">
+                <img id="foto" src="src/reagentes/fotos/{{ foto }}">
+            </div>
+            <div class="col-md-6 col-lg-6 col-12 col-sm-12">
+                <div class="row">
+                    <div class="col-lg-7 col-md-7 col-12 col-sm-12">
+                        <label class="font-weight-bold mt-1" style="margin-bottom: 0px !important;" for="quantidade">Quantidade</label>
+                        <input id="quantidade" value="{{ quantidade }}" class="form-control text-center" type="number" name="quantidade">
+                    </div>
+                    <div class="col-lg-5 col-md-4 col-12 col-sm-12">
+                        <label class="font-weight-bold mt-1" style="margin-bottom: 0px !important;" for="medida">Unidade de medida</label>
+                        <div class="form-group" style="margin-bottom: 0px !important;">
+                            <select id="medida" class="form-control" name="medida">
+                                <option value="g">grama (g)</option>
+                                <option value="ml">mililitros (ml)</option>
+                                <option value="L">Litros (l)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="font-weight-bold mt-1" style="margin-bottom: 0px !important;" for="laboratorio">Laboratório</label>
+                    <select id="laboratorio" class="form-control" name="laboratorio">
+                        <option value="1">Externo</option>
+                        <option value="2">Interno</option>
+                        <option value="3">Ambos</option>
+                    </select>
+                    <div class="secao-foto">
+                        <label class="font-weight-bold foto mt-1" style="margin-bottom: 0px !important;" for="foto">Foto</label><br>
+                        <input type="file" class="form-control input-foto" name="foto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" value="{{ id_reagente }}" name="id_reagente" id="id_reagente">
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger btn-fechar" data-dismiss="modal">Fechar</button>
+        <button type="button" entidade="reagente" class="btn btn-primary btn-update d-none">Salvar</button>
+    </div>
+</form>
+<script>
+    $("#quantidade").mask("9999")
+    $("#laboratorio").val("{{ id_laboratorio }}")
+    $("#medida").val("{{ medida }}")
+    $(".modal-content").find("select, input, textarea").attr("readonly", "{{ editavel }}")
+    $(".modal-content").find("select, input, textarea").attr("disabled", "{{ editavel }}")
+    $(".secao-foto, .btn-update").addClass("d-none")
+    "{{ editavel }}" == true ? $(".secao-foto, .btn-update").addClass("d-none") : $(".secao-foto, .btn-update").removeClass("d-none")
+</script>

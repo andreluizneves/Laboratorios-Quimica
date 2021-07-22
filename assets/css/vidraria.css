@@ -1,0 +1,51 @@
+.banner {
+    background-image: url("../img/vidraria.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 250px;
+    margin: 0;
+}
+
+#foto {
+    width: auto;
+    height: 400px;
+}
+
+@media screen and (min-width: 600px) {
+    #foto {
+        width: auto;
+        height: 400px;
+    }
+    .input-foto {
+        display: unset !important;
+        font-weight: bold;
+    }
+    #descricao {
+        height: 140px;
+        resize: none;
+    }
+}
+
+@media screen and (max-device-width: 480px) {
+    #foto-form {
+        font-size: 0.6rem;
+    }
+    .input-nome {
+        width: 100% !important;
+    }
+    #foto {
+        height: auto;
+        width: 100%;
+    }
+    .input-foto {
+        font-size: 0.6rem;
+    }
+    .modal-lgg {
+        max-width: none;
+    }
+    #descricao {
+        height: 175px;
+        resize: none;
+    }
+}

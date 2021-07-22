@@ -1,0 +1,80 @@
+body {
+    visibility: hidden;
+}
+
+.banner {
+    background-image: url("../img/menu.jpg");
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 0px !important;
+    margin-bottom: 0px;
+    height: 550px;
+}
+
+@media screen and (max-device-width: 480px) {
+    .display-1 {
+        font-size: 2rem !important;
+    }
+    .rodape-devs {
+        font-size: 18px !important;
+    }
+    .rodape>div>div>div.col-12 {
+        margin-top: 1rem;
+    }
+    .col-form,
+    .col-list {
+        margin-top: 0.5rem !important;
+        font-size: 18px;
+    }
+    .logo-aa {
+        width: inherit;
+        height: 275px;
+    }
+    .duracao {
+        margin-bottom: 1rem;
+    }
+    .info-aa,
+    .info-qui {
+        margin-top: 0px !important;
+    }
+    .components>li {
+        font-size: 16px !important;
+    }
+    * {
+        font-size: 1rem !important;
+    }
+}
+
+@media screen and (max-device-width: 500px) {
+    main {
+        flex-direction: column;
+    }
+    * {
+        font-size: 1rem !important;
+    }
+    img {
+        height: 80px;
+    }
+    input,
+    select {
+        height: 35px !important;
+    }
+    .btn-login {
+        margin-bottom: 1rem !important;
+    }
+    .formulario {
+        height: auto;
+        background-color: rgb(6 115 121);
+        z-index: 1;
+        width: auto;
+        box-shadow: black 0 20px 20px;
+        border-radius: 45px 5px 45px 5px;
+    }
+    .fundo {
+        position: absolute;
+        background-size: cover;
+        background-position: center;
+        filter: brightness(0.75) blur(1px);
+    }
+}
