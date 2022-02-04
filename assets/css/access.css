@@ -1,0 +1,100 @@
+body {
+    height: 100vh;
+    background-image: url(../img/background-access.jpg);
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.row {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.row>div {
+    border-radius: 45px 5px 45px 5px;
+    background-color: rgb(6 115 121);
+    box-shadow: black 4px 1px 20px 4px;
+    padding: 35px;
+}
+
+img {
+    background-color: white;
+    border-radius: 100%;
+    transition: 0.5s;
+}
+
+.form-control {
+    color: black !important;
+}
+
+select {
+    padding: 0rem .75rem !important;
+}
+
+a {
+    color: #000368 !important;
+    font-size: 1.5rem;
+}
+
+.swal2-html-container {
+    overflow: hidden !important;
+}
+
+@media screen and (min-device-width:1px) and (max-device-width:500px) {
+    * {
+        font-size: .5rem !important;
+    }
+    img {
+        height: 80px;
+    }
+    input,
+    select {
+        height: 35px !important;
+    }
+    .title {
+        font-size: 2rem !important;
+    }
+    .btn-login {
+        margin-bottom: 1rem !important;
+    }
+}
+
+@media screen and (max-device-width: 500px) {
+    * {
+        font-size: 1rem !important;
+    }
+    img {
+        height: 80px;
+    }
+    input,
+    select {
+        height: 35px !important;
+    }
+    .title {
+        font-size: 2rem !important;
+    }
+    .btn-login {
+        margin-bottom: 1rem !important;
+    }
+}
+
+@media screen and (min-device-width:500px) and (max-device-width:920px) {
+    * {
+        font-size: .75rem !important;
+    }
+    img {
+        height: 80px;
+    }
+    input,
+    select {
+        height: 35px !important;
+    }
+    .title {
+        font-size: 2rem !important;
+    }
+    .btn-login {
+        margin-bottom: 1rem !important;
+    }
+}

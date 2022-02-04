@@ -15,221 +15,222 @@ CREATE SCHEMA IF NOT EXISTS `laboratorios_quimica` DEFAULT CHARACTER SET utf8 ;
 USE `laboratorios_quimica` ;
 
 -- -----------------------------------------------------
--- Table `laboratorios_quimica`.`laboratorios`
+-- Table `laboratorios_quimica`.`users`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `laboratorios_quimica`.`laboratorios` (
-  `id_laboratorio` INT NOT NULL AUTO_INCREMENT,
-  `laboratorio` VARCHAR(50) NOT NULL,
-  PRIMARY KEY (`id_laboratorio`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `laboratorios_quimica`.`vidrarias`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `laboratorios_quimica`.`vidrarias` (
-  `id_vidraria` INT NOT NULL AUTO_INCREMENT,
-  `id_laboratorio` INT NOT NULL,
-  `nome` VARCHAR(50) NOT NULL,
-  `quantidade` INT NOT NULL,
-  `descricao` VARCHAR(300) NOT NULL,
-  `foto` VARCHAR(28) NOT NULL,
-  PRIMARY KEY (`id_vidraria`),
-  INDEX `fk_vidrarias_laboratorio1_idx` (`id_laboratorio` ASC),
-  CONSTRAINT `fk_vidrarias_laboratorio1`
-    FOREIGN KEY (`id_laboratorio`)
-    REFERENCES `laboratorios_quimica`.`laboratorios` (`id_laboratorio`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `laboratorios_quimica`.`equipamentos`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `laboratorios_quimica`.`equipamentos` (
-  `id_equipamento` INT NOT NULL AUTO_INCREMENT,
-  `id_laboratorio` INT NOT NULL,
-  `nome` VARCHAR(50) NOT NULL,
-  `patrimonio` INT NOT NULL,
-  `descricao` VARCHAR(300) NOT NULL,
-  `foto` VARCHAR(28) NOT NULL,
-  PRIMARY KEY (`id_equipamento`),
-  INDEX `fk_equipamentos_laboratorio1_idx` (`id_laboratorio` ASC),
-  CONSTRAINT `fk_equipamentos_laboratorio1`
-    FOREIGN KEY (`id_laboratorio`)
-    REFERENCES `laboratorios_quimica`.`laboratorios` (`id_laboratorio`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `laboratorios_quimica`.`usuarios`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `laboratorios_quimica`.`usuarios` (
-  `id_usuario` INT NOT NULL AUTO_INCREMENT,
-  `nome` VARCHAR(50) NOT NULL,
-  `tipo` VARCHAR(12) NOT NULL,
-  `rm` INT NULL,
-  `ra` INT NULL,
+CREATE TABLE IF NOT EXISTS `laboratorios_quimica`.`users` (
+  `id_user` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(60) NOT NULL,
+  `login` INT(5) NOT NULL,
   `email` VARCHAR(60) NOT NULL,
-  `senha` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`id_usuario`),
-  UNIQUE INDEX `rm_UNIQUE` (`rm` ASC),
-  UNIQUE INDEX `ra_UNIQUE` (`ra` ASC))
+  `password` VARCHAR(255) NOT NULL,
+  `type` TINYINT NOT NULL COMMENT 'Professor/Adm -2\nAluno - 1',
+  PRIMARY KEY (`id_user`),
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `laboratorios_quimica`.`relatorios`
+-- Table `laboratorios_quimica`.`laboratories`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `laboratorios_quimica`.`relatorios` (
-  `id_relatorio` INT NOT NULL AUTO_INCREMENT,
-  `id_usuario` INT NOT NULL,
-  `id_laboratorio` INT NOT NULL,
-  `titulo` VARCHAR(55) NOT NULL,
-  `data_hora` DATETIME NOT NULL,
-  `aulas` CHAR(8) NOT NULL,
-  `descricao` VARCHAR(300) NOT NULL,
-  PRIMARY KEY (`id_relatorio`),
-  INDEX `fk_relatorios_professores_idx` (`id_usuario` ASC),
-  INDEX `fk_relatorios_local1_idx` (`id_laboratorio` ASC),
-  CONSTRAINT `fk_relatorios_usuarios`
-    FOREIGN KEY (`id_usuario`)
-    REFERENCES `laboratorios_quimica`.`usuarios` (`id_usuario`)
+CREATE TABLE IF NOT EXISTS `laboratorios_quimica`.`laboratories` (
+  `id_laboratory` INT NOT NULL AUTO_INCREMENT,
+  `laboratory` VARCHAR(7) NOT NULL,
+  PRIMARY KEY (`id_laboratory`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `laboratorios_quimica`.`glassworks`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `laboratorios_quimica`.`glassworks` (
+  `id_glassware` INT NOT NULL AUTO_INCREMENT,
+  `id_laboratory` INT NOT NULL,
+  `name` VARCHAR(60) NOT NULL,
+  `quantity` INT NOT NULL,
+  `description` VARCHAR(300) NOT NULL,
+  `photo` VARCHAR(28) NOT NULL,
+  PRIMARY KEY (`id_glassware`),
+  INDEX `fk_glassworks_laboratories1_idx` (`id_laboratory` ASC),
+  CONSTRAINT `fk_glassworks_laboratories1`
+    FOREIGN KEY (`id_laboratory`)
+    REFERENCES `laboratorios_quimica`.`laboratories` (`id_laboratory`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `laboratorios_quimica`.`equipament`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `laboratorios_quimica`.`equipament` (
+  `id_equipament` INT NOT NULL AUTO_INCREMENT,
+  `id_laboratory` INT NOT NULL,
+  `name` VARCHAR(60) NOT NULL,
+  `patrimony` INT NOT NULL,
+  `description` VARCHAR(300) NOT NULL,
+  `photo` VARCHAR(28) NOT NULL,
+  PRIMARY KEY (`id_equipament`),
+  INDEX `fk_equipament_laboratories1_idx` (`id_laboratory` ASC),
+  CONSTRAINT `fk_equipament_laboratories1`
+    FOREIGN KEY (`id_laboratory`)
+    REFERENCES `laboratorios_quimica`.`laboratories` (`id_laboratory`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `laboratorios_quimica`.`reagents`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `laboratorios_quimica`.`reagents` (
+  `id_reagent` INT NOT NULL AUTO_INCREMENT,
+  `id_laboratory` INT NOT NULL,
+  `name` VARCHAR(60) NOT NULL,
+  `measure` VARCHAR(2) NOT NULL,
+  `quantity` FLOAT(6,2) NOT NULL,
+  `photo` VARCHAR(28) NOT NULL,
+  PRIMARY KEY (`id_reagent`),
+  INDEX `fk_reagents_laboratories1_idx` (`id_laboratory` ASC),
+  CONSTRAINT `fk_reagents_laboratories1`
+    FOREIGN KEY (`id_laboratory`)
+    REFERENCES `laboratorios_quimica`.`laboratories` (`id_laboratory`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `laboratorios_quimica`.`reports`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `laboratorios_quimica`.`reports` (
+  `id_report` INT NOT NULL AUTO_INCREMENT,
+  `id_user` INT NOT NULL,
+  `id_laboratory` INT NOT NULL,
+  `title` VARCHAR(60) NOT NULL,
+  `date_time` DATETIME NOT NULL,
+  `duration` TIME NOT NULL,
+  `description` VARCHAR(300) NOT NULL,
+  PRIMARY KEY (`id_report`),
+  INDEX `fk_reports_users1_idx` (`id_user` ASC),
+  INDEX `fk_reports_laboratories1_idx` (`id_laboratory` ASC),
+  CONSTRAINT `fk_reports_users1`
+    FOREIGN KEY (`id_user`)
+    REFERENCES `laboratorios_quimica`.`users` (`id_user`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_relatorios_laboratorios`
-    FOREIGN KEY (`id_laboratorio`)
-    REFERENCES `laboratorios_quimica`.`laboratorios` (`id_laboratorio`)
+  CONSTRAINT `fk_reports_laboratories1`
+    FOREIGN KEY (`id_laboratory`)
+    REFERENCES `laboratorios_quimica`.`laboratories` (`id_laboratory`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `laboratorios_quimica`.`reagentes`
+-- Table `laboratorios_quimica`.`broken_glassworks`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `laboratorios_quimica`.`reagentes` (
-  `id_reagente` INT NOT NULL AUTO_INCREMENT,
-  `id_laboratorio` INT NOT NULL,
-  `nome` VARCHAR(50) NOT NULL,
-  `medida` VARCHAR(2) NOT NULL,
-  `quantidade` INT NOT NULL,
-  `foto` VARCHAR(28) NOT NULL,
-  PRIMARY KEY (`id_reagente`),
-  INDEX `fk_reagentes_laboratorio1_idx` (`id_laboratorio` ASC),
-  CONSTRAINT `fk_reagentes_laboratorio1`
-    FOREIGN KEY (`id_laboratorio`)
-    REFERENCES `laboratorios_quimica`.`laboratorios` (`id_laboratorio`)
+CREATE TABLE IF NOT EXISTS `laboratorios_quimica`.`broken_glassworks` (
+  `id_broken_glassware` INT NOT NULL AUTO_INCREMENT,
+  `id_report` INT NULL,
+  `id_glassware` INT NOT NULL,
+  `quantity` INT NOT NULL,
+  PRIMARY KEY (`id_broken_glassware`),
+  INDEX `fk_broken_glassworks_glassworks1_idx` (`id_glassware` ASC),
+  INDEX `fk_broken_glassworks_reports1_idx` (`id_report` ASC),
+  CONSTRAINT `fk_broken_glassworks_glassworks1`
+    FOREIGN KEY (`id_glassware`)
+    REFERENCES `laboratorios_quimica`.`glassworks` (`id_glassware`)
     ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_broken_glassworks_reports1`
+    FOREIGN KEY (`id_report`)
+    REFERENCES `laboratorios_quimica`.`reports` (`id_report`)
+    ON DELETE CASCADE
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `laboratorios_quimica`.`vidrarias_quebradas`
+-- Table `laboratorios_quimica`.`reports_reagents`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `laboratorios_quimica`.`vidrarias_quebradas` (
-  `id_vidraria_quebrada` INT NOT NULL AUTO_INCREMENT,
-  `id_vidraria` INT NOT NULL,
-  `id_relatorio` INT NOT NULL,
-  `quantidade_quebrada` INT NOT NULL,
-  PRIMARY KEY (`id_vidraria_quebrada`),
-  INDEX `fk_vidrarias_quebradas_relatorios1_idx` (`id_relatorio` ASC),
-  INDEX `fk_vidrarias_quebradas_vidrarias1_idx` (`id_vidraria` ASC),
-  CONSTRAINT `fk_vidrarias_quebradas_relatorios1`
-    FOREIGN KEY (`id_relatorio`)
-    REFERENCES `laboratorios_quimica`.`relatorios` (`id_relatorio`)
+CREATE TABLE IF NOT EXISTS `laboratorios_quimica`.`reports_reagents` (
+  `id_report_reagent` INT NOT NULL AUTO_INCREMENT,
+  `id_report` INT NOT NULL,
+  `id_reagent` INT NOT NULL,
+  `quantity` FLOAT(6,2) NOT NULL,
+  INDEX `fk_reagents_has_reports_reports1_idx` (`id_report` ASC),
+  INDEX `fk_reagents_has_reports_reagents1_idx` (`id_reagent` ASC),
+  PRIMARY KEY (`id_report_reagent`),
+  CONSTRAINT `fk_reagents_has_reports_reagents1`
+    FOREIGN KEY (`id_reagent`)
+    REFERENCES `laboratorios_quimica`.`reagents` (`id_reagent`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_reagents_has_reports_reports1`
+    FOREIGN KEY (`id_report`)
+    REFERENCES `laboratorios_quimica`.`reports` (`id_report`)
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `laboratorios_quimica`.`reports_glassworks`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `laboratorios_quimica`.`reports_glassworks` (
+  `id_report_glassware` INT NOT NULL AUTO_INCREMENT,
+  `id_report` INT NOT NULL,
+  `id_glassware` INT NOT NULL,
+  INDEX `fk_reports_has_glassworks_glassworks1_idx` (`id_glassware` ASC),
+  INDEX `fk_reports_has_glassworks_reports1_idx` (`id_report` ASC),
+  PRIMARY KEY (`id_report_glassware`),
+  CONSTRAINT `fk_reports_has_glassworks_reports1`
+    FOREIGN KEY (`id_report`)
+    REFERENCES `laboratorios_quimica`.`reports` (`id_report`)
     ON DELETE CASCADE
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_vidrarias_quebradas_vidrarias1`
-    FOREIGN KEY (`id_vidraria`)
-    REFERENCES `laboratorios_quimica`.`vidrarias` (`id_vidraria`)
-    ON DELETE CASCADE
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `laboratorios_quimica`.`relatorios_reagentes`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `laboratorios_quimica`.`relatorios_reagentes` (
-  `id_relatorio_reagente` INT NOT NULL AUTO_INCREMENT,
-  `id_relatorio` INT NOT NULL,
-  `id_reagente` INT NOT NULL,
-  `quantidade_usada` INT NOT NULL,
-  INDEX `fk_relatorios_has_reagentes_reagentes1_idx` (`id_reagente` ASC),
-  INDEX `fk_relatorios_has_reagentes_relatorios1_idx` (`id_relatorio` ASC),
-  PRIMARY KEY (`id_relatorio_reagente`),
-  CONSTRAINT `fk_relatorios_has_reagentes_relatorios1`
-    FOREIGN KEY (`id_relatorio`)
-    REFERENCES `laboratorios_quimica`.`relatorios` (`id_relatorio`)
-    ON DELETE CASCADE
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_relatorios_has_reagentes_reagentes1`
-    FOREIGN KEY (`id_reagente`)
-    REFERENCES `laboratorios_quimica`.`reagentes` (`id_reagente`)
+  CONSTRAINT `fk_reports_has_glassworks_glassworks1`
+    FOREIGN KEY (`id_glassware`)
+    REFERENCES `laboratorios_quimica`.`glassworks` (`id_glassware`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `laboratorios_quimica`.`relatorios_equipamentos`
+-- Table `laboratorios_quimica`.`reports_equipament`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `laboratorios_quimica`.`relatorios_equipamentos` (
-  `id_relatorio_equipamento` INT NOT NULL AUTO_INCREMENT,
-  `id_relatorio` INT NOT NULL,
-  `id_equipamento` INT NOT NULL,
-  INDEX `fk_relatorios_has_equipamentos_equipamentos1_idx` (`id_equipamento` ASC),
-  INDEX `fk_relatorios_has_equipamentos_relatorios1_idx` (`id_relatorio` ASC),
-  PRIMARY KEY (`id_relatorio_equipamento`),
-  CONSTRAINT `fk_relatorios_has_equipamentos_relatorios1`
-    FOREIGN KEY (`id_relatorio`)
-    REFERENCES `laboratorios_quimica`.`relatorios` (`id_relatorio`)
-    ON DELETE CASCADE
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_relatorios_has_equipamentos_equipamentos1`
-    FOREIGN KEY (`id_equipamento`)
-    REFERENCES `laboratorios_quimica`.`equipamentos` (`id_equipamento`)
+CREATE TABLE IF NOT EXISTS `laboratorios_quimica`.`reports_equipament` (
+  `id_report_equipament` INT NOT NULL AUTO_INCREMENT,
+  `id_report` INT NOT NULL,
+  `id_equipament` INT NOT NULL,
+  PRIMARY KEY (`id_report_equipament`),
+  INDEX `fk_equipament_has_reports_reports1_idx` (`id_report` ASC),
+  INDEX `fk_equipament_has_reports_equipament1_idx` (`id_equipament` ASC),
+  CONSTRAINT `fk_equipament_has_reports_equipament1`
+    FOREIGN KEY (`id_equipament`)
+    REFERENCES `laboratorios_quimica`.`equipament` (`id_equipament`)
     ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_equipament_has_reports_reports1`
+    FOREIGN KEY (`id_report`)
+    REFERENCES `laboratorios_quimica`.`reports` (`id_report`)
+    ON DELETE CASCADE
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
--- -----------------------------------------------------
--- Table `laboratorios_quimica`.`relatorios_vidrarias`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `laboratorios_quimica`.`relatorios_vidrarias` (
-  `id_relatorio_vidraria` INT NOT NULL AUTO_INCREMENT,
-  `id_relatorio` INT NOT NULL,
-  `id_vidraria` INT NOT NULL,
-  INDEX `fk_relatorios_has_vidrarias_vidrarias1_idx` (`id_vidraria` ASC),
-  INDEX `fk_relatorios_has_vidrarias_relatorios1_idx` (`id_relatorio` ASC),
-  PRIMARY KEY (`id_relatorio_vidraria`),
-  CONSTRAINT `fk_relatorios_has_vidrarias_relatorios1`
-    FOREIGN KEY (`id_relatorio`)
-    REFERENCES `laboratorios_quimica`.`relatorios` (`id_relatorio`)
-    ON DELETE CASCADE
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_relatorios_has_vidrarias_vidrarias1`
-    FOREIGN KEY (`id_vidraria`)
-    REFERENCES `laboratorios_quimica`.`vidrarias` (`id_vidraria`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
--- -----------------------------------------------------
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 -- INSERTS
-INSERT INTO `laboratorios` (`id_laboratorio`, `laboratorio`) VALUES
+INSERT INTO `laboratories` (`id_laboratory`, `laboratory`) VALUES
 	(1, 'Externo'),
 	(2, 'Interno'),
 	(3, 'Ambos');
 
-INSERT INTO `equipamentos` (`id_equipamento`, `id_laboratorio`, `nome`, `patrimonio`, `descricao`, `foto`) VALUES
+INSERT INTO `equipament` (`id_equipament`, `id_laboratory`, `name`, `patrimony`, `description`, `photo`) VALUES
 	(1, 1, 'Balança de Precisão', 1, 'É um equipamento de grande importância para medições da massa de um corpo. A escolha de uma balança de precisão para laboratório ou para qualquer outro tipo de utilização deve se levar em conta a necessidade do usuário: em relação a quanto ele deseja pesar e a resolução dessa pesagem.', '16083779475fdde65b4780b.jpg'),
 	(2, 2, 'Bomba de vácuo', 2, 'Aparelho destinado a retirar o gás de um determinado volume, de forma que a pressão seja baixada a valores adequados ao propósito desejado.', '16083780185fdde6a292a42.jpg'),
 	(3, 1, 'Sacarímetro de BRIX', 3, 'Instrumento destinado a medir o teor de açúcar em solução. A escala do Sacarímetro de Brix varia de 0 a 90º Brix com divisões de 0,1 / 0,2 / 0,5 e 1º Brix. A escala de temperatura no caso de Termo-densímetros varia de 0 a 50ºC com divisão de 1ºC.', '16083780815fdde6e13fc0a.jpg'),
@@ -258,7 +259,7 @@ INSERT INTO `equipamentos` (`id_equipamento`, `id_laboratorio`, `nome`, `patrimo
 	(26, 3, 'Turbidímetro', 26, 'Usado em indústrias farmacêuticas, de alimento ou em indústrias químicas, o turbidímetro é um equipamento capaz de medir o grau de turvação de vários líquidos.  A turvação de um líquido nada mais é do que a concentração de partículas sólidas em seu meio.', '16083790775fddeac5da8cd.jpg'),
 	(27, 3, 'Determinador de açúcares', 27, 'Utilizado para a determinação de açúcares redutores em alimentos e bebidas, como caldo de cana, frutas, extrato de tomate, balas, etc.', '16083791085fddeae49f54f.jpg');
 
-INSERT INTO `reagentes` (`id_reagente`, `id_laboratorio`, `nome`, `medida`, `quantidade`, `foto`) VALUES
+INSERT INTO `reagents` (`id_reagent`, `id_laboratory`, `name`, `measure`, `quantity`, `photo`) VALUES
 	(1, 1, 'Acetato de amônia', 'g', 1000, '16083804495fddf0219564c.jpg'),
 	(2, 2, 'Acetato de Sódio', 'g', 400, '16083804835fddf04333f00.jpg'),
 	(3, 1, 'Acetona', 'ml', 500, '16083805045fddf05899bc5.png'),
@@ -329,7 +330,7 @@ INSERT INTO `reagentes` (`id_reagente`, `id_laboratorio`, `nome`, `medida`, `qua
 	(68, 1, 'Hidróxido de sódio', 'g', 2200, '16083884775fde0f7d3cf7f.jpg'),
 	(69, 2, 'Hidróxido de sódio, solução', 'ml', 1000, '16083885075fde0f9b97857.jpg');
 
-INSERT INTO `vidrarias` (`id_vidraria`, `id_laboratorio`, `nome`, `quantidade`, `descricao`, `foto`) VALUES
+INSERT INTO `glassworks` (`id_glassware`, `id_laboratory`, `name`, `quantity`, `description`, `photo`) VALUES
 	(1, 1, 'Almofariz com pistilo', 20, 'Equipamento usado para maceração de substâncias sólidas. Empregado em titulações, aquecimento de líquidos e para dissolver substâncias.', '16083792505fddeb7230b5d.jpg'),
 	(2, 2, 'Argola', 20, 'Peça de forma anelar, com um braço para fixação a um suporte universal, utilizada no laboratório como suporte de funis e de ampolas de decantação.', '16083792775fddeb8d37815.jpg'),
 	(3, 3, 'Bastão de vidro', 15, 'Instrumento feito em vidro alcalino, maciço, utilizado em transportes de líquidos e agitação de soluções. No transporte de líquidos ele é utilizado para não respingar líquidos fora do recipiente.', '16083793065fddebaa133df.jpg'),

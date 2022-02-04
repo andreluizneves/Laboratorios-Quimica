@@ -1,0 +1,170 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #e6e6e6;
+    visibility: hidden;
+}
+
+.card:hover,
+.card-report:hover {
+    filter: contrast(1.2) drop-shadow(2px 4px 6px black);
+}
+
+.content>div {
+    transition: 1s;
+}
+
+.modal-lgg {
+    max-width: 95%;
+}
+
+.content {
+    box-shadow: 0px 7px 16px 0px rgba(50, 50, 50, 1);
+    overflow: scroll;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    padding-top: 25px !important;
+    background-image: linear-gradient(315deg, #1f4037 0%, #99f2c8 85%);
+}
+
+.controls {
+    padding: 15px;
+    background-color: rgb(94, 255, 143);
+}
+
+.card p img {
+    text-align: center;
+    width: auto;
+    height: 220px;
+}
+
+.card,
+.card-report {
+    padding-left: 8px;
+    padding-right: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    padding-top: 2px;
+    background-image: url("../img/background-card.jpg");
+    box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 1);
+}
+
+.card-report[used="true"] {
+    box-shadow: 0px 0px 0px 4px rgb(127 255 0 / 92)
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+}
+
+.jumbotron {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 250px;
+    margin: 0;
+}
+
+.jumbotron h1 {
+    text-transform: uppercase;
+    background-image: linear-gradient(to top, rgb(147, 246, 255) 40%, #88f31d 60%);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
+
+.modal-content {
+    background-color: #76b852;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+}
+
+.modal-header {
+    display: block;
+}
+
+.swal2-html-container {
+    overflow: hidden !important;
+}
+
+.name {
+    width: 60%;
+}
+
+.photo {
+    width: auto;
+    height: 400px;
+}
+
+.description {
+    height: 175px !important;
+    resize: none;
+}
+
+@media screen and (min-width: 600px) {
+    .photo {
+        display: unset !important;
+        font-weight: bold;
+    }
+    .description {
+        height: 140px;
+        resize: none;
+    }
+}
+
+@media screen and (max-device-width: 480px) {
+    .name {
+        width: 100% !important;
+    }
+    .photo {
+        height: auto;
+        width: 100%;
+        font-size: 0.7rem;
+    }
+    .modal-lgg {
+        max-width: none;
+    }
+    .description {
+        height: 175px;
+        resize: none;
+    }
+}
+
+@media screen and (max-device-width: 480px) {
+    .display-1 {
+        font-size: 2rem !important;
+    }
+    .btn-list,
+    .btn-form {
+        margin-top: 0.5rem !important;
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .content {
+        padding: 1rem !important;
+        margin: 1rem !important;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+    .display-1 {
+        font-size: 2rem;
+    }
+}

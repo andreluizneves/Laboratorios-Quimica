@@ -1,0 +1,127 @@
+.content-sidebar ul.list-unstyled {
+    padding: 20px 0;
+    border-bottom: 1px solid rgb(73, 180, 87);
+}
+
+.content-sidebar ul li a {
+    font-size: 1.1em;
+    display: block;
+    color: black;
+    text-decoration: none;
+    width: 225px;
+}
+
+.sidebar .toggle-btn {
+    position: absolute;
+    top: 15px;
+    left: 320px;
+    height: 55px;
+    width: 110px;
+}
+
+.content-sidebar .sidebar-header {
+    padding: 20px;
+    background: rgb(73, 180, 87);
+}
+
+.content-sidebar ul .btn-pages li:hover {
+    color: rgb(98, 212, 113);
+    background: #fff;
+    transition: all 0.3s;
+}
+
+.sidebar {
+    position: fixed;
+    left: -310px;
+    transition: .4s;
+    z-index: 100
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar i {
+    font-size: 3rem !important;
+}
+
+.content-sidebar i {
+    font-size: 20px !important;
+}
+
+.sidebar ul li {
+    list-style: none;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    padding: 15px 24px;
+}
+
+.sidebar ul .btn-pages li {
+    cursor: pointer;
+}
+
+.btn-pages {
+    overflow-y: auto;
+}
+
+.sideall {
+    display: flex;
+    width: 100%;
+}
+
+.content-sidebar {
+    width: 250px;
+    top: 0;
+    left: 0;
+    height: 10000px;
+    z-index: 90;
+    background: rgb(98, 212, 113);
+    color: #fff;
+    transition: all 0.3s;
+}
+
+.toggle-btn {
+    cursor: pointer;
+    width: 110px;
+    background-color: #000000;
+    border-radius: 10px;
+    top: 30px;
+    left: 255px;
+}
+
+.toggle-btn>center {
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.username,
+.userlogin {
+    word-wrap: break-word;
+}
+
+nav .list-unstyled {
+    overflow: scroll;
+    height: 75vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+center>img {
+    width: 100px;
+    height: auto;
+    background-color: white;
+    border-radius: 100%;
+}
+
+@media screen and (max-device-width: 480px) {
+    nav .list-unstyled {
+        overflow-y: scroll;
+    }
+    nav .list-unstyled>li {
+        font-size: 16px !important;
+    }
+    mav * {
+        font-size: 1rem !important;
+    }
+}
