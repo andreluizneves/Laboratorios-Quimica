@@ -72,4 +72,4 @@ Thiago Kalil Martineli Samara – Front-End – [Facebook](https://www.facebook.
 ## Agradecimentos
 Sistema desenvolvido durante o **Trabalho de Conslusão de Curso** do **Técnico em Desenvolvimento de Sistemas**, projeto Multidisciplinar com o **Técnico em Açúcar e Álcool** na [ETEC Professora Helcy Moreira Martins Aguiar](https://eteccafelandia.com.br) em 2020.
 
-Agradecemos á todos envolvidos pela colaboração e sugestões.
+Agradecemos a todos envolvidos pela colaboração e sugestões.
